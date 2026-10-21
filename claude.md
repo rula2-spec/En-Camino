@@ -4,6 +4,7 @@
 - El usuario edita los archivos en esta carpeta (`C:\Mis proyectos_tesis\App`).
 - **Claude NUNCA hace commit ni push si el usuario no lo pide explícitamente.** Los cambios quedan locales hasta que el usuario diga que se suban.
 - **Claude NO crea BAJO NINGUNA CIRCUNSTANCIA secciones ni páginas internas sin pedido expreso del usuario.** Solo se hace exactamente lo que se pide.
+- **Al final de cada respuesta, Claude avisa siempre el estado del repo:** si hay archivos modificados sin subir (y cuáles) o si todo está igual que en GitHub.
 
 ## Tecnologías
 - Lenguajes: **solo HTML, CSS y JavaScript**. Sin TypeScript, preprocesadores (Sass, etc.) ni bundlers.
