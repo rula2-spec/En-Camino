@@ -2,7 +2,8 @@
 
 ## Flujo de trabajo
 - El usuario edita los archivos en esta carpeta (`C:\Mis proyectos_tesis\App`).
-- Claude se encarga de hacer commit y push a GitHub cuando se lo piden.
+- **Claude NUNCA hace commit ni push si el usuario no lo pide explícitamente.** Los cambios quedan locales hasta que el usuario diga que se suban.
+- **Claude NO crea BAJO NINGUNA CIRCUNSTANCIA secciones ni páginas internas sin pedido expreso del usuario.** Solo se hace exactamente lo que se pide.
 
 ## Tecnologías
 - Lenguajes: **solo HTML, CSS y JavaScript**. Sin TypeScript, preprocesadores (Sass, etc.) ni bundlers.
