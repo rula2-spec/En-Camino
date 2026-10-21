@@ -4,6 +4,24 @@
 - El usuario edita los archivos en esta carpeta (`C:\Mis proyectos_tesis\App`).
 - Claude se encarga de hacer commit y push a GitHub cuando se lo piden.
 
+## Tecnologías
+- Usar **solo HTML, CSS y JavaScript** (vanilla). Sin frameworks, librerías, bundlers, TypeScript ni preprocesadores.
+- Sitio estático: no hay build, Vercel sirve los archivos tal cual.
+
+## Estructura de carpetas
+```
+/
+├── index.html      ← página principal (obligatorio en la raíz)
+├── *.html          ← otras páginas, también en la raíz
+├── css/            ← hojas de estilo (.css)
+├── js/             ← scripts (.js)
+├── imagenes/       ← imágenes y otros recursos gráficos
+└── claude.md
+```
+- Cada carpeta tiene un `.gitkeep` para que Git la suba vacía; se puede borrar cuando tenga archivos.
+- Referencias siempre con rutas relativas, p. ej. `css/estilos.css`, `js/main.js`, `imagenes/logo.png`.
+- Cuando se empiece a diseñar una sección nueva, crear los archivos dentro de estas carpetas (no sueltos en la raíz, salvo los `.html`).
+
 ## Repositorio GitHub
 - URL: https://github.com/rula2-spec/En-Camino
 - Remote: `origin` → `https://github.com/rula2-spec/En-Camino.git`
