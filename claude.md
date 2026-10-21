@@ -5,7 +5,9 @@
 - Claude se encarga de hacer commit y push a GitHub cuando se lo piden.
 
 ## Tecnologías
-- Usar **solo HTML, CSS y JavaScript** (vanilla). Sin frameworks, librerías, bundlers, TypeScript ni preprocesadores.
+- Lenguajes: **solo HTML, CSS y JavaScript**. Sin TypeScript, preprocesadores (Sass, etc.) ni bundlers.
+- **Se pueden usar librerías JS/CSS**, especialmente **GSAP** (animaciones), entre otras.
+- Cargar las librerías por CDN con versión fija (p. ej. `https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js`) con `<script>` en el HTML, o descargadas a `js/`. No usar npm/build.
 - Sitio estático: no hay build, Vercel sirve los archivos tal cual.
 
 ## Estructura de carpetas
