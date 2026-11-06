@@ -1,0 +1,36 @@
+/* ==========================================================================
+   En Camino · Tokens de diseño
+   Colores, tipografía, radios, espaciado y tamaños táctiles de la marca.
+   Montserrat se carga desde Google Fonts en cada página.
+   ========================================================================== */
+
+:root {
+  /* Paleta principal (cuentas del isotipo) */
+  --ec-azul: #323366;      --ec-azul-presionado: #25264D;  --ec-azul-tinte: #E6E6EF;
+  --ec-verde: #009866;     --ec-verde-presionado: #007A52;
+  --ec-rojo: #CB1417;      --ec-rojo-presionado: #A31013;  --ec-rojo-tinte: #FBE7E7;
+  --ec-amarillo: #FCCB68;  --ec-amarillo-presionado: #E9B550;
+  --ec-blanco: #FFFFFF;    --ec-negro: #141414;
+  /* Neutros */
+  --ec-papel: #F7F4EC;     --ec-arena: #EDE9DF;   --ec-arena-presionado: #DED8CA;
+  --ec-linea: #D9D3C4;     --ec-gris: #5A564E;    --ec-piedra: #8A857B;  --ec-pizarra: #34374A;
+  /* Deshabilitado */
+  --ec-des-fondo: #E7E4DD; --ec-des-texto: #A9A498; --ec-des-linea: #DCD8CF;
+  /* Foco accesible */
+  --ec-foco: #FCCB68;
+
+  /* Tipografía */
+  --ec-fuente: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ec-texto-boton: 600 16px/1 var(--ec-fuente);
+  --ec-texto-chip: 500 14px/1 var(--ec-fuente);
+
+  /* Medidas (retícula de 6 columnas, módulo 48 dp, medianil 8 dp) */
+  --ec-modulo: 48px;  --ec-medianil: 8px;  --ec-margen: 16px;
+  --ec-alto-boton: 48px;   --ec-alto-chico: 40px;  --ec-tactil-min: 48px;
+  --ec-radio-pildora: 999px; --ec-radio-tarjeta: 16px; --ec-radio-campo: 14px; --ec-radio-tonal: 12px;
+  --ec-sombra: 0 2px 6px rgba(20, 20, 20, .18);
+  --ec-transicion: 120ms ease;
+
+  /* Escala de texto ajustable con el botón «Aa» (ver botones.js) */
+  --ec-escala-texto: 1;
+}

@@ -1,0 +1,226 @@
+/* ==========================================================================
+   En Camino · Botones
+   Estados: :hover · :active (presionado) · :disabled / [aria-disabled="true"]
+            · :focus-visible · [aria-pressed] / [aria-selected] / [aria-checked]
+            / [aria-current] / [aria-expanded] para los que se activan.
+   Copia del kit con anchos fluidos para celulares de 320 a 599 dp.
+   ========================================================================== */
+.btn, .btn-icono, .fab, .chip, .segmentado__opcion, .nav-item, .tile, .item-lista,
+.acordeon__cabecera, .switch, .media, .contador, .marcador, .banner-emergencia__cerrar {
+  -webkit-tap-highlight-color: transparent; cursor: pointer; font-family: var(--ec-fuente);
+  border: 0; background: none; color: inherit; margin: 0; padding: 0; transition: background var(--ec-transicion), color var(--ec-transicion), transform var(--ec-transicion), box-shadow var(--ec-transicion);
+}
+:where(.btn, .btn-icono, .fab, .chip, .segmentado__opcion, .nav-item, .tile, .item-lista, .acordeon__cabecera, .switch, .media, .contador, .marcador, .banner-emergencia__cerrar):focus-visible {
+  outline: 3px solid var(--ec-foco); outline-offset: 2px;
+}
+:where(.btn, .btn-icono, .fab, .chip, .tile, .item-lista, .media, .marcador):disabled,
+:where(.btn, .btn-icono, .fab, .chip, .tile, .item-lista, .media, .marcador)[aria-disabled="true"] { cursor: not-allowed; }
+.ico { width: 20px; height: 20px; flex: none; display: block; }
+
+/* ---------- Botón de texto ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: var(--ec-alto-boton); box-sizing: border-box; max-width: 100%; padding: 6px 24px; border-radius: var(--ec-radio-pildora);
+  font: var(--ec-texto-boton); line-height: 1.2; text-align: center; user-select: none;
+}
+.btn--bloque { display: flex; width: 100%; }
+.btn--medio  { width: calc(50% - var(--ec-medianil) / 2); }
+.btn--chico  { min-height: var(--ec-alto-chico); padding: 4px 16px; font-size: 14px; }
+
+.btn--primario   { background: var(--ec-azul); color: var(--ec-blanco); }
+.btn--primario:hover { background: #2B2C5A; }
+.btn--primario:active { background: var(--ec-azul-presionado); }
+
+.btn--secundario { background: var(--ec-blanco); color: var(--ec-azul); box-shadow: inset 0 0 0 1.6px var(--ec-azul); }
+.btn--secundario:hover { background: #F2F2F7; }
+.btn--secundario:active { background: var(--ec-azul-tinte); }
+
+.btn--servicio   { background: var(--ec-verde); color: var(--ec-blanco); }
+.btn--servicio:hover { background: #008A5D; }
+.btn--servicio:active { background: var(--ec-verde-presionado); }
+
+.btn--emergencia { background: var(--ec-rojo); color: var(--ec-blanco); border-radius: 14px; }
+.btn--emergencia:hover { background: #B91215; }
+.btn--emergencia:active { background: var(--ec-rojo-presionado); }
+
+.btn--peligro    { background: var(--ec-blanco); color: var(--ec-rojo); box-shadow: inset 0 0 0 1.6px var(--ec-rojo); }
+.btn--peligro:hover { background: #FDF3F3; }
+.btn--peligro:active { background: var(--ec-rojo-tinte); }
+
+.btn--tonal      { background: var(--ec-arena); color: var(--ec-azul); }
+.btn--tonal:hover { background: #E6E1D5; }
+.btn--tonal:active { background: var(--ec-arena-presionado); }
+
+.btn--terciario  { background: none; color: var(--ec-azul); padding: 6px 12px; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1.5px; }
+.btn--terciario:has(.ico) { text-decoration: none; }
+.btn--terciario:hover { background: #F2F2F7; }
+.btn--terciario:active { background: var(--ec-azul-tinte); }
+
+.btn--social     { background: var(--ec-blanco); color: var(--ec-negro); box-shadow: inset 0 0 0 1.6px var(--ec-linea); }
+.btn--social:hover { background: #FBFAF6; }
+.btn--social:active { background: var(--ec-arena); }
+.btn__logo { width: 20px; height: 20px; flex: none; display: block; }  /* insertar aquí el logo oficial de Google / Apple */
+
+.btn:is(:disabled, [aria-disabled="true"]) { background: var(--ec-des-fondo); color: var(--ec-des-texto); box-shadow: none; text-decoration: none; }
+.btn:is(.btn--secundario, .btn--peligro, .btn--social):is(:disabled, [aria-disabled="true"]) { background: var(--ec-blanco); box-shadow: inset 0 0 0 1.6px var(--ec-des-linea); }
+.btn--terciario:is(:disabled, [aria-disabled="true"]) { background: none; }
+
+/* Estado cargando (agregar .is-cargando mientras se espera una respuesta) */
+.btn.is-cargando { color: transparent !important; position: relative; pointer-events: none; }
+.btn.is-cargando::after { content: ""; position: absolute; width: 20px; height: 20px; border-radius: 50%;
+  border: 2.5px solid currentColor; border-color: var(--ec-blanco) var(--ec-blanco) transparent transparent; animation: ec-giro .8s linear infinite; }
+.btn--secundario.is-cargando::after, .btn--tonal.is-cargando::after { border-color: var(--ec-azul) var(--ec-azul) transparent transparent; }
+@keyframes ec-giro { to { transform: rotate(360deg); } }
+
+/* ---------- Botón de ícono (48 dp) ---------- */
+.btn-icono { position: relative; width: 48px; height: 48px; display: inline-grid; place-items: center; border-radius: 50%; color: var(--ec-azul); }
+.btn-icono .ico { width: 24px; height: 24px; }
+.btn-icono--plano:hover { background: #F2F2F7; }
+.btn-icono--plano:active { background: var(--ec-azul-tinte); }
+.btn-icono--plano[aria-pressed="true"] { color: var(--ec-rojo); }  /* p. ej. favorito activo */
+.btn-icono--tonal { border-radius: var(--ec-radio-tonal); background: var(--ec-arena); font: 700 17px/1 var(--ec-fuente); }
+.btn-icono--tonal:active { background: var(--ec-arena-presionado); }
+.btn-icono--relleno { background: var(--ec-azul); color: var(--ec-blanco); }
+.btn-icono--relleno:active { background: var(--ec-azul-presionado); }
+.btn-icono--rojo { background: var(--ec-rojo); color: var(--ec-blanco); }
+.btn-icono--rojo:active { background: var(--ec-rojo-presionado); }
+.btn-icono__badge { position: absolute; top: 8px; right: 9px; width: 11px; height: 11px; border-radius: 50%; background: var(--ec-rojo); box-shadow: 0 0 0 2px var(--ec-blanco); }
+.btn-icono:is(:disabled, [aria-disabled="true"]) { color: var(--ec-des-texto); background: none; }
+.btn-icono:is(.btn-icono--tonal, .btn-icono--relleno, .btn-icono--rojo):is(:disabled, [aria-disabled="true"]) { background: var(--ec-des-fondo); }
+.btn-icono__texto { font: 700 17px/1 var(--ec-fuente); letter-spacing: -.5px; }
+
+/* ---------- Botón flotante del mapa (FAB) ---------- */
+.fab { width: 56px; height: 56px; border-radius: 50%; display: inline-grid; place-items: center; box-shadow: var(--ec-sombra); background: var(--ec-blanco); color: var(--ec-azul); }
+.fab .ico { width: 24px; height: 24px; }
+.fab:active { background: var(--ec-arena); }
+.fab--primario { background: var(--ec-azul); color: var(--ec-blanco); }
+.fab--primario:active { background: var(--ec-azul-presionado); }
+.fab--sos { width: 80px; height: 80px; background: var(--ec-rojo); color: var(--ec-blanco); font: 700 22px/1 var(--ec-fuente);
+  box-shadow: var(--ec-sombra), inset 0 0 0 6px var(--ec-rojo), inset 0 0 0 8px rgba(255,255,255,.45); }
+.fab--sos:active { background: var(--ec-rojo-presionado); box-shadow: var(--ec-sombra), inset 0 0 0 6px var(--ec-rojo-presionado), inset 0 0 0 8px rgba(255,255,255,.45); }
+.fab:is(:disabled, [aria-disabled="true"]) { background: var(--ec-des-fondo); color: var(--ec-des-texto); box-shadow: none; }
+
+/* ---------- Chips de filtro (aria-pressed) ---------- */
+.chip { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px; border-radius: 20px;
+  background: var(--ec-blanco); color: var(--ec-negro); box-shadow: inset 0 0 0 1.5px var(--ec-linea); font: var(--ec-texto-chip); white-space: nowrap; }
+.chip .ico { width: 18px; height: 18px; color: var(--chip-color, var(--ec-azul)); }
+.chip:active { background: var(--ec-arena); }
+.chip--servicio { --chip-color: var(--ec-verde); } .chip--ayuda { --chip-color: var(--ec-rojo); }
+.chip--fe { --chip-color: var(--ec-amarillo); --chip-texto: var(--ec-azul); } .chip--general { --chip-color: var(--ec-azul); }
+.chip[aria-pressed="true"] { background: var(--chip-color); color: var(--chip-texto, var(--ec-blanco)); box-shadow: none; }
+.chip[aria-pressed="true"] .ico { color: currentColor; }
+.chip:is(:disabled, [aria-disabled="true"]) { background: var(--ec-des-fondo); color: var(--ec-des-texto); box-shadow: none; }
+.chip:is(:disabled, [aria-disabled="true"]) .ico { color: var(--ec-des-texto); }
+.fila-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* ---------- Control segmentado (role="tablist") ---------- */
+.segmentado { display: flex; padding: 4px; min-height: 44px; border-radius: 22px; background: var(--ec-arena); width: 100%; box-sizing: border-box; }
+.segmentado__opcion { flex: 1 1 0; min-width: 0; border-radius: 18px; font: 500 14px/1 var(--ec-fuente); color: var(--ec-gris); }
+.segmentado__opcion[aria-selected="true"] { background: var(--ec-blanco); color: var(--ec-azul); font-weight: 600; box-shadow: 0 1px 3px rgba(20,20,20,.15); }
+.segmentado__opcion:not([aria-selected="true"]):active { background: var(--ec-arena-presionado); }
+.segmentado[aria-disabled="true"] { background: var(--ec-des-fondo); pointer-events: none; }
+.segmentado[aria-disabled="true"] .segmentado__opcion { color: var(--ec-des-texto); background: none; box-shadow: none; }
+
+/* ---------- Barra de navegación inferior (5 destinos) ---------- */
+.nav-inferior { display: flex; justify-content: space-around; min-height: 56px; box-sizing: border-box; background: var(--ec-blanco); border-top: 1px solid var(--ec-linea); }
+.nav-item { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 2px; padding-top: 1px; color: var(--ec-piedra); font: 500 11px/12px var(--ec-fuente); text-align: center; border-radius: 14px; }
+.nav-item__pastilla { flex: none; width: 48px; height: 28px; border-radius: 14px; display: grid; place-items: center; transition: background var(--ec-transicion); }
+.nav-item .ico { width: 22px; height: 22px; }
+.nav-item[aria-current="page"] { color: var(--ec-azul); font-weight: 700; }
+.nav-item[aria-current="page"] .nav-item__pastilla { background: var(--ec-azul-tinte); }
+.nav-item:active .nav-item__pastilla { background: #D3D3E3; }
+
+/* ---------- Tarjeta de acceso rápido (3 columnas × 2 filas = 160 × 104) ---------- */
+.grilla2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--ec-medianil); }
+.tile { width: 100%; min-width: 0; min-height: 104px; box-sizing: border-box; padding: 14px 8px 14px 16px; border-radius: var(--ec-radio-tarjeta); background: var(--ec-blanco);
+  box-shadow: inset 0 0 0 1.5px var(--ec-linea); display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+.tile__icono { flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--sec, var(--ec-azul)); color: var(--sec-texto, var(--ec-blanco)); margin-bottom: auto; }
+.tile__icono .ico { width: 22px; height: 22px; }
+.tile__titulo { margin-top: 8px; font: 600 14px/1.2 var(--ec-fuente); color: var(--ec-negro); overflow-wrap: anywhere; }
+.tile__sub { font: 400 11px/1.3 var(--ec-fuente); color: var(--ec-gris); margin-top: 2px; }
+.tile:active { background: var(--ec-arena); }
+.tile:is(:disabled, [aria-disabled="true"]) { background: var(--ec-des-fondo); }
+.tile:is(:disabled, [aria-disabled="true"]) :is(.tile__titulo, .tile__sub) { color: var(--ec-des-texto); }
+.tile:is(:disabled, [aria-disabled="true"]) .tile__icono { background: var(--ec-des-linea); color: var(--ec-des-texto); box-shadow: none; }
+
+/* Colores de sección (cuentas del rosario) */
+.sec--azul { --sec: var(--ec-azul); }  .sec--verde { --sec: var(--ec-verde); }  .sec--rojo { --sec: var(--ec-rojo); }
+.sec--amarillo { --sec: var(--ec-amarillo); --sec-texto: var(--ec-azul); }  .sec--pizarra { --sec: var(--ec-pizarra); }
+.sec--blanco { --sec: var(--ec-blanco); --sec-texto: var(--ec-azul); }
+.sec--blanco :is(.tile__icono, .item-lista__icono) { box-shadow: inset 0 0 0 2px var(--ec-azul); }
+
+/* ---------- Ítem de lista (6 columnas × 56) ---------- */
+.item-lista { width: 100%; min-height: 56px; box-sizing: border-box; padding: 6px 16px; display: flex; align-items: center; gap: 12px;
+  border-radius: var(--ec-radio-campo); background: var(--ec-blanco); box-shadow: inset 0 0 0 1.5px var(--ec-linea); text-align: left; }
+.item-lista__icono { flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--sec, var(--ec-azul)); color: var(--sec-texto, var(--ec-blanco)); flex: none; }
+.item-lista__icono .ico { width: 18px; height: 18px; }
+.item-lista__titulo { flex: 1; min-width: 0; overflow-wrap: anywhere; font: 500 15px/1.2 var(--ec-fuente); color: var(--ec-negro); }
+.item-lista__valor { font: 500 13px/1 var(--ec-fuente); color: var(--ec-gris); }
+.item-lista__chevron { color: var(--ec-piedra); }
+.item-lista:active { background: var(--ec-arena); }
+.item-lista--peligro .item-lista__titulo, .item-lista--peligro .ico { color: var(--ec-rojo); font-weight: 600; }
+.item-lista:is(:disabled, [aria-disabled="true"]) { background: var(--ec-des-fondo); }
+.item-lista:is(:disabled, [aria-disabled="true"]) :is(.item-lista__titulo, .item-lista__valor, .item-lista__chevron) { color: var(--ec-des-texto); }
+.item-lista:is(:disabled, [aria-disabled="true"]) .item-lista__icono { background: var(--ec-des-linea); color: var(--ec-des-texto); box-shadow: none; }
+
+/* ---------- Interruptor (role="switch") ---------- */
+.switch { width: 44px; height: 24px; border-radius: 12px; background: #C9C3B5; position: relative; flex: none; }
+.switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: var(--ec-blanco); transition: transform var(--ec-transicion); }
+.switch[aria-checked="true"] { background: var(--ec-verde); }
+.switch[aria-checked="true"]::after { transform: translateX(20px); }
+.switch:is(:disabled, [aria-disabled="true"]) { background: var(--ec-des-linea); cursor: not-allowed; }
+
+/* ---------- Casilla y opción única ---------- */
+.casilla, .opcion { appearance: none; -webkit-appearance: none; width: 24px; height: 24px; margin: 0; cursor: pointer; display: inline-grid; place-items: center;
+  background: var(--ec-blanco); box-shadow: inset 0 0 0 1.6px var(--ec-piedra); transition: background var(--ec-transicion); }
+.casilla { border-radius: 6px; }
+.opcion { border-radius: 50%; }
+.casilla:checked { background: var(--ec-azul) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/18px no-repeat; box-shadow: none; }
+.opcion:checked { box-shadow: inset 0 0 0 1.6px var(--ec-azul), inset 0 0 0 6.5px var(--ec-blanco), inset 0 0 0 12px var(--ec-azul); }
+.casilla:disabled, .opcion:disabled { box-shadow: inset 0 0 0 1.6px var(--ec-des-linea); cursor: not-allowed; }
+.casilla:checked:disabled { background-color: var(--ec-des-linea); }
+.opcion:checked:disabled { box-shadow: inset 0 0 0 1.6px var(--ec-des-linea), inset 0 0 0 6.5px var(--ec-blanco), inset 0 0 0 12px var(--ec-des-linea); }
+:is(.casilla, .opcion):focus-visible { outline: 3px solid var(--ec-foco); outline-offset: 2px; }
+
+/* ---------- Acordeón (preguntas frecuentes) ---------- */
+.acordeon { width: 100%; border-radius: var(--ec-radio-campo); background: var(--ec-blanco); box-shadow: inset 0 0 0 1.5px var(--ec-linea); overflow: hidden; }
+.acordeon__cabecera { width: 100%; min-height: 56px; padding: 0 16px 0 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; text-align: left; font: 600 14px/1.3 var(--ec-fuente); color: var(--ec-negro); }
+.acordeon__cabecera .ico { color: var(--ec-azul); transition: transform var(--ec-transicion); }
+.acordeon__cabecera[aria-expanded="true"] .ico { transform: rotate(180deg); }
+.acordeon__cabecera:active { background: var(--ec-arena); }
+.acordeon__panel { padding: 0 18px 18px; font: 400 14px/1.5 var(--ec-fuente); color: var(--ec-gris); }
+.acordeon__panel[hidden] { display: none; }
+
+/* ---------- Controles de reproducción (oraciones, cancionero) ---------- */
+.media { width: 48px; height: 48px; border-radius: 50%; display: inline-grid; place-items: center; color: var(--ec-azul); }
+.media .ico { width: 24px; height: 24px; }
+.media:active { background: var(--ec-azul-tinte); }
+.media--principal { width: 64px; height: 64px; background: var(--ec-azul); color: var(--ec-blanco); }
+.media--principal .ico { width: 28px; height: 28px; }
+.media--principal:active { background: var(--ec-azul-presionado); }
+.media:is(:disabled, [aria-disabled="true"]) { color: var(--ec-des-texto); background: none; }
+.media--principal:is(:disabled, [aria-disabled="true"]) { background: var(--ec-des-fondo); }
+.controles-media { display: flex; align-items: center; gap: 16px; }
+
+/* ---------- Contador del rosario (tocar para avanzar) ---------- */
+.contador { width: 192px; height: 200px; border-radius: 50%; display: grid; place-items: center; }
+.contador svg { width: 192px; height: 200px; display: block; }
+.contador:active { background: radial-gradient(circle at 50% 48%, var(--ec-azul-tinte) 0 60%, transparent 61%); }
+
+/* ---------- Banner de emergencia (Home) ---------- */
+.banner-emergencia { width: 100%; min-height: 56px; box-sizing: border-box; padding: 8px 8px 8px 16px; border-radius: var(--ec-radio-campo);
+  background: var(--ec-rojo); color: var(--ec-blanco); display: flex; align-items: center; gap: 12px; font-family: var(--ec-fuente); }
+.banner-emergencia__texto { flex: 1; min-width: 0; } .banner-emergencia__titulo { font: 600 13px/1.3 var(--ec-fuente); } .banner-emergencia__sub { font: 500 11px/1.3 var(--ec-fuente); color: #F6CFCF; }
+.banner-emergencia__cerrar { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; color: var(--ec-blanco); }
+.banner-emergencia__cerrar:active { background: var(--ec-rojo-presionado); }
+
+/* ---------- Marcadores del mapa (aria-pressed = seleccionado) ---------- */
+.marcador { width: 56px; height: 68px; display: inline-grid; place-items: end center; background: none; }
+.marcador svg { width: 56px; height: 68px; display: block; transition: transform var(--ec-transicion); transform-origin: 50% 100%; }
+.marcador[aria-pressed="true"] svg { transform: scale(1.18); }
+
+/* En celulares anchos «Punto espiritual» entra en una línea: se centra el contenido de la barra */
+@media (min-width: 480px) { .nav-item { padding-top: 8px; } }
+
+/* Respeta usuarios que reducen el movimiento */
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
