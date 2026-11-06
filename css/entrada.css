@@ -1,0 +1,109 @@
+/* ==========================================================================
+   En Camino · Pantallas de entrada: Carga, Bienvenida e Ingreso
+   Base de 360 dp, fluida de 320 a 599 dp. Nada depende de un alto fijo.
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; background: var(--ec-fondo-claro); color: var(--ec-negro); font-family: var(--ec-fuente); }
+body.fondo-azul { background: var(--ec-azul); }
+p, h1 { margin: 0; }
+
+/* ---------- Carga ---------- */
+.carga {
+  position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center;
+  min-height: 100vh; min-height: 100dvh; padding: 48px var(--ec-margen) 32px;
+  color: var(--ec-blanco); text-align: center;
+}
+.carga__arco { position: absolute; border: 1px dashed rgba(255, 255, 255, .22); border-radius: 50%; pointer-events: none; }
+.carga__arco--arriba { width: 354px; height: 354px; top: -75px; right: -149px; }
+.carga__arco--abajo  { width: 388px; height: 388px; bottom: -88px; left: -109px; }
+.carga__centro { position: relative; margin-block: auto; padding-block: 16px; width: 100%; }
+
+.carga__rosario { width: 164px; margin-inline: auto; }
+.carga__rosario svg { display: block; width: 100%; height: auto; }
+.cuenta { fill: none; stroke: #9EA0B9; stroke-width: 1.8; }
+.cuenta--llena[data-grupo="0"] { fill: var(--ec-blanco);   stroke: var(--ec-blanco); }
+.cuenta--llena[data-grupo="1"] { fill: var(--ec-rojo);     stroke: var(--ec-rojo); }
+.cuenta--llena[data-grupo="2"] { fill: var(--ec-verde);    stroke: var(--ec-verde); }
+.cuenta--llena[data-grupo="3"] { fill: var(--ec-amarillo); stroke: var(--ec-amarillo); }
+/* Azul noche sobre azul noche: el contorno blanco hace visible la cuenta llena */
+.cuenta--llena[data-grupo="4"] { fill: var(--ec-azul);     stroke: var(--ec-blanco); }
+.carga__porcentaje { fill: var(--ec-blanco); font: 300 32px "lemonde-sans", sans-serif; }
+.carga__cruz { fill: none; stroke: var(--ec-blanco); stroke-width: 3.6; stroke-linecap: round; }
+
+.carga__marca { margin-top: 26px; font: 300 48px/1.1 "baga", sans-serif; }
+.carga__lema { margin-top: 6px; font: 400 14px/1.35 var(--ec-fuente); color: var(--ec-azul-tinte); }
+.carga__estado { margin-top: 40px; font: 600 15px/1.3 var(--ec-fuente); color: var(--ec-amarillo); }
+
+.carga__lugar { position: relative; display: flex; align-items: center; justify-content: center; gap: 10px; font: 400 13px/1.3 var(--ec-fuente); color: #C8C9DA; }
+.carga__punto { flex: none; width: 6px; height: 6px; border-radius: 50%; }
+.carga__punto--verde { background: var(--ec-verde); }
+.carga__punto--rojo  { background: var(--ec-rojo); }
+
+/* ---------- Bienvenida ---------- */
+.bienvenida { display: flex; flex-direction: column; width: 100%; max-width: 599px; min-height: 100vh; min-height: 100dvh; margin-inline: auto; }
+.bienvenida__mapa { position: relative; flex: 1 1 260px; overflow: hidden; border-radius: 0 0 28px 28px; background: #E8EEE4; }
+/* El dibujo escala con el alto y queda centrado: en pantallas anchas se ve más mapa a los costados, sin ampliarse */
+.bienvenida__mapa svg { position: absolute; top: 0; left: 50%; display: block; height: 100%; aspect-ratio: 780 / 900; overflow: visible; transform: translateX(-50%); }
+.bienvenida__marca { position: absolute; top: 52px; left: var(--ec-margen); display: inline-flex; align-items: center; gap: 8px; padding: 4px 16px 4px 8px; border-radius: var(--ec-radio-pildora); background: var(--ec-blanco); font: 300 20px/1 "baga", sans-serif; }
+.bienvenida__marca img { display: block; width: auto; height: 32px; }
+
+.bienvenida__contenido { padding: 28px var(--ec-margen) 32px; }
+.bienvenida__puntos { display: flex; gap: 8px; }
+.bienvenida__punto { width: 11px; height: 11px; border-radius: 50%; box-shadow: inset 0 0 0 2px #9A9AAE; }
+.bienvenida__punto--activo { background: var(--ec-verde); box-shadow: none; }
+.bienvenida__titulo { margin-top: 12px; font: 300 32px/1.25 "lemonde-sans", sans-serif; }
+.bienvenida__texto { margin-top: 12px; margin-bottom: 28px; font: 400 15px/1.5 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.bienvenida .btn--primario { min-height: 52px; }
+.bienvenida__pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px; margin-top: 8px; font: 600 14px/1.3 var(--ec-fuente); color: var(--ec-azul); }
+.bienvenida__pie .btn { padding-inline: 2px; font-size: 14px; text-underline-offset: 3px; }
+
+/* ---------- Ingreso ---------- */
+.ingreso {
+  --ec-linea: var(--ec-linea-social);
+  display: flex; flex-direction: column;
+  width: 100%; max-width: 599px; min-height: 100vh; min-height: 100dvh; margin-inline: auto;
+  padding: 48px var(--ec-margen) 32px;
+}
+.ingreso__cabecera { display: flex; align-items: center; gap: 7px; margin-left: -4px; }
+.ingreso__volver { color: var(--ec-negro); }
+.ingreso__volver .ico { position: relative; }
+/* El círculo visible mide 40 dp; el área táctil sigue siendo de 48 dp */
+.ingreso__volver::before { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #E6E5EA; }
+.ingreso__volver:hover { background: none; }
+.ingreso__volver:active::before { background: var(--ec-azul-tinte); }
+.ingreso__seccion { font: 300 18px/1.2 "lemonde-sans", sans-serif; }
+
+.ingreso__titulo { margin-top: 18px; font: 300 32px/1.15 "lemonde-sans", sans-serif; }
+.ingreso__bajada { margin-top: 4px; font: 400 14px/1.4 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.ingreso__form { margin-top: 20px; }
+
+.campo + .campo { margin-top: 14px; }
+.campo__etiqueta { display: block; margin-bottom: 8px; font: 600 14px/1.2 var(--ec-fuente); }
+.campo__caja {
+  display: flex; align-items: center; gap: 12px; min-height: 50px; padding-inline: 16px;
+  border-radius: var(--ec-radio-campo); background: var(--ec-blanco); box-shadow: inset 0 0 0 1.5px var(--ec-linea-campo);
+  color: var(--ec-texto-secundario);
+}
+.campo__caja:focus-within { outline: 3px solid var(--ec-foco); outline-offset: 2px; }
+/* 16 px evita que iOS haga zoom al tocar el campo */
+.campo__entrada { flex: 1; min-width: 0; height: 48px; padding: 0; border: 0; outline: 0; background: none; color: var(--ec-negro); font: 400 16px/1.2 var(--ec-fuente); }
+.campo__entrada::placeholder { color: var(--ec-texto-sugerido); opacity: 1; }
+.campo__accion { flex: none; margin-right: -12px; color: var(--ec-texto-secundario); }
+.campo__accion[aria-pressed="true"] { color: var(--ec-azul); }
+
+.ingreso__olvido { display: flex; justify-content: flex-end; }
+.ingreso__olvido .btn { padding-inline: 0; font-size: 14px; text-underline-offset: 3px; }
+.ingreso__olvido .btn:hover { background: none; }
+.ingreso .btn--primario { min-height: 52px; }
+
+.ingreso__separador { display: flex; align-items: center; gap: 12px; margin-block: 14px; font: 400 14px/1.3 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.ingreso__separador::before, .ingreso__separador::after { content: ""; flex: 1; height: 1px; background: var(--ec-linea-campo); }
+
+.ingreso__sociales { display: grid; gap: 12px; }
+.ingreso__sociales .btn { min-height: 50px; padding-inline: 12px; font-size: 14px; }
+/* Espacio reservado para el logo oficial de Google y Apple (viene del catálogo del kit) */
+.slot { border: 1.2px dashed var(--ec-piedra); border-radius: 4px; }
+
+.ingreso__pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px; margin-top: auto; padding-top: 16px; font: 400 14px/1.3 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.ingreso__pie .btn { padding-inline: 4px; font-size: 14px; text-underline-offset: 3px; }

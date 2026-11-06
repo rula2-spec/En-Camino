@@ -2,14 +2,42 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#323366">
   <title>En Camino</title>
+  <link rel="stylesheet" href="https://use.typekit.net/asn0sci.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/entrada.css">
 </head>
-<body style="background-color: red;">
-  <h1>Hola mundo</h1>
-  <p style="font-family: 'Poppins', sans-serif;">Prueba 1 de app móvil peregrinación</p>
+<body class="fondo-azul">
+  <main class="carga">
+    <span class="carga__arco carga__arco--arriba" aria-hidden="true"></span>
+    <span class="carga__arco carga__arco--abajo" aria-hidden="true"></span>
+
+    <div class="carga__centro">
+      <div id="carga-progreso" class="carga__rosario" role="progressbar" aria-label="Preparando tu camino" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <svg viewBox="0 0 164 194" aria-hidden="true">
+          <g id="carga-cuentas"></g>
+          <text id="carga-porcentaje" class="carga__porcentaje" x="82" y="94" text-anchor="middle">0%</text>
+          <path class="carga__cruz" d="M82 156 V191 M72 168 H92"/>
+        </svg>
+      </div>
+      <h1 class="carga__marca">En Camino</h1>
+      <p class="carga__lema">Peregrinación a Nuestra Señora de Lourdes</p>
+      <p class="carga__estado">Preparando tu camino…</p>
+    </div>
+
+    <p class="carga__lugar">
+      <span class="carga__punto carga__punto--verde" aria-hidden="true"></span>
+      <span>Santuario de Alta Gracia · Córdoba</span>
+      <span class="carga__punto carga__punto--rojo" aria-hidden="true"></span>
+    </p>
+  </main>
+
+  <script src="js/navegacion.js"></script>
+  <script src="js/carga.js"></script>
 </body>
 </html>

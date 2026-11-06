@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#E8EEE4">
+  <title>Bienvenida · En Camino</title>
+  <link rel="stylesheet" href="https://use.typekit.net/asn0sci.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/botones.css">
+  <link rel="stylesheet" href="css/entrada.css">
+</head>
+<body>
+  <main class="bienvenida">
+    <div class="bienvenida__mapa">
+      <!-- Mapa ilustrado de la pantalla final. Coordenadas en px de la referencia (780 de ancho). -->
+      <svg viewBox="0 0 780 900" aria-hidden="true">
+        <ellipse cx="165" cy="375" rx="240" ry="202" fill="#DCE7D6"/>
+        <ellipse cx="675" cy="675" rx="228" ry="171" fill="#DCE7D6"/>
+        <path d="M-200 -255 L262 900" fill="none" stroke="#D6DFEA" stroke-width="11"/>
+        <!-- Las rutas siguen más allá del dibujo para cubrir los celulares anchos -->
+        <path d="M-800 585 L1600 -15 M-800 447 L1600 816 M700 -240 L375 900" fill="none" stroke="#FFFFFF" stroke-width="14"/>
+        <text x="40" y="296" fill="#686D70" font-family="Montserrat, sans-serif" font-weight="600" font-size="20" letter-spacing="1">RP 5</text>
+
+        <g fill="#FFFFFF" stroke="#9A9AAE" stroke-width="5">
+          <circle cx="589" cy="-3" r="8"/><circle cx="555" cy="31" r="8"/><circle cx="485" cy="99" r="8"/><circle cx="451" cy="131" r="8"/>
+          <circle cx="421" cy="165" r="8"/><circle cx="395" cy="199" r="8"/><circle cx="375" cy="233" r="8"/><circle cx="359" cy="265" r="8"/>
+          <circle cx="349" cy="299" r="8"/><circle cx="345" cy="367" r="8"/><circle cx="351" cy="399" r="8"/><circle cx="361" cy="433" r="8"/>
+          <circle cx="373" cy="467" r="8"/><circle cx="385" cy="501" r="8"/><circle cx="397" cy="533" r="8"/><circle cx="409" cy="567" r="8"/>
+        </g>
+        <g fill="#009866">
+          <circle cx="417" cy="601" r="11"/><circle cx="421" cy="635" r="11"/><circle cx="421" cy="667" r="11"/><circle cx="385" cy="769" r="11"/>
+          <circle cx="361" cy="801" r="11"/><circle cx="335" cy="835" r="11"/><circle cx="303" cy="869" r="11"/><circle cx="269" cy="903" r="11"/>
+        </g>
+
+        <g fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Hidratación (glifo del kit) -->
+          <g transform="translate(521 62) scale(1.185)">
+            <circle r="27" fill="#16884D" stroke="none"/>
+            <path d="M-20.3 -7.39 A21.6 21.6 0 0 1 -11.45 -18.32" stroke-opacity=".55" stroke-width="2.33"/>
+            <g transform="scale(1.1) translate(-12 -12)" stroke-width="2"><path d="M12 4.2 C12 4.2 5.6 10.8 5.6 14.6 A6.4 6.4 0 0 0 18.4 14.6 C18.4 10.8 12 4.2 12 4.2 Z"/><path d="M9.2 15 A2.9 2.9 0 0 0 11.6 17.8" stroke-width="1.6"/></g>
+          </g>
+          <!-- Comida (glifo del kit) -->
+          <g transform="translate(343 335) scale(1.185)">
+            <circle r="27" fill="#16884D" stroke="none"/>
+            <path d="M-20.3 -7.39 A21.6 21.6 0 0 1 -11.45 -18.32" stroke-opacity=".55" stroke-width="2.33"/>
+            <g transform="scale(1.1) translate(-12 -12)" stroke-width="2"><path d="M7 4 V9 M9.5 4 V20 M12 4 V9 M7 9 A2.5 2.5 0 0 0 12 9 M17 20 V4 C18.9 5.3 19.4 9 18.8 13 H17"/></g>
+          </g>
+          <!-- Puesto de asistencia: el maletín no está en el kit, sale de la pantalla final -->
+          <g transform="translate(407 722) scale(1.185)">
+            <circle r="27" fill="#E5353F" stroke="none"/>
+            <path d="M-20.3 -7.39 A21.6 21.6 0 0 1 -11.45 -18.32" stroke-opacity=".55" stroke-width="2.33"/>
+            <g transform="scale(1.1) translate(-12 -12)" stroke-width="2"><path d="M5 7.5 H19 A1.5 1.5 0 0 1 20.5 9 V18.5 A1.5 1.5 0 0 1 19 20 H5 A1.5 1.5 0 0 1 3.5 18.5 V9 A1.5 1.5 0 0 1 5 7.5 Z M8.5 7.5 V5.5 A1.5 1.5 0 0 1 10 4 H14 A1.5 1.5 0 0 1 15.5 5.5 V7.5 M12 10.5 V17 M8.75 13.75 H15.25"/></g>
+          </g>
+        </g>
+      </svg>
+
+      <p class="bienvenida__marca"><img src="imagenes/isotipo.png" alt="" width="27" height="32"><span>En Camino</span></p>
+    </div>
+
+    <div class="bienvenida__contenido">
+      <div class="bienvenida__puntos" aria-hidden="true"><span class="bienvenida__punto bienvenida__punto--activo"></span><span class="bienvenida__punto"></span><span class="bienvenida__punto"></span></div>
+      <h1 class="bienvenida__titulo">Todo tu camino,<br>en un solo lugar</h1>
+      <p class="bienvenida__texto">Mapa, puestos de asistencia, oraciones y cronograma: antes, durante y después de la peregrinación.</p>
+      <button class="btn btn--primario btn--bloque" type="button" data-ec="comenzar" data-id="comenzar" data-destino="registro"><span>Comenzar</span></button>
+      <p class="bienvenida__pie">
+        <span>Ya tengo cuenta ·</span>
+        <button class="btn btn--terciario" type="button" data-ec="ir-ingreso" data-id="ir-ingreso" data-destino="ingreso"><span>Ingresar</span></button>
+      </p>
+    </div>
+  </main>
+
+  <script src="js/botones.js"></script>
+  <script src="js/navegacion.js"></script>
+</body>
+</html>

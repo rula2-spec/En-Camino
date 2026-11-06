@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F7F7">
+  <title>Ingresar · En Camino</title>
+  <link rel="stylesheet" href="https://use.typekit.net/asn0sci.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/botones.css">
+  <link rel="stylesheet" href="css/entrada.css">
+</head>
+<body>
+  <!-- Glifos del sprite del kit que usa esta pantalla. g-correo no está en el kit: sale de la pantalla final. -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="g-atras" viewBox="0 0 24 24"><path d="M15 4.5 L8 12 L15 19.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-candado" viewBox="0 0 24 24"><path d="M6.5 11 H17.5 A1.5 1.5 0 0 1 19 12.5 V19 A1.5 1.5 0 0 1 17.5 20.5 H6.5 A1.5 1.5 0 0 1 5 19 V12.5 A1.5 1.5 0 0 1 6.5 11 Z M8 11 V8 A4 4 0 0 1 16 8 V11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-correo" viewBox="0 0 24 24"><path d="M4.5 5.5 H19.5 A1.5 1.5 0 0 1 21 7 V17 A1.5 1.5 0 0 1 19.5 18.5 H4.5 A1.5 1.5 0 0 1 3 17 V7 A1.5 1.5 0 0 1 4.5 5.5 Z M3.5 6.5 L12 13 L20.5 6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-telefono" viewBox="0 0 24 24"><path d="M5.5 3.5 H9 L10.5 8 L8.3 9.6 A11 11 0 0 0 14.4 15.7 L16 13.5 L20.5 15 V18.5 A2 2 0 0 1 18.5 20.5 A16 16 0 0 1 3.5 5.5 A2 2 0 0 1 5.5 3.5 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-ver" viewBox="0 0 24 24"><path d="M2.5 12 C5 7 8.5 5.5 12 5.5 C15.5 5.5 19 7 21.5 12 C19 17 15.5 18.5 12 18.5 C8.5 18.5 5 17 2.5 12 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <main class="ingreso">
+    <header class="ingreso__cabecera">
+      <button class="btn-icono btn-icono--plano ingreso__volver" type="button" aria-label="Volver" data-ec="atras" data-id="atras" data-destino="bienvenida">
+        <svg class="ico" aria-hidden="true"><use href="#g-atras"/></svg>
+      </button>
+      <p class="ingreso__seccion">Ingresar</p>
+    </header>
+
+    <h1 class="ingreso__titulo">¡Hola, peregrino!</h1>
+    <p class="ingreso__bajada">Ingresá para guardar tu recorrido y tu grupo.</p>
+
+    <form id="form-ingreso" class="ingreso__form">
+      <div class="campo">
+        <label class="campo__etiqueta" for="ingreso-usuario">Correo o teléfono</label>
+        <div class="campo__caja">
+          <svg class="ico" aria-hidden="true"><use href="#g-correo"/></svg>
+          <input class="campo__entrada" id="ingreso-usuario" name="usuario" type="text" inputmode="email" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="nombre@correo.com" required>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label class="campo__etiqueta" for="ingreso-contrasena">Contraseña</label>
+        <div class="campo__caja">
+          <svg class="ico" aria-hidden="true"><use href="#g-candado"/></svg>
+          <input class="campo__entrada" id="ingreso-contrasena" name="contrasena" type="password" autocomplete="current-password" required>
+          <button class="btn-icono btn-icono--plano campo__accion" type="button" aria-label="Mostrar contraseña" aria-pressed="false" data-ec="alternar" data-id="ver-contrasena">
+            <svg class="ico" aria-hidden="true"><use href="#g-ver"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="ingreso__olvido">
+        <button class="btn btn--terciario" type="button" data-ec="olvide-contrasena" data-id="olvide-contrasena" data-destino="recuperar-contrasena"><span>¿Olvidaste tu contraseña?</span></button>
+      </div>
+
+      <button class="btn btn--primario btn--bloque" type="submit" data-ec="ingresar" data-id="ingresar"><span>Ingresar</span></button>
+    </form>
+
+    <p class="ingreso__separador">o continuá con</p>
+
+    <div class="ingreso__sociales">
+      <button class="btn btn--social btn--bloque" type="button" data-ec="google" data-id="google" data-destino="ingresar con cuenta de Google"><span class="btn__logo slot" aria-hidden="true"></span><span>Continuar con Google</span></button>
+      <button class="btn btn--social btn--bloque" type="button" data-ec="apple" data-id="apple" data-destino="ingresar con cuenta de Apple"><span class="btn__logo slot" aria-hidden="true"></span><span>Continuar con Apple</span></button>
+      <button class="btn btn--social btn--bloque" type="button" data-ec="telefono" data-id="telefono" data-destino="ingresar con número de teléfono"><svg class="ico" aria-hidden="true"><use href="#g-telefono"/></svg><span>Continuar con número de teléfono</span></button>
+    </div>
+
+    <p class="ingreso__pie">
+      <span>¿No tenés cuenta?</span>
+      <button class="btn btn--terciario" type="button" data-ec="registrate" data-id="registrate" data-destino="registro"><span>Registrate</span></button>
+    </p>
+  </main>
+
+  <script src="js/botones.js"></script>
+  <script src="js/navegacion.js"></script>
+  <script src="js/ingreso.js"></script>
+</body>
+</html>

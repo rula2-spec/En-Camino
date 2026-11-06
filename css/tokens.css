@@ -14,6 +14,9 @@
   /* Neutros */
   --ec-papel: #F7F4EC;     --ec-arena: #EDE9DF;   --ec-arena-presionado: #DED8CA;
   --ec-linea: #D9D3C4;     --ec-gris: #5A564E;    --ec-piedra: #8A857B;  --ec-pizarra: #34374A;
+  /* Neutros fríos de las pantallas finales (mandan sobre el papel y la línea del kit) */
+  --ec-fondo-claro: #F7F7F7; --ec-linea-campo: #D5D6DA; --ec-linea-social: #CACBD0;
+  --ec-texto-secundario: #4B4D5C; --ec-texto-sugerido: #707184;
   /* Deshabilitado */
   --ec-des-fondo: #E7E4DD; --ec-des-texto: #A9A498; --ec-des-linea: #DCD8CF;
   /* Foco accesible */
