@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F7F7">
+  <title>Mi equipo · En Camino</title>
+  <link rel="stylesheet" href="https://use.typekit.net/asn0sci.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/botones.css">
+  <link rel="stylesheet" href="css/entrada.css">
+  <link rel="stylesheet" href="css/inicio.css">
+  <link rel="stylesheet" href="css/equipo.css">
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="g-inicio" viewBox="0 0 24 24"><path d="M4 10.5 L12 4 L20 10.5 M6 9 V20 H18 V9 M10 20 V16 A2 2 0 0 1 14 16 V20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-mapa" viewBox="0 0 24 24"><path d="M3.5 6.5 L9 4.5 L15 6.5 L20.5 4.5 V17.5 L15 19.5 L9 17.5 L3.5 19.5 Z M9 4.5 V17.5 M15 6.5 V19.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-rosario" viewBox="0 0 24 24"><circle cx="12" cy="8.8" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><g fill="currentColor"><circle cx="12" cy="3.8" r="1.25"/><circle cx="15.54" cy="5.26" r="1.25"/><circle cx="17" cy="8.8" r="1.25"/><circle cx="15.54" cy="12.34" r="1.25"/><circle cx="8.46" cy="12.34" r="1.25"/><circle cx="7" cy="8.8" r="1.25"/><circle cx="8.46" cy="5.26" r="1.25"/></g><path d="M12 13.8 V21 M9.8 18.2 H14.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="g-ayuda" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5 V16.5 M7.5 12 H16.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="g-configuracion" viewBox="0 0 24 24"><path d="M12 3 L14.68 5.53 L18.36 5.64 L18.47 9.32 L21 12 L18.47 14.68 L18.36 18.36 L14.68 18.47 L12 21 L9.32 18.47 L5.64 18.36 L5.53 14.68 L3 12 L5.53 9.32 L5.64 5.64 L9.32 5.53 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="g-atras" viewBox="0 0 24 24"><path d="M15 4.5 L8 12 L15 19.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-chevron-derecha" viewBox="0 0 24 24"><path d="M9.5 5.5 L16 12 L9.5 18.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-telefono" viewBox="0 0 24 24"><path d="M5.5 3.5 H9 L10.5 8 L8.3 9.6 A11 11 0 0 0 14.4 15.7 L16 13.5 L20.5 15 V18.5 A2 2 0 0 1 18.5 20.5 A16 16 0 0 1 3.5 5.5 A2 2 0 0 1 5.5 3.5 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-reencuentro" viewBox="0 0 24 24"><path d="M12 21 C12 21 5.5 14.8 5.5 9.75 A6.5 6.5 0 0 1 18.5 9.75 C18.5 14.8 12 21 12 21 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 6.8 L14.6 11.6 H9.4 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="g-hidratacion" viewBox="0 0 24 24"><path d="M12 4.2 C12 4.2 5.6 10.8 5.6 14.6 A6.4 6.4 0 0 0 18.4 14.6 C18.4 10.8 12 4.2 12 4.2 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-comida" viewBox="0 0 24 24"><path d="M7 4 V9 M9.5 4 V20 M12 4 V9 M7 9 A2.5 2.5 0 0 0 12 9 M17 20 V4 C18.9 5.3 19.4 9 18.8 13 H17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-maletin" viewBox="0 0 24 24"><path d="M5 7.5 H19 A1.5 1.5 0 0 1 20.5 9 V18.5 A1.5 1.5 0 0 1 19 20 H5 A1.5 1.5 0 0 1 3.5 18.5 V9 A1.5 1.5 0 0 1 5 7.5 Z M8.5 7.5 V5.5 A1.5 1.5 0 0 1 10 4 H14 A1.5 1.5 0 0 1 15.5 5.5 V7.5 M12 10.5 V17 M8.75 13.75 H15.25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-persona" viewBox="0 0 24 24"><circle cx="12" cy="6.5" r="3.6" fill="currentColor"/><path d="M5 21.5 C5 14.5 8 11.5 12 11.5 C16 11.5 19 14.5 19 21.5 Z" fill="currentColor"/></symbol>
+  </svg>
+
+  <main class="inicio equipo">
+    <header class="cabecera">
+      <button class="btn-icono btn-icono--plano cabecera__volver" type="button" aria-label="Volver" data-ec="volver-equipo" data-id="volver-equipo"><svg class="ico" aria-hidden="true"><use href="#g-atras"/></svg></button>
+      <div class="equipo__titulos">
+        <h1 class="cabecera__titulo equipo__titulo">Mi equipo</h1>
+        <p class="cabecera__paso">Grupo LOURDES-24 · 6 personas</p>
+      </div>
+      <button class="equipo__ajustes" type="button" aria-label="Ajustes del grupo" data-ec="ajustes-grupo" data-id="ajustes-grupo"><span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-configuracion"/></svg></span></button>
+    </header>
+
+    <!-- Mapa ilustrado de la pantalla final 12 (coordenadas en px de la referencia, recorte de 700 × 440) -->
+    <div class="equipo__mapa" aria-hidden="true">
+      <svg viewBox="0 0 700 440" preserveAspectRatio="xMidYMid slice">
+        <rect width="700" height="440" fill="#E8EEE4"/>
+        <ellipse cx="70" cy="190" rx="250" ry="120" fill="#DCE7D6"/><ellipse cx="640" cy="350" rx="230" ry="100" fill="#DCE7D6"/>
+        <path d="M0 20 L180 460" fill="none" stroke="#D6DFEA" stroke-width="10"/>
+        <path d="M-40 250 L740 60 M-40 250 L740 370 M520 -20 L380 460" fill="none" stroke="#FFFFFF" stroke-width="14"/>
+        <text x="18" y="152" font-family="Montserrat, sans-serif" font-weight="700" font-size="19" fill="#686D70">RP 5</text>
+        <g fill="#FFFFFF" stroke="#9A9AAE" stroke-width="4.5"><circle cx="530" cy="0" r="8"/><circle cx="500" cy="18" r="8"/><circle cx="436" cy="48" r="8"/><circle cx="408" cy="64" r="8"/><circle cx="378" cy="80" r="8"/><circle cx="356" cy="98" r="8"/><circle cx="337" cy="114" r="8"/><circle cx="324" cy="130" r="8"/></g>
+        <g fill="#009866"><circle cx="360" cy="262" r="10"/><circle cx="374" cy="292" r="10"/><circle cx="380" cy="314" r="10"/><circle cx="345" cy="378" r="10"/><circle cx="326" cy="392" r="10"/><circle cx="303" cy="410" r="10"/><circle cx="274" cy="424" r="10"/><circle cx="242" cy="440" r="10"/></g>
+        <circle cx="470" cy="32" r="32" fill="#16884D"/><use href="#g-hidratacion" x="454" y="16" width="32" height="32" color="#FFFFFF"/>
+        <circle cx="312" cy="162" r="32" fill="#16884D"/><use href="#g-comida" x="296" y="146" width="32" height="32" color="#FFFFFF"/>
+        <circle cx="368" cy="354" r="32" fill="#E5353F"/><use href="#g-maletin" x="352" y="338" width="32" height="32" color="#FFFFFF"/>
+        <g font-family="Montserrat, sans-serif" font-weight="700" font-size="17" text-anchor="middle">
+          <g transform="translate(366 182)"><circle r="26" fill="#16884D" fill-opacity=".2"/><use href="#g-persona" x="-15" y="-18" width="30" height="30" color="#16884D"/><circle cy="-10" r="5" fill="#FFFFFF"/><text x="30" y="-24" fill="#16884D">S</text></g>
+          <g transform="translate(280 246)"><circle r="26" fill="#16884D" fill-opacity=".2"/><use href="#g-persona" x="-15" y="-18" width="30" height="30" color="#16884D"/><rect x="-48" y="-16" width="28" height="26" rx="13" fill="#FFFFFF"/><circle cy="-10" r="5" fill="#FFFFFF"/><text x="-34" y="3" fill="#16884D">J</text></g>
+          <g transform="translate(436 300)"><circle r="28" fill="#16884D" fill-opacity=".2"/><use href="#g-persona" x="-15" y="-18" width="30" height="30" color="#16884D"/><rect x="16" y="-52" width="28" height="26" rx="13" fill="#FFFFFF"/><circle cy="-10" r="5" fill="#FFFFFF"/><text x="30" y="-33" fill="#16884D">L</text></g>
+        </g>
+        <g transform="translate(330 222)">
+          <circle r="62" fill="#FCCB68" fill-opacity=".35"/>
+          <circle r="38" fill="#FCCB68" fill-opacity=".55" stroke="#FCCB68" stroke-width="4"/>
+          <use href="#g-persona" x="-24" y="-30" width="48" height="48" color="#323366"/>
+          <circle cy="-19" r="7" fill="#FFFFFF"/>
+          <rect x="48" y="-66" width="80" height="40" rx="20" fill="#323366"/>
+          <text x="88" y="-38" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="700" font-size="21" fill="#FFFFFF">Vos</text>
+        </g>
+      </svg>
+    </div>
+
+    <button class="reencuentro" type="button" data-ec="punto-reencuentro" data-id="punto-reencuentro" data-destino="reencuentro">
+      <span class="icono-seccion icono-seccion--celeste"><svg class="ico" aria-hidden="true"><use href="#g-reencuentro"/></svg></span>
+      <span class="reencuentro__textos"><span class="reencuentro__titulo">Punto de reencuentro</span><span class="reencuentro__sub">Posta de comida · Km 18</span></span>
+      <svg class="ico reencuentro__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
+    </button>
+
+    <ul class="integrantes">
+      <li class="integrante"><span class="integrante__inicial integrante__inicial--vos" aria-hidden="true">M</span><p class="integrante__textos"><span class="integrante__nombre">Martina (vos)</span><span class="integrante__estado">Km 14,2 · ahora</span></p></li>
+      <li class="integrante"><span class="integrante__inicial" aria-hidden="true">J</span><p class="integrante__textos"><span class="integrante__nombre">Juan</span><span class="integrante__estado">Km 14,0 · 200 m atrás</span></p><button class="integrante__llamar" type="button" aria-label="Llamar a Juan" data-ec="llamar-integrante" data-id="llamar-juan"><span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-telefono"/></svg></span></button></li>
+      <li class="integrante"><span class="integrante__inicial" aria-hidden="true">S</span><p class="integrante__textos"><span class="integrante__nombre">Sofía</span><span class="integrante__estado">Km 15,1 · 900 m adelante</span></p><button class="integrante__llamar" type="button" aria-label="Llamar a Sofía" data-ec="llamar-integrante" data-id="llamar-sofia"><span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-telefono"/></svg></span></button></li>
+      <li class="integrante"><span class="integrante__inicial integrante__inicial--sin-senal" aria-hidden="true">L</span><p class="integrante__textos"><span class="integrante__nombre">Lucas</span><span class="integrante__estado integrante__estado--alerta">Sin señal · visto hace 12 min</span></p><button class="integrante__llamar" type="button" aria-label="Llamar a Lucas" data-ec="llamar-integrante" data-id="llamar-lucas"><span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-telefono"/></svg></span></button></li>
+    </ul>
+
+    <button class="btn btn--bloque equipo__compartir" type="button" data-ec="compartir-ubicacion" data-id="compartir-ubicacion"><span>Compartir mi ubicación</span></button>
+  </main>
+
+  <nav class="nav-inferior barra" aria-label="Navegación principal" style="--nav-activo: #16884D">
+    <button class="nav-item" type="button" data-ec="nav-inicio" data-destino="inicio"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-inicio"/></svg></span>Inicio</button>
+    <button class="nav-item" type="button" data-ec="nav-mapa" data-destino="mapa" aria-current="page"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-mapa"/></svg></span>Mapa</button>
+    <button class="nav-item" type="button" data-ec="nav-espiritual" data-destino="espiritual"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-rosario"/></svg></span>Punto espiritual</button>
+    <button class="nav-item" type="button" data-ec="nav-ayuda" data-destino="ayuda"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-ayuda"/></svg></span>Ayuda</button>
+    <button class="nav-item" type="button" data-ec="nav-ajustes" data-destino="ajustes"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-configuracion"/></svg></span>Ajustes</button>
+  </nav>
+
+  <script src="js/botones.js"></script>
+  <script src="js/navegacion.js"></script>
+  <script src="js/equipo.js"></script>
+</body>
+</html>

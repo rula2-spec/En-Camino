@@ -17,8 +17,7 @@
   <!-- Glifos del sprite del kit que usa esta pantalla -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
     <symbol id="g-atras" viewBox="0 0 24 24"><path d="M15 4.5 L8 12 L15 19.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="g-perfil" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 20 C5.5 15.5 8.5 13.5 12 13.5 C15.5 13.5 18.5 15.5 19.5 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  </svg>
+    <symbol id="g-perfil" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 20 C5.5 15.5 8.5 13.5 12 13.5 C15.5 13.5 18.5 15.5 19.5 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>  </svg>
 
   <main class="formulario registro">
     <header class="cabecera">
@@ -103,7 +102,7 @@
           <div class="campo__caja campo__caja--gris">
             <input class="campo__entrada" id="registro-codigo" name="codigo" type="text" autocapitalize="characters" spellcheck="false" placeholder="Código · ej. LOURDES-24">
           </div>
-          <button class="btn btn--servicio" type="button" data-ec="unirme" data-id="unirme"><span>Unirme</span></button>
+          <button class="btn btn--servicio unirme" id="registro-unirme" type="button" aria-pressed="false" data-ec="unirme" data-id="unirme"><span class="unirme__texto">Unirme</span><span class="unirme__modificar" aria-hidden="true">Modificar</span></button>
         </div>
       </section>
 

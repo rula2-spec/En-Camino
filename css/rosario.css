@@ -1,0 +1,31 @@
+/* ==========================================================================
+   En Camino · Rosario guiado (pantalla 17)
+   ========================================================================== */
+.rosario__titulos { flex: 1; min-width: 0; }
+.rosario__titulo { font-size: 24px; }
+.rosario__numero-misterio { margin-top: 14px; text-align: center; font: 700 12px/1.3 var(--ec-fuente); letter-spacing: 1.8px; text-transform: uppercase; color: #8C6A14; }
+.rosario__misterio { margin-top: 4px; text-align: center; font: 300 26px/1.2 "lemonde-sans", sans-serif; }
+
+/* ---------- Contador ---------- */
+.rosario-contador { display: block; width: 220px; max-width: 72%; margin: 10px auto 0; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.rosario-contador svg { display: block; width: 100%; height: auto; }
+.rosario-contador:focus-visible { outline: 3px solid var(--ec-foco); outline-offset: 4px; }
+.rosario-contador:disabled { cursor: default; }
+.cuenta-rosario { fill: var(--ec-blanco); stroke: #9C9BA9; stroke-width: 2.5; transition: fill var(--ec-transicion); }
+.cuenta-rosario--hecha { fill: var(--ec-azul); stroke: var(--ec-azul); }
+.cuenta-rosario--actual { fill: var(--ec-amarillo); stroke: var(--ec-azul); stroke-width: 2.5; }
+.rosario-contador__numero { fill: var(--ec-azul); font: 300 46px "lemonde-sans", sans-serif; }
+.rosario-contador__oracion { fill: var(--ec-texto-secundario); font: 400 14px var(--ec-fuente); }
+
+/* ---------- Texto de la oración (crece con A+) ---------- */
+.oracion { margin-top: 14px; padding: 14px 16px 16px; border-radius: 20px; background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #E3E3E5; }
+.oracion__titulo { font: 700 11px/1.3 var(--ec-fuente); letter-spacing: 1.8px; text-transform: uppercase; color: var(--ec-texto-secundario); }
+.oracion__texto { margin-top: 6px; font: 400 calc(15px * var(--ec-escala-texto)) / 1.6 var(--ec-fuente); color: var(--ec-negro); }
+
+/* ---------- Controles ---------- */
+.rosario__controles { display: flex; align-items: center; gap: 8px; margin-top: 14px; }
+.rosario__texto { background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #D5D6DA; border-radius: 50%; color: var(--ec-negro); }
+.rosario__texto:active { background: var(--ec-arena); }
+.rosario__play { margin-left: auto; }
+.rosario__siguiente { margin-left: auto; min-height: 48px; padding-inline: 22px; }
+.rosario__ayuda { margin-top: 12px; text-align: center; font: 400 13px/1.3 var(--ec-fuente); color: var(--ec-texto-secundario); }

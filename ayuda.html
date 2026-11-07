@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F7F7">
+  <title>Ayuda · En Camino</title>
+  <link rel="stylesheet" href="https://use.typekit.net/asn0sci.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/botones.css">
+  <link rel="stylesheet" href="css/entrada.css">
+  <link rel="stylesheet" href="css/inicio.css">
+  <link rel="stylesheet" href="css/ayuda.css">
+</head>
+<body>
+  <!-- Glifos del kit que usa esta pantalla. Maletín, Reencuentro, Chat con puntos y Ayuda (cruz) salen de las pantallas finales -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="g-inicio" viewBox="0 0 24 24"><path d="M4 10.5 L12 4 L20 10.5 M6 9 V20 H18 V9 M10 20 V16 A2 2 0 0 1 14 16 V20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-mapa" viewBox="0 0 24 24"><path d="M3.5 6.5 L9 4.5 L15 6.5 L20.5 4.5 V17.5 L15 19.5 L9 17.5 L3.5 19.5 Z M9 4.5 V17.5 M15 6.5 V19.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-rosario" viewBox="0 0 24 24"><circle cx="12" cy="8.8" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><g fill="currentColor"><circle cx="12" cy="3.8" r="1.25"/><circle cx="15.54" cy="5.26" r="1.25"/><circle cx="17" cy="8.8" r="1.25"/><circle cx="15.54" cy="12.34" r="1.25"/><circle cx="8.46" cy="12.34" r="1.25"/><circle cx="7" cy="8.8" r="1.25"/><circle cx="8.46" cy="5.26" r="1.25"/></g><path d="M12 13.8 V21 M9.8 18.2 H14.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="g-ayuda" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5 V16.5 M7.5 12 H16.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="g-configuracion" viewBox="0 0 24 24"><path d="M12 3 L14.68 5.53 L18.36 5.64 L18.47 9.32 L21 12 L18.47 14.68 L18.36 18.36 L14.68 18.47 L12 21 L9.32 18.47 L5.64 18.36 L5.53 14.68 L3 12 L5.53 9.32 L5.64 5.64 L9.32 5.53 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="g-chevron-derecha" viewBox="0 0 24 24"><path d="M9.5 5.5 L16 12 L9.5 18.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-emergencia" viewBox="0 0 24 24"><path d="M12 4 L20.5 19 H3.5 Z M12 9.5 V13.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="16.2" r="1.45" fill="currentColor"/></symbol>
+    <symbol id="g-chat-puntos" viewBox="0 0 24 24"><path d="M5 4.5 H19 A1.5 1.5 0 0 1 20.5 6 V15.5 A1.5 1.5 0 0 1 19 17 H10 L5.5 20.5 V17 H5 A1.5 1.5 0 0 1 3.5 15.5 V6 A1.5 1.5 0 0 1 5 4.5 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><g fill="currentColor"><circle cx="8.5" cy="10.8" r="1.2"/><circle cx="12" cy="10.8" r="1.2"/><circle cx="15.5" cy="10.8" r="1.2"/></g></symbol>
+    <symbol id="g-maletin" viewBox="0 0 24 24"><path d="M5 7.5 H19 A1.5 1.5 0 0 1 20.5 9 V18.5 A1.5 1.5 0 0 1 19 20 H5 A1.5 1.5 0 0 1 3.5 18.5 V9 A1.5 1.5 0 0 1 5 7.5 Z M8.5 7.5 V5.5 A1.5 1.5 0 0 1 10 4 H14 A1.5 1.5 0 0 1 15.5 5.5 V7.5 M12 10.5 V17 M8.75 13.75 H15.25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-telefono" viewBox="0 0 24 24"><path d="M5.5 3.5 H9 L10.5 8 L8.3 9.6 A11 11 0 0 0 14.4 15.7 L16 13.5 L20.5 15 V18.5 A2 2 0 0 1 18.5 20.5 A16 16 0 0 1 3.5 5.5 A2 2 0 0 1 5.5 3.5 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-pregunta" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.5 9.5 A2.5 2.5 0 1 1 13.2 11.7 C12.5 12.1 12 12.7 12 13.6 V14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="17.3" r="1.3" fill="currentColor"/></symbol>
+    <symbol id="g-reencuentro" viewBox="0 0 24 24"><path d="M12 21 C12 21 5.5 14.8 5.5 9.75 A6.5 6.5 0 0 1 18.5 9.75 C18.5 14.8 12 21 12 21 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 6.8 L14.6 11.6 H9.4 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <main class="inicio ayuda">
+    <h1 class="ayuda__titulo">Ayuda</h1>
+    <p class="ayuda__bajada">Elegí lo que necesitás. Te respondemos rápido.</p>
+
+    <section class="emergencia-tarjeta" aria-labelledby="emergencia-titulo">
+      <div class="emergencia-tarjeta__cabecera">
+        <span class="icono-seccion icono-seccion--rojo emergencia-tarjeta__icono"><svg class="ico" aria-hidden="true"><use href="#g-emergencia"/></svg></span>
+        <div>
+          <h2 class="emergencia-tarjeta__titulo" id="emergencia-titulo">Emergencia</h2>
+          <p class="emergencia-tarjeta__sub">Escribí al equipo de asistencia</p>
+        </div>
+      </div>
+      <!-- «Abrir WhatsApp» no está en el kit: sale de la pantalla final 13 -->
+      <button class="btn btn--bloque btn--blanco-rojo" type="button" data-ec="abrir-whatsapp" data-id="abrir-whatsapp" data-destino="chat-asistencia">
+        <span class="icono-seccion icono-seccion--rojo icono-seccion--boton"><svg class="ico" aria-hidden="true"><use href="#g-chat-puntos"/></svg></span><span>Abrir WhatsApp</span>
+      </button>
+    </section>
+
+    <div class="destinos ayuda__lista">
+      <button class="destino" type="button" data-ec="asistencia-medica" data-id="asistencia-medica" data-destino="asistencia">
+        <span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-maletin"/></svg></span>
+        <span class="destino__textos"><span class="destino__titulo">Asistencia médica</span><span class="destino__sub">Puesto sanitario más cercano · 2,1 km</span></span>
+        <svg class="ico destino__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
+      </button>
+      <button class="destino" type="button" data-ec="llamar-emergencias" data-id="llamar-emergencias">
+        <span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-telefono"/></svg></span>
+        <span class="destino__textos"><span class="destino__titulo">Llamar a emergencias</span><span class="destino__sub">107 · SAME · Defensa Civil</span></span>
+        <svg class="ico destino__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
+      </button>
+      <button class="destino" type="button" data-ec="chat-asistencia" data-id="chat-asistencia" data-destino="chat-asistencia">
+        <span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-chat-puntos"/></svg></span>
+        <span class="destino__textos"><span class="destino__titulo">Chat de asistencia</span><span class="destino__sub">Respuestas automáticas 24 h</span></span>
+        <svg class="ico destino__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
+      </button>
+      <button class="destino" type="button" data-ec="preguntas-frecuentes" data-id="preguntas-frecuentes" data-destino="preguntas">
+        <span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-pregunta"/></svg></span>
+        <span class="destino__textos"><span class="destino__titulo">Preguntas frecuentes</span><span class="destino__sub">Baños, transporte, objetos perdidos</span></span>
+        <svg class="ico destino__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
+      </button>
+      <button class="destino" type="button" data-ec="me-perdi" data-id="me-perdi" data-destino="reencuentro">
+        <span class="icono-seccion icono-seccion--celeste"><svg class="ico" aria-hidden="true"><use href="#g-reencuentro"/></svg></span>
+        <span class="destino__textos"><span class="destino__titulo">Me perdí de mi grupo</span><span class="destino__sub">Ir al punto de reencuentro</span></span>
+        <svg class="ico destino__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
+      </button>
+    </div>
+
+    <button class="ayuda__config" type="button" data-ec="configuracion-permisos" data-id="configuracion-permisos" data-destino="ajustes">
+      <span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-configuracion"/></svg></span>Configuración y permisos
+    </button>
+  </main>
+
+  <nav class="nav-inferior barra" aria-label="Navegación principal" style="--nav-activo: #E2393E">
+    <button class="nav-item" type="button" data-ec="nav-inicio" data-destino="inicio"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-inicio"/></svg></span>Inicio</button>
+    <button class="nav-item" type="button" data-ec="nav-mapa" data-destino="mapa"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-mapa"/></svg></span>Mapa</button>
+    <button class="nav-item" type="button" data-ec="nav-espiritual" data-destino="espiritual"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-rosario"/></svg></span>Punto espiritual</button>
+    <button class="nav-item" type="button" data-ec="nav-ayuda" data-destino="ayuda" aria-current="page"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-ayuda"/></svg></span>Ayuda</button>
+    <button class="nav-item" type="button" data-ec="nav-ajustes" data-destino="ajustes"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-configuracion"/></svg></span>Ajustes</button>
+  </nav>
+
+  <script src="js/botones.js"></script>
+  <script src="js/navegacion.js"></script>
+</body>
+</html>

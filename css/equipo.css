@@ -1,0 +1,43 @@
+/* ==========================================================================
+   En Camino · Mi equipo (pantalla 12)
+   ========================================================================== */
+.equipo__titulos { flex: 1; min-width: 0; }
+.equipo__titulo { font-size: 28px; }
+.equipo__ajustes { flex: none; display: grid; place-items: center; width: 48px; height: 48px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.equipo__ajustes .icono-seccion { --tam: 44px; }
+.equipo__ajustes:focus-visible { outline: 3px solid var(--ec-foco); outline-offset: 0; }
+
+.equipo__mapa { margin-top: 12px; aspect-ratio: 700 / 440; overflow: hidden; border-radius: 24px; box-shadow: inset 0 0 0 1.2px #E3E3E5; background: #E8EEE4; }
+.equipo__mapa svg { display: block; width: 100%; height: 100%; }
+
+/* ---------- Punto de reencuentro ---------- */
+.reencuentro { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 64px; margin-top: 12px; padding: 10px 12px 10px 14px; border: 0; border-radius: 22px; background: var(--ec-azul); color: var(--ec-blanco); text-align: left; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.reencuentro:active { background: var(--ec-azul-presionado); }
+.reencuentro:focus-visible { outline: 3px solid var(--ec-foco); outline-offset: 2px; }
+.reencuentro .icono-seccion { --tam: 38px; }
+.reencuentro__textos { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.reencuentro__titulo { font: 700 16px/1.2 var(--ec-fuente); }
+.reencuentro__sub { font: 400 13px/1.3 var(--ec-fuente); color: #D5D5E3; }
+.reencuentro__chevron { flex: none; width: 20px; height: 20px; }
+
+/* ---------- Integrantes ---------- */
+.integrantes { margin: 12px 0 0; padding: 0; list-style: none; overflow: hidden; border-radius: 20px; background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #E3E3E5; }
+.integrante { display: flex; align-items: center; gap: 12px; min-height: 60px; padding: 6px 6px 6px 14px; }
+.integrante + .integrante { border-top: 1px solid #EDEDF0; }
+.integrante__inicial { flex: none; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; box-shadow: inset 0 0 0 2px var(--ec-azul); color: var(--ec-azul); font: 700 15px/1 var(--ec-fuente); }
+.integrante__inicial--vos { background: var(--ec-azul); color: var(--ec-blanco); box-shadow: none; }
+.integrante__inicial--sin-senal { box-shadow: inset 0 0 0 2px #A9A9B6; color: #8C8C99; }
+.integrante__textos { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.integrante__nombre { font: 700 15px/1.25 var(--ec-fuente); }
+.integrante__estado { font: 400 13px/1.3 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.integrante__estado--alerta { color: #B3141A; }
+/* En «Martina (vos)» no hay botón: la fila deja el mismo alto que las demás */
+.integrante:first-child { min-height: 60px; padding-right: 14px; }
+.integrante__llamar { flex: none; display: grid; place-items: center; width: 48px; height: 48px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.integrante__llamar .icono-seccion { --tam: 38px; }
+.integrante__llamar:focus-visible { outline: 3px solid var(--ec-foco); outline-offset: -2px; }
+
+/* «Compartir mi ubicación»: contorno verde (variante del secundario del kit, como en la pantalla 12) */
+.equipo__compartir { margin-top: 14px; min-height: 52px; background: var(--ec-blanco); color: var(--ec-verde-presionado); box-shadow: inset 0 0 0 1.6px var(--ec-verde-presionado); font-weight: 700; }
+.equipo__compartir:hover { background: #F2FAF6; }
+.equipo__compartir:active { background: #D9F0E8; }

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F7F7">
+  <title>Cronograma · En Camino</title>
+  <link rel="stylesheet" href="https://use.typekit.net/asn0sci.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/botones.css">
+  <link rel="stylesheet" href="css/entrada.css">
+  <link rel="stylesheet" href="css/inicio.css">
+  <link rel="stylesheet" href="css/cronograma.css">
+</head>
+<body>
+  <!-- Glifos del kit que usa esta pantalla. Cáliz, Custodia e Intenciones (confesiones) salen de las pantallas finales -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="g-inicio" viewBox="0 0 24 24"><path d="M4 10.5 L12 4 L20 10.5 M6 9 V20 H18 V9 M10 20 V16 A2 2 0 0 1 14 16 V20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-mapa" viewBox="0 0 24 24"><path d="M3.5 6.5 L9 4.5 L15 6.5 L20.5 4.5 V17.5 L15 19.5 L9 17.5 L3.5 19.5 Z M9 4.5 V17.5 M15 6.5 V19.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-rosario" viewBox="0 0 24 24"><circle cx="12" cy="8.8" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><g fill="currentColor"><circle cx="12" cy="3.8" r="1.25"/><circle cx="15.54" cy="5.26" r="1.25"/><circle cx="17" cy="8.8" r="1.25"/><circle cx="15.54" cy="12.34" r="1.25"/><circle cx="8.46" cy="12.34" r="1.25"/><circle cx="7" cy="8.8" r="1.25"/><circle cx="8.46" cy="5.26" r="1.25"/></g><path d="M12 13.8 V21 M9.8 18.2 H14.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="g-ayuda" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5 V16.5 M7.5 12 H16.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="g-configuracion" viewBox="0 0 24 24"><path d="M12 3 L14.68 5.53 L18.36 5.64 L18.47 9.32 L21 12 L18.47 14.68 L18.36 18.36 L14.68 18.47 L12 21 L9.32 18.47 L5.64 18.36 L5.53 14.68 L3 12 L5.53 9.32 L5.64 5.64 L9.32 5.53 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="g-atras" viewBox="0 0 24 24"><path d="M15 4.5 L8 12 L15 19.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-avisos" viewBox="0 0 24 24"><path d="M12 4 C8.6 4 6.9 6.8 6.9 10 V14 L5.2 16.6 H18.8 L17.1 14 V10 C17.1 6.8 15.4 4 12 4 Z M10 19.3 A2.2 2.2 0 0 0 14 19.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-caliz" viewBox="0 0 24 24"><path d="M7 4 H17 C17 8.5 15 11 12 11 C9 11 7 8.5 7 4 Z M12 11 V17 M8.5 20 H15.5 M9.5 20 C9.5 18.3 10.6 17 12 17 C13.4 17 14.5 18.3 14.5 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="1.4" fill="currentColor"/></symbol>
+    <symbol id="g-custodia" viewBox="0 0 24 24"><circle cx="12" cy="8" r="2.6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5 V4 M12 12 V13.5 M6.5 8 H8 M16 8 H17.5 M8.1 4.1 L9.2 5.2 M14.8 10.8 L15.9 11.9 M8.1 11.9 L9.2 10.8 M14.8 5.2 L15.9 4.1 M12 13.5 V18 M8.5 21 H15.5 M9.5 21 C9.5 19.3 10.6 18 12 18 C13.4 18 14.5 19.3 14.5 21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-intenciones" viewBox="0 0 24 24"><path d="M14 20.5 V17.5 H11.5 A1.5 1.5 0 0 1 10 16 V14 L8 13.3 L10 10 A6 6 0 0 0 4 4.5 M14 20.5 H6.5 V17 A7 7 0 0 1 4 11.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.5 8.5 A3.5 3.5 0 0 1 15.5 13.5 M18.5 6 A7 7 0 0 1 18.5 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <main class="inicio cronograma">
+    <header class="cabecera">
+      <button class="btn-icono btn-icono--plano cabecera__volver" type="button" aria-label="Volver" data-ec="volver-cronograma" data-id="volver-cronograma"><svg class="ico" aria-hidden="true"><use href="#g-atras"/></svg></button>
+      <div class="cronograma__titulos">
+        <h1 class="cabecera__titulo cronograma__titulo">Cronograma</h1>
+        <p class="cabecera__paso">Santuario de Lourdes · Alta Gracia</p>
+      </div>
+    </header>
+
+    <!-- Días: segmentado del kit (role="tablist"), con el estilo de la pantalla final 19 -->
+    <div class="dias" role="tablist" data-id="dias" aria-label="Día">
+      <button class="dias__opcion" type="button" role="tab" data-ec="segmento" data-valor="vie" aria-selected="false" tabindex="-1" aria-controls="dia-actividades">Vie 6</button>
+      <button class="dias__opcion" type="button" role="tab" data-ec="segmento" data-valor="sab" aria-selected="true" tabindex="0" aria-controls="dia-actividades">Sáb 7</button>
+      <button class="dias__opcion" type="button" role="tab" data-ec="segmento" data-valor="dom" aria-selected="false" tabindex="-1" aria-controls="dia-actividades">Dom 8</button>
+    </div>
+
+    <div id="dia-actividades" role="tabpanel">
+      <ol class="agenda" id="agenda-sab">
+        <li class="agenda__item agenda__item--ahora">
+          <span class="agenda__hora">07:00</span><span class="agenda__marca" aria-hidden="true"></span>
+          <div class="actividad">
+            <span class="icono-seccion icono-seccion--naranja"><svg class="ico" aria-hidden="true"><use href="#g-caliz"/></svg></span>
+            <p class="actividad__textos"><span class="actividad__titulo">Misa del peregrino <span class="actividad__ahora">Ahora</span></span><span class="actividad__sub">Gruta · al aire libre</span></p>
+            <button class="actividad__aviso" type="button" aria-label="Recordarme: Misa del peregrino" data-ec="alternar" data-id="aviso-misa-peregrino" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#g-avisos"/></svg></button>
+          </div>
+        </li>
+        <li class="agenda__item">
+          <span class="agenda__hora">09:30</span><span class="agenda__marca" aria-hidden="true"></span>
+          <div class="actividad">
+            <span class="icono-seccion icono-seccion--naranja"><svg class="ico" aria-hidden="true"><use href="#g-intenciones"/></svg></span>
+            <p class="actividad__textos"><span class="actividad__titulo">Confesiones</span><span class="actividad__sub">Capilla · hasta 13:00</span></p>
+            <button class="actividad__aviso" type="button" aria-label="Recordarme: Confesiones" data-ec="alternar" data-id="aviso-confesiones" aria-pressed="true"><svg class="ico" aria-hidden="true"><use href="#g-avisos"/></svg></button>
+          </div>
+        </li>
+        <li class="agenda__item">
+          <span class="agenda__hora">11:00</span><span class="agenda__marca" aria-hidden="true"></span>
+          <div class="actividad">
+            <span class="icono-seccion icono-seccion--naranja"><svg class="ico" aria-hidden="true"><use href="#g-custodia"/></svg></span>
+            <p class="actividad__textos"><span class="actividad__titulo">Bendición de peregrinos</span><span class="actividad__sub">Explanada</span></p>
+            <button class="actividad__aviso" type="button" aria-label="Recordarme: Bendición de peregrinos" data-ec="alternar" data-id="aviso-bendicion" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#g-avisos"/></svg></button>
+          </div>
+        </li>
+        <li class="agenda__item">
+          <span class="agenda__hora">12:00</span><span class="agenda__marca" aria-hidden="true"></span>
+          <div class="actividad">
+            <span class="icono-seccion icono-seccion--naranja"><svg class="ico" aria-hidden="true"><use href="#g-caliz"/></svg></span>
+            <p class="actividad__textos"><span class="actividad__titulo">Misa central</span><span class="actividad__sub">Gruta · obispo de Córdoba</span></p>
+            <button class="actividad__aviso" type="button" aria-label="Recordarme: Misa central" data-ec="alternar" data-id="aviso-misa-central" aria-pressed="true"><svg class="ico" aria-hidden="true"><use href="#g-avisos"/></svg></button>
+          </div>
+        </li>
+        <li class="agenda__item">
+          <span class="agenda__hora">17:00</span><span class="agenda__marca" aria-hidden="true"></span>
+          <div class="actividad">
+            <span class="icono-seccion icono-seccion--cobalto"><svg class="ico" aria-hidden="true"><use href="#g-rosario"/></svg></span>
+            <p class="actividad__textos"><span class="actividad__titulo">Rosario de antorchas</span><span class="actividad__sub">Calle Butori · 700 m</span></p>
+            <button class="actividad__aviso" type="button" aria-label="Recordarme: Rosario de antorchas" data-ec="alternar" data-id="aviso-rosario-antorchas" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#g-avisos"/></svg></button>
+          </div>
+        </li>
+      </ol>
+      <p class="agenda__vacio" id="agenda-vacio" hidden>Todavía no hay actividades cargadas para este día.</p>
+    </div>
+  </main>
+
+  <nav class="nav-inferior barra" aria-label="Navegación principal" style="--nav-activo: #1B2A8A">
+    <button class="nav-item" type="button" data-ec="nav-inicio" data-destino="inicio"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-inicio"/></svg></span>Inicio</button>
+    <button class="nav-item" type="button" data-ec="nav-mapa" data-destino="mapa"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-mapa"/></svg></span>Mapa</button>
+    <button class="nav-item" type="button" data-ec="nav-espiritual" data-destino="espiritual" aria-current="page"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-rosario"/></svg></span>Punto espiritual</button>
+    <button class="nav-item" type="button" data-ec="nav-ayuda" data-destino="ayuda"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-ayuda"/></svg></span>Ayuda</button>
+    <button class="nav-item" type="button" data-ec="nav-ajustes" data-destino="ajustes"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-configuracion"/></svg></span>Ajustes</button>
+  </nav>
+
+  <script src="js/botones.js"></script>
+  <script src="js/navegacion.js"></script>
+  <script src="js/cronograma.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+/* ==========================================================================
+   En Camino · Inicio (Antes)
+   Base de 360 dp, fluida de 320 a 599 dp. La barra inferior queda fija y la
+   pantalla deja lugar debajo para que no tape contenido.
+   ========================================================================== */
+.inicio {
+  width: 100%; max-width: 599px; margin-inline: auto;
+  padding: 48px var(--ec-margen) calc(104px + env(safe-area-inset-bottom));
+}
+
+/* ---------- Cabecera ---------- */
+.inicio__cabecera { display: flex; align-items: center; gap: 10px; }
+.inicio__isotipo { flex: none; display: block; width: auto; height: 36px; }
+.inicio__saludo { flex: 1; min-width: 0; }
+.inicio__buen-dia { font: 400 14px/1.2 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.inicio__nombre { font: 300 26px/1.15 "lemonde-sans", sans-serif; overflow-wrap: anywhere; }
+.inicio__clima { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #E6E5EA; font: 600 13px/1 var(--ec-fuente); }
+.inicio__avisos { position: relative; flex: none; display: grid; place-items: center; width: 48px; height: 48px; margin-right: -4px; border: 0; border-radius: 50%; padding: 0; background: none; color: var(--ec-blanco); cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.inicio__avisos::before { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: #CB8515; }
+.inicio__avisos::after { content: ""; position: absolute; top: 9px; left: 8px; width: 12px; height: 12px; border-radius: 50%; border-top: 2px solid rgba(255, 255, 255, .55); transform: rotate(-35deg); }
+.inicio__avisos .ico { position: relative; width: 22px; height: 22px; }
+.inicio__avisos:active::before { background: #B07311; }
+.inicio__avisos:focus-visible { outline: 3px solid var(--ec-foco); outline-offset: 0; }
+.inicio__badge { position: absolute; top: 0; right: 0; min-width: 18px; height: 18px; padding: 0 4px; border-radius: 9px; background: var(--ec-rojo); box-shadow: 0 0 0 2px var(--ec-fondo-claro); font: 700 11px/18px var(--ec-fuente); text-align: center; }
+
+/* ---------- Selector de etapas (segmentado del kit con íconos) ---------- */
+.etapas { margin-top: 18px; min-height: 46px; padding: 4px; border-radius: 23px; background: #EBEAF0; }
+.etapas__opcion { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 4px 2px; border-radius: 19px; color: #6B6B78; font: 600 14px/1.1 var(--ec-fuente); }
+.etapas__opcion[aria-current="page"] { background: var(--ec-blanco); color: var(--ec-negro); box-shadow: 0 1px 3px rgba(20, 20, 20, .15); }
+.etapas__icono { flex: none; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--ec-pizarra); color: var(--ec-blanco); }
+.etapas__icono .ico { width: 14px; height: 14px; }
+/* En celulares angostos se achica un poco para que las tres etapas no se toquen */
+@media (max-width: 359px) {
+  .etapas__opcion { gap: 4px; font-size: 13px; }
+  .etapas__icono { width: 22px; height: 22px; }
+}
+
+/* ---------- Cuenta regresiva ---------- */
+.cuenta-regresiva { position: relative; overflow: hidden; margin-top: 16px; padding: 20px 18px 18px; border-radius: 22px; background: var(--ec-azul); color: var(--ec-blanco); }
+.cuenta-regresiva__arco { position: absolute; width: 190px; height: 190px; top: -59px; right: -77px; border: 1.5px dotted rgba(252, 203, 104, .5); border-radius: 50%; pointer-events: none; }
+.cuenta-regresiva > :not(.cuenta-regresiva__arco) { position: relative; }
+.cuenta-regresiva__faltan { font: 400 14px/1.2 var(--ec-fuente); color: #D0D4F1; }
+.cuenta-regresiva__dias { margin-top: 4px; font: 300 52px/1 "lemonde-sans", sans-serif; }
+.cuenta-regresiva__detalle { margin-top: 10px; font: 400 13px/1.35 var(--ec-fuente); }
+.cuenta-regresiva__boton { margin-top: 14px; min-height: 40px; padding: 6px 14px 6px 18px; gap: 4px; }
+.cuenta-regresiva__boton .ico { width: 18px; height: 18px; }
+
+/* ---------- Tu preparación (checklist) ---------- */
+.preparacion { margin-top: 22px; }
+.preparacion__cabecera { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.preparacion__titulo { font: 300 22px/1.2 "lemonde-sans", sans-serif; }
+.preparacion__cuenta { flex: none; font: 700 15px/1.2 var(--ec-fuente); color: var(--ec-verde-presionado); }
+.checklist { margin: 12px 0 0; padding: 0; list-style: none; overflow: hidden; border-radius: 18px; background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #E3E3E5; }
+.checklist li + li { border-top: 1px solid #EDEDF0; }
+.tarea { display: flex; align-items: center; gap: 14px; width: 100%; min-height: 48px; padding: 6px 12px 6px 14px; border: 0; background: none; text-align: left; color: #3A3A44; font: 400 15px/1.3 var(--ec-fuente); cursor: pointer; -webkit-tap-highlight-color: transparent; transition: background var(--ec-transicion); }
+.tarea:active { background: var(--ec-fondo-claro); }
+.tarea:focus-visible { outline: 3px solid var(--ec-foco); outline-offset: -3px; }
+.tarea__marca { flex: none; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; box-shadow: inset 0 0 0 1.8px #9C9BA9; color: var(--ec-blanco); transition: background var(--ec-transicion), box-shadow var(--ec-transicion); }
+.tarea__marca .ico { width: 14px; height: 14px; visibility: hidden; }
+.tarea[aria-checked="true"] .tarea__marca { background: var(--ec-verde); box-shadow: none; }
+.tarea[aria-checked="true"] .tarea__marca .ico { visibility: visible; }
+.tarea__texto { flex: 1; min-width: 0; }
+.tarea__chevron { flex: none; width: 18px; height: 18px; color: #6B6B78; }
+
+/* ---------- Accesos (tarjetas de a dos) ---------- */
+.accesos { margin-top: 16px; }
+.acceso { display: flex; align-items: center; gap: 10px; min-width: 0; min-height: 64px; padding: 10px 10px 10px 12px; border: 0; border-radius: 18px; background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #E3E3E5; text-align: left; color: var(--ec-negro); font-family: var(--ec-fuente); cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.acceso:active { background: var(--ec-fondo-claro); }
+.acceso:focus-visible { outline: 3px solid var(--ec-foco); outline-offset: 2px; }
+.acceso__icono { flex: none; width: 34px; height: 34px; display: block; }
+.acceso__textos { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.acceso__titulo { font: 600 15px/1.2 var(--ec-fuente); overflow-wrap: anywhere; }
+.acceso__sub { font: 400 12px/1.25 var(--ec-fuente); color: var(--ec-texto-secundario); overflow-wrap: anywhere; }
+
+/* ---------- Ícono de sección: círculo de color con brillo («Cada función, una cuenta») ---------- */
+.icono-seccion { --tam: 40px; position: relative; flex: none; display: grid; place-items: center; width: var(--tam); height: var(--tam); border-radius: 50%; background: var(--icono, #16884D); color: var(--ec-blanco); }
+.icono-seccion::after { content: ""; position: absolute; top: 14%; left: 14%; width: 32%; height: 32%; border-radius: 50%; border-top: 2px solid rgba(255, 255, 255, .55); transform: rotate(-35deg); }
+.icono-seccion .ico { width: calc(var(--tam) * .52); height: calc(var(--tam) * .52); }
+.icono-seccion--chico { --tam: 36px; }
+.icono-seccion--mini { --tam: 24px; }
+.icono-seccion--mini::after { display: none; }
+.icono-seccion--rojo { --icono: #E2393E; }
+.icono-seccion--celeste { --icono: #1D89AF; }
+.icono-seccion--cobalto { --icono: #1B2A8A; }
+.inicio__seccion { margin-top: 24px; font: 300 24px/1.2 "lemonde-sans", sans-serif; }
+
+/* ---------- Durante: avance ---------- */
+.avance { margin-top: 16px; padding: 18px 16px 16px; border-radius: 22px; background: var(--ec-azul); color: var(--ec-blanco); }
+.avance__km { font: 400 15px/1 var(--ec-fuente); }
+.avance__numero { font: 300 52px/1 "lemonde-sans", sans-serif; margin-right: 4px; }
+.avance__cuentas { display: flex; align-items: center; justify-content: space-between; gap: 3px; margin-top: 14px; }
+.avance__cuenta { flex: 0 1 9px; aspect-ratio: 1; min-width: 6px; border-radius: 50%; box-shadow: inset 0 0 0 1.6px #9EA0B9; }
+.avance__cuenta--hecha { background: var(--ec-verde); box-shadow: none; }
+.avance__cuenta--actual { flex-basis: 13px; background: var(--ec-amarillo); box-shadow: 0 0 0 2px rgba(255, 255, 255, .85); }
+.avance__faltan { margin-top: 12px; font: 400 14px/1.3 var(--ec-fuente); color: #D5D5E3; }
+.avance__posta { display: flex; align-items: center; gap: 12px; margin-top: 12px; padding: 10px 12px; border-radius: 16px; background: rgba(255, 255, 255, .1); }
+.avance__posta p { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.avance__posta-etiqueta { font: 400 12px/1.2 var(--ec-fuente); color: #C3C3D6; }
+.avance__posta-dato { font: 700 16px/1.2 var(--ec-fuente); }
+.avance__pie { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 10px; margin-top: 12px; }
+.avance__boton { min-height: 40px; padding: 6px 12px 6px 16px; gap: 4px; }
+.avance__boton .ico { width: 18px; height: 18px; }
+.avance__senal { display: flex; align-items: center; gap: 6px; font: 400 12px/1.25 var(--ec-fuente); }
+.avance__senal .ico { width: 14px; height: 14px; }
+
+/* ---------- Durante: cabecera compacta fija ---------- */
+.compacta { position: fixed; top: 0; left: 0; right: 0; z-index: 10; display: flex; align-items: center; gap: 10px; max-width: 599px; margin-inline: auto; padding: calc(10px + env(safe-area-inset-top)) var(--ec-margen) 10px; background: var(--ec-blanco); box-shadow: 0 1px 0 #E5E5E7; transform: translateY(-110%); visibility: hidden; transition: transform 200ms ease, visibility 200ms; }
+.compacta--visible { transform: none; visibility: visible; }
+.compacta__isotipo { flex: none; display: block; width: auto; height: 29px; }
+.compacta__titulo { flex: 1; min-width: 0; font: 300 19px/1.2 "lemonde-sans", sans-serif; }
+.compacta__km { flex: none; display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: var(--ec-radio-pildora); background: var(--ec-azul); color: var(--ec-blanco); font: 700 13px/1 var(--ec-fuente); }
+.compacta__punto { width: 8px; height: 8px; border-radius: 50%; background: var(--ec-amarillo); }
+
+/* ---------- Durante: línea de tiempo «¿Qué necesitás?» ---------- */
+.linea { position: relative; display: grid; gap: 14px; margin: 16px 0 0; padding: 0; list-style: none; }
+.linea::before { content: ""; position: absolute; top: 20px; bottom: -24px; left: 19px; width: 2px; background: #CBC8E5; }
+.linea > li { position: relative; display: flex; align-items: flex-start; gap: 10px; }
+.bloque { flex: 1; min-width: 0; padding: 4px 4px 14px; border-radius: 20px; background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #E3E3E5; }
+.bloque--ayuda { box-shadow: inset 0 0 0 2px var(--ec-rojo); }
+.bloque__cabecera { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 48px; padding: 8px 8px 4px 12px; border: 0; border-radius: 16px; background: none; text-align: left; color: var(--ec-negro); cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.bloque__cabecera:active { background: var(--ec-fondo-claro); }
+.bloque__cabecera:focus-visible { outline: 3px solid var(--ec-foco); outline-offset: -3px; }
+.bloque__textos { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.bloque__titulo { font: 300 21px/1.15 "lemonde-sans", sans-serif; }
+.bloque--ayuda .bloque__titulo { color: #B3141A; }
+.bloque__sub { font: 400 13px/1.3 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.bloque__chevron { flex: none; width: 20px; height: 20px; color: #6B6B78; }
+.bloque--ayuda .bloque__chevron { color: #B3141A; }
+.acciones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px 2px; margin-top: 8px; }
+.accion { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; min-height: 72px; padding: 4px 2px; border: 0; border-radius: 14px; background: none; color: var(--ec-negro); font: 400 12px/1.2 var(--ec-fuente); text-align: center; overflow-wrap: anywhere; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.accion .icono-seccion { --tam: 38px; }
+.accion:active { background: var(--ec-fondo-claro); }
+.accion:focus-visible { outline: 3px solid var(--ec-foco); outline-offset: -3px; }
+/* En celulares angostos las etiquetas se achican para no cortar palabras como «Reencuentro» */
+@media (max-width: 359px) {
+  .accion { font-size: 11px; }
+  .bloque { padding-inline: 2px; }
+}
+
+/* ---------- Después: logro ---------- */
+.logro { display: flex; align-items: center; gap: 12px; margin-top: 16px; padding: 18px 16px 18px 18px; border-radius: 22px; background: var(--ec-azul); color: var(--ec-blanco); }
+.logro__textos { flex: 1; min-width: 0; }
+.logro__km { font: 300 36px/1.05 "lemonde-sans", sans-serif; }
+.logro__detalle { margin-top: 8px; font: 400 13px/1.3 var(--ec-fuente); color: #D5D5E3; }
+.logro__boton { margin-top: 14px; min-height: 40px; padding: 6px 14px; }
+.logro__sello { flex: none; display: grid; place-items: center; width: 76px; height: 76px; border-radius: 50%; background: var(--ec-blanco); }
+.logro__sello img { display: block; width: auto; height: 50px; }
+@media (max-width: 359px) {
+  .logro { padding-inline: 14px; gap: 8px; }
+  .logro__sello { width: 64px; height: 64px; }
+  .logro__sello img { height: 42px; }
+}
+
+/* ---------- Después: volver a casa ---------- */
+.destinos { display: grid; gap: 10px; margin-top: 12px; }
+.destino { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 64px; padding: 10px 10px 10px 14px; border: 0; border-radius: 18px; background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #E3E3E5; text-align: left; color: var(--ec-negro); cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.destino:active { background: var(--ec-fondo-claro); }
+.destino:focus-visible { outline: 3px solid var(--ec-foco); outline-offset: 2px; }
+.destino .icono-seccion { --tam: 38px; }
+.destino__textos { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.destino__titulo { font: 700 15px/1.2 var(--ec-fuente); }
+.destino__sub { font: 400 12.5px/1.3 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.destino__chevron { flex: none; width: 20px; height: 20px; color: #6B6B78; }
+/* Tarjetas de acceso del kit, con borde y brillo de la pantalla final */
+.accesos .tile { border-radius: 18px; box-shadow: inset 0 0 0 1.2px #E3E3E5; padding: 14px 10px 14px 14px; }
+.accesos .tile__icono { position: relative; }
+.accesos .tile__icono::after { content: ""; position: absolute; top: 14%; left: 14%; width: 32%; height: 32%; border-radius: 50%; border-top: 2px solid rgba(255, 255, 255, .55); transform: rotate(-35deg); }
+.accesos .tile__titulo { margin-top: 10px; font-size: 15px; }
+.accesos .tile__sub { font-size: 12px; }
+
+/* ---------- Barra inferior: círculos unidos por un hilo, como un rosario ---------- */
+.barra { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; max-width: 599px; margin-inline: auto; padding: 8px 4px calc(8px + env(safe-area-inset-bottom)); box-shadow: 0 -1px 0 #E3E3E5; }
+.barra::before { content: ""; position: absolute; top: 25px; left: 10%; right: 10%; height: 1.5px; background: #CBCADC; }
+.barra .nav-item { position: relative; gap: 4px; padding-top: 0; font: 400 11px/1.2 var(--ec-fuente); color: #504E59; }
+.barra .nav-item__pastilla { width: 36px; height: 36px; border-radius: 50%; background: #BBBBBB; color: var(--ec-blanco); position: relative; }
+.barra .nav-item__pastilla::after { content: ""; position: absolute; top: 5px; left: 5px; width: 10px; height: 10px; border-radius: 50%; border-top: 1.6px solid rgba(255, 255, 255, .55); transform: rotate(-35deg); }
+.barra .nav-item .ico { width: 20px; height: 20px; }
+.barra .nav-item[aria-current="page"] { color: var(--ec-negro); font-weight: 700; }
+/* El destino activo toma el color de su sección (--nav-activo en la barra): pizarra en Inicio, verde en Mapa, cobalto en Fe */
+.barra .nav-item[aria-current="page"] .nav-item__pastilla { background: var(--nav-activo, var(--ec-pizarra)); }
+.barra .nav-item:active .nav-item__pastilla { background: #A5A5A5; }
+.barra .nav-item[aria-current="page"]:active .nav-item__pastilla { background: var(--nav-activo, var(--ec-pizarra)); }

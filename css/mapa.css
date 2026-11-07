@@ -1,0 +1,54 @@
+/* ==========================================================================
+   En Camino · Mapa (recorrido de ida)
+   El mapa ocupa toda la pantalla; la tarjeta del recorrido, los botones
+   flotantes y la próxima posta van encima, a propósito, como en la pantalla 09.
+   ========================================================================== */
+body.fondo-mapa { background: #E8EEE4; overflow: hidden; }
+.mapa { --alto-barra: calc(86px + env(safe-area-inset-bottom)); position: fixed; inset: 0; max-width: 599px; margin-inline: auto; overflow: hidden; }
+
+.mapa__lienzo { position: absolute; inset: 0; --zoom: 1; }
+.mapa__lienzo svg { display: block; width: 100%; height: 100%; transform: scale(var(--zoom)); transform-origin: 48.5% 48%; transition: transform 250ms ease; }
+
+/* ---------- Tarjeta del recorrido ---------- */
+.recorrido { position: absolute; top: calc(44px + env(safe-area-inset-top)); left: var(--ec-margen); right: var(--ec-margen); padding: 8px 14px 14px; border-radius: 24px; background: var(--ec-blanco); box-shadow: 0 4px 16px rgba(20, 20, 20, .12); }
+.recorrido__cabecera { display: flex; align-items: center; gap: 4px; margin-left: -8px; }
+.recorrido__volver { flex: none; color: var(--ec-negro); }
+.recorrido__titulo { flex: 1; min-width: 0; font: 300 21px/1.2 "lemonde-sans", sans-serif; }
+.recorrido__etapa { flex: none; padding: 7px 14px; border-radius: var(--ec-radio-pildora); background: #D9F0E8; color: var(--ec-verde-presionado); font: 700 13px/1 var(--ec-fuente); }
+.recorrido__dato { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-top: 4px; }
+.recorrido__km { font: 400 15px/1 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.recorrido__numero { margin-right: 4px; font: 300 44px/1 "lemonde-sans", sans-serif; color: var(--ec-negro); }
+.recorrido__donde { min-height: 44px; padding: 6px 14px; font-size: 15px; }
+.recorrido__cuentas { display: flex; align-items: center; justify-content: space-between; gap: 2px; margin-top: 12px; }
+.recorrido__cuenta { flex: 0 1 9px; aspect-ratio: 1; min-width: 5px; border-radius: 50%; box-shadow: inset 0 0 0 1.6px #9C9BA9; }
+.recorrido__cuenta--hecha { background: var(--ec-verde); box-shadow: none; }
+.recorrido__cuenta--actual { flex-basis: 13px; background: var(--ec-azul); box-shadow: none; }
+.recorrido__estado { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 10px; }
+.recorrido__faltan { flex: 1; min-width: 0; font: 400 13px/1.3 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.recorrido__faltan strong { color: var(--ec-negro); }
+.recorrido__guardado { flex: none; max-width: 48%; display: flex; align-items: center; gap: 6px; font: 700 13px/1.2 var(--ec-fuente); color: var(--ec-verde-presionado); }
+.recorrido__guardado .ico { width: 14px; height: 14px; }
+.recorrido__guardado--pendiente { color: var(--ec-texto-secundario); }
+.recorrido__guardado--pendiente .icono-seccion { --icono: #A9A9B6; }
+.leyenda { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 10px 0 0; padding: 0; list-style: none; font: 400 12px/1.3 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.leyenda li { display: flex; align-items: center; gap: 4px; }
+.leyenda__persona { width: 16px; height: 16px; color: var(--ec-azul); }
+.leyenda__persona--grupo { color: #16884D; }
+.leyenda__punto { width: 10px; height: 10px; border-radius: 50%; box-shadow: inset 0 0 0 1.6px #9C9BA9; }
+.leyenda__punto--hecho { background: var(--ec-verde); box-shadow: none; }
+
+/* ---------- Botones flotantes ---------- */
+.mapa__controles { position: absolute; right: 14px; bottom: calc(var(--alto-barra) + 96px); display: flex; flex-direction: column; gap: 10px; }
+.mapa__fab { width: 48px; height: 48px; }
+.mapa__fab--ubicacion { background: #16884D; color: var(--ec-blanco); }
+.mapa__fab--ubicacion:active { background: var(--ec-verde-presionado); }
+/* En pantallas bajas los botones van en fila para no pisar la tarjeta del recorrido */
+@media (max-height: 700px) { .mapa__controles { flex-direction: row; } }
+
+/* ---------- Próxima posta ---------- */
+.proxima { position: absolute; left: var(--ec-margen); right: var(--ec-margen); bottom: calc(var(--alto-barra) + 12px); display: flex; align-items: center; gap: 12px; min-height: 64px; padding: 10px 16px 10px 12px; border-radius: 22px; background: var(--ec-blanco); box-shadow: 0 4px 16px rgba(20, 20, 20, .12); }
+.proxima .icono-seccion { --tam: 44px; }
+.proxima__textos { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.proxima__etiqueta { font: 400 12px/1.2 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.proxima__nombre { font: 300 19px/1.2 "lemonde-sans", sans-serif; }
+.proxima__distancia { flex: none; font: 700 16px/1.2 var(--ec-fuente); color: var(--ec-verde-presionado); }

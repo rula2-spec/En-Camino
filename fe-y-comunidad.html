@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F7F7">
+  <title>Fe y comunidad · En Camino</title>
+  <link rel="stylesheet" href="https://use.typekit.net/asn0sci.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/botones.css">
+  <link rel="stylesheet" href="css/entrada.css">
+  <link rel="stylesheet" href="css/inicio.css">
+  <link rel="stylesheet" href="css/fe.css">
+</head>
+<body>
+  <!-- Glifos del kit que usa esta pantalla. Vela, Nota e Intenciones salen de la pantalla final 16 -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="g-inicio" viewBox="0 0 24 24"><path d="M4 10.5 L12 4 L20 10.5 M6 9 V20 H18 V9 M10 20 V16 A2 2 0 0 1 14 16 V20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-mapa" viewBox="0 0 24 24"><path d="M3.5 6.5 L9 4.5 L15 6.5 L20.5 4.5 V17.5 L15 19.5 L9 17.5 L3.5 19.5 Z M9 4.5 V17.5 M15 6.5 V19.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-rosario" viewBox="0 0 24 24"><circle cx="12" cy="8.8" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><g fill="currentColor"><circle cx="12" cy="3.8" r="1.25"/><circle cx="15.54" cy="5.26" r="1.25"/><circle cx="17" cy="8.8" r="1.25"/><circle cx="15.54" cy="12.34" r="1.25"/><circle cx="8.46" cy="12.34" r="1.25"/><circle cx="7" cy="8.8" r="1.25"/><circle cx="8.46" cy="5.26" r="1.25"/></g><path d="M12 13.8 V21 M9.8 18.2 H14.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="g-ayuda" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5 V16.5 M7.5 12 H16.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="g-configuracion" viewBox="0 0 24 24"><path d="M12 3 L14.68 5.53 L18.36 5.64 L18.47 9.32 L21 12 L18.47 14.68 L18.36 18.36 L14.68 18.47 L12 21 L9.32 18.47 L5.64 18.36 L5.53 14.68 L3 12 L5.53 9.32 L5.64 5.64 L9.32 5.53 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="g-chevron-derecha" viewBox="0 0 24 24"><path d="M9.5 5.5 L16 12 L9.5 18.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-vela" viewBox="0 0 24 24"><path d="M9 11 H15 V20.5 H9 Z M7 20.5 H17 M12 11 V9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 3.5 C13.6 5.3 13.8 6.9 12 8.2 C10.2 6.9 10.4 5.3 12 3.5 Z" fill="currentColor"/></symbol>
+    <symbol id="g-nota" viewBox="0 0 24 24"><path d="M11 17.5 V4.5 C13 4.5 16.5 6 16.5 9.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="8.4" cy="17.5" rx="2.8" ry="2.3" fill="currentColor"/></symbol>
+    <symbol id="g-intenciones" viewBox="0 0 24 24"><path d="M14 20.5 V17.5 H11.5 A1.5 1.5 0 0 1 10 16 V14 L8 13.3 L10 10 A6 6 0 0 0 4 4.5 M14 20.5 H6.5 V17 A7 7 0 0 1 4 11.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.5 8.5 A3.5 3.5 0 0 1 15.5 13.5 M18.5 6 A7 7 0 0 1 18.5 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <main class="inicio fe">
+    <h1 class="fe__titulo">Fe y comunidad</h1>
+    <p class="fe__bajada">Rezá y cantá con tu grupo durante el camino</p>
+
+    <section class="misterios" aria-labelledby="misterios-nombre">
+      <svg class="misterios__cuentas-deco" viewBox="0 0 120 110" aria-hidden="true">
+        <g fill="#6870B8"><circle cx="25" cy="6" r="10.5"/><circle cx="14" cy="26" r="10.5"/><circle cx="12" cy="48" r="10.5"/><circle cx="19" cy="70" r="10.5"/><circle cx="35" cy="87" r="10.5"/><circle cx="56" cy="96" r="10.5"/><circle cx="78" cy="96" r="10.5"/><circle cx="100" cy="86" r="10.5"/></g>
+      </svg>
+      <p class="misterios__dia" id="misterios-dia">Misterios de hoy · sábado</p>
+      <h2 class="misterios__nombre" id="misterios-nombre">Misterios Gozosos</h2>
+      <div class="misterios__cuentas" aria-hidden="true">
+        <span class="misterios__cuenta misterios__cuenta--llena"></span><span class="misterios__cuenta misterios__cuenta--llena"></span><span class="misterios__cuenta misterios__cuenta--llena"></span><span class="misterios__cuenta misterios__cuenta--llena"></span>
+        <span class="misterios__cuenta"></span><span class="misterios__cuenta"></span><span class="misterios__cuenta"></span><span class="misterios__cuenta"></span><span class="misterios__cuenta"></span><span class="misterios__cuenta"></span>
+      </div>
+      <div class="misterios__pie">
+        <p class="misterios__avance">Ibas por la 2.ª decena</p>
+        <button class="btn btn--amarillo misterios__boton" type="button" data-ec="continuar-rosario" data-id="continuar-rosario" data-destino="rosario"><span>Continuar</span><svg class="ico" aria-hidden="true"><use href="#g-chevron-derecha"/></svg></button>
+      </div>
+    </section>
+
+    <!-- Tarjetas de acceso del kit (tarjetas-acceso), de a dos dentro de .grilla2 -->
+    <div class="grilla2 fe__accesos">
+      <button class="tile" type="button" data-ec="rosario" data-id="rosario" data-destino="rosario"><span class="tile__icono"><svg class="ico" aria-hidden="true"><use href="#g-rosario"/></svg></span><span class="tile__titulo">Rosario</span><span class="tile__sub">Guiado por decenas, con audio</span></button>
+      <button class="tile" type="button" data-ec="oraciones" data-id="oraciones" data-destino="oraciones"><span class="tile__icono"><svg class="ico" aria-hidden="true"><use href="#g-vela"/></svg></span><span class="tile__titulo">Oraciones</span><span class="tile__sub">Del peregrino, para cada tramo</span></button>
+      <button class="tile" type="button" data-ec="cancionero" data-id="cancionero" data-destino="cancionero"><span class="tile__icono"><svg class="ico" aria-hidden="true"><use href="#g-nota"/></svg></span><span class="tile__titulo">Cancionero</span><span class="tile__sub">Cantos del camino, sin conexión</span></button>
+      <button class="tile" type="button" data-ec="intenciones" data-id="intenciones" data-destino="intenciones"><span class="tile__icono"><svg class="ico" aria-hidden="true"><use href="#g-intenciones"/></svg></span><span class="tile__titulo">Intenciones</span><span class="tile__sub">Dejá tu pedido y rezá por otros</span></button>
+    </div>
+  </main>
+
+  <nav class="nav-inferior barra" aria-label="Navegación principal" style="--nav-activo: #1B2A8A">
+    <button class="nav-item" type="button" data-ec="nav-inicio" data-destino="inicio"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-inicio"/></svg></span>Inicio</button>
+    <button class="nav-item" type="button" data-ec="nav-mapa" data-destino="mapa"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-mapa"/></svg></span>Mapa</button>
+    <button class="nav-item" type="button" data-ec="nav-espiritual" data-destino="espiritual" aria-current="page"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-rosario"/></svg></span>Punto espiritual</button>
+    <button class="nav-item" type="button" data-ec="nav-ayuda" data-destino="ayuda"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-ayuda"/></svg></span>Ayuda</button>
+    <button class="nav-item" type="button" data-ec="nav-ajustes" data-destino="ajustes"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-configuracion"/></svg></span>Ajustes</button>
+  </nav>
+
+  <script src="js/botones.js"></script>
+  <script src="js/navegacion.js"></script>
+  <script src="js/fe.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F7F7">
+  <title>Rosario · En Camino</title>
+  <link rel="stylesheet" href="https://use.typekit.net/asn0sci.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/botones.css">
+  <link rel="stylesheet" href="css/entrada.css">
+  <link rel="stylesheet" href="css/inicio.css">
+  <link rel="stylesheet" href="css/rosario.css">
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="g-inicio" viewBox="0 0 24 24"><path d="M4 10.5 L12 4 L20 10.5 M6 9 V20 H18 V9 M10 20 V16 A2 2 0 0 1 14 16 V20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-mapa" viewBox="0 0 24 24"><path d="M3.5 6.5 L9 4.5 L15 6.5 L20.5 4.5 V17.5 L15 19.5 L9 17.5 L3.5 19.5 Z M9 4.5 V17.5 M15 6.5 V19.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-rosario" viewBox="0 0 24 24"><circle cx="12" cy="8.8" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><g fill="currentColor"><circle cx="12" cy="3.8" r="1.25"/><circle cx="15.54" cy="5.26" r="1.25"/><circle cx="17" cy="8.8" r="1.25"/><circle cx="15.54" cy="12.34" r="1.25"/><circle cx="8.46" cy="12.34" r="1.25"/><circle cx="7" cy="8.8" r="1.25"/><circle cx="8.46" cy="5.26" r="1.25"/></g><path d="M12 13.8 V21 M9.8 18.2 H14.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="g-ayuda" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5 V16.5 M7.5 12 H16.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="g-configuracion" viewBox="0 0 24 24"><path d="M12 3 L14.68 5.53 L18.36 5.64 L18.47 9.32 L21 12 L18.47 14.68 L18.36 18.36 L14.68 18.47 L12 21 L9.32 18.47 L5.64 18.36 L5.53 14.68 L3 12 L5.53 9.32 L5.64 5.64 L9.32 5.53 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="g-atras" viewBox="0 0 24 24"><path d="M15 4.5 L8 12 L15 19.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-menu" viewBox="0 0 24 24"><path d="M8.5 7 H20 M8.5 12 H20 M8.5 17 H20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><g fill="currentColor"><circle cx="4.5" cy="7" r="1.4"/><circle cx="4.5" cy="12" r="1.4"/><circle cx="4.5" cy="17" r="1.4"/></g></symbol>
+    <symbol id="g-play" viewBox="0 0 24 24"><path d="M8 5 V19 L19 12 Z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="g-pausa" viewBox="0 0 24 24"><rect x="6.5" y="5" width="3.5" height="14" rx="1" fill="currentColor"/><rect x="14" y="5" width="3.5" height="14" rx="1" fill="currentColor"/></symbol>
+  </svg>
+
+  <main class="inicio rosario">
+    <header class="cabecera">
+      <button class="btn-icono btn-icono--plano cabecera__volver" type="button" aria-label="Volver" data-ec="volver-rosario" data-id="volver-rosario"><svg class="ico" aria-hidden="true"><use href="#g-atras"/></svg></button>
+      <div class="rosario__titulos">
+        <p class="cabecera__titulo rosario__titulo">Rosario</p>
+        <p class="cabecera__paso" id="rosario-tipo">Misterios Gozosos</p>
+      </div>
+      <button class="btn-icono btn-icono--plano boton-circulo" type="button" aria-label="Abrir menú" data-ec="menu" data-id="menu"><svg class="ico" aria-hidden="true"><use href="#g-menu"/></svg></button>
+    </header>
+
+    <p class="rosario__numero-misterio" id="rosario-numero">2.º misterio</p>
+    <h1 class="rosario__misterio" id="rosario-misterio">La Visitación de María</h1>
+
+    <!-- Contador del rosario: tocar para avanzar una cuenta (adaptado del contador del kit a la pantalla 17) -->
+    <button class="rosario-contador" id="rosario-contador" type="button" data-ec="rosario-avanzar" data-id="rosario-contador" aria-label="Avemaría 6 de 10. Tocá para avanzar">
+      <svg viewBox="0 0 220 252" aria-hidden="true">
+        <circle cx="110" cy="110" r="92" fill="none" stroke="#3B3B5F" stroke-width="1.6"/>
+        <g id="rosario-cuentas"></g>
+        <text class="rosario-contador__numero" id="rosario-cuenta" x="110" y="118" text-anchor="middle">6 / 10</text>
+        <text class="rosario-contador__oracion" x="110" y="146" text-anchor="middle">Avemaría</text>
+        <path d="M110 214 V250 M97 226 H123" fill="none" stroke="#141414" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <section class="oracion" aria-labelledby="oracion-titulo">
+      <h2 class="oracion__titulo" id="oracion-titulo">Texto de la oración</h2>
+      <p class="oracion__texto">Dios te salve, María, llena eres de gracia, el Señor es contigo. Bendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús. Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén.</p>
+    </section>
+
+    <div class="rosario__controles">
+      <button class="btn-icono btn-icono--tonal rosario__texto" type="button" aria-label="Achicar texto" data-ec="texto" data-accion="menos"><span class="btn-icono__texto">A−</span></button>
+      <button class="btn-icono btn-icono--tonal rosario__texto" type="button" aria-label="Agrandar texto" data-ec="texto" data-accion="mas"><span class="btn-icono__texto">A+</span></button>
+      <button class="media media--principal rosario__play" type="button" aria-label="Reproducir" data-ec="reproducir" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#g-play"/></svg></button>
+      <button class="btn btn--amarillo rosario__siguiente" id="rosario-siguiente" type="button" data-ec="rosario-avanzar" data-id="rosario-siguiente"><span>Siguiente</span></button>
+    </div>
+    <p class="rosario__ayuda" id="rosario-ayuda">Tocá el rosario para avanzar una cuenta</p>
+  </main>
+
+  <nav class="nav-inferior barra" aria-label="Navegación principal" style="--nav-activo: #1B2A8A">
+    <button class="nav-item" type="button" data-ec="nav-inicio" data-destino="inicio"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-inicio"/></svg></span>Inicio</button>
+    <button class="nav-item" type="button" data-ec="nav-mapa" data-destino="mapa"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-mapa"/></svg></span>Mapa</button>
+    <button class="nav-item" type="button" data-ec="nav-espiritual" data-destino="espiritual" aria-current="page"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-rosario"/></svg></span>Punto espiritual</button>
+    <button class="nav-item" type="button" data-ec="nav-ayuda" data-destino="ayuda"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-ayuda"/></svg></span>Ayuda</button>
+    <button class="nav-item" type="button" data-ec="nav-ajustes" data-destino="ajustes"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-configuracion"/></svg></span>Ajustes</button>
+  </nav>
+
+  <script src="js/botones.js"></script>
+  <script src="js/navegacion.js"></script>
+  <script src="js/rosario.js"></script>
+</body>
+</html>

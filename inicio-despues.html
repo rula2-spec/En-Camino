@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F7F7">
+  <title>Inicio · Después · En Camino</title>
+  <link rel="stylesheet" href="https://use.typekit.net/asn0sci.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/botones.css">
+  <link rel="stylesheet" href="css/entrada.css">
+  <link rel="stylesheet" href="css/inicio.css">
+</head>
+<body>
+  <!-- Glifos del kit que usa esta pantalla. Reencuentro, Vuelta, Maletín y Ayuda (cruz) salen de las pantallas finales -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="g-inicio" viewBox="0 0 24 24"><path d="M4 10.5 L12 4 L20 10.5 M6 9 V20 H18 V9 M10 20 V16 A2 2 0 0 1 14 16 V20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-mapa" viewBox="0 0 24 24"><path d="M3.5 6.5 L9 4.5 L15 6.5 L20.5 4.5 V17.5 L15 19.5 L9 17.5 L3.5 19.5 Z M9 4.5 V17.5 M15 6.5 V19.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-rosario" viewBox="0 0 24 24"><circle cx="12" cy="8.8" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><g fill="currentColor"><circle cx="12" cy="3.8" r="1.25"/><circle cx="15.54" cy="5.26" r="1.25"/><circle cx="17" cy="8.8" r="1.25"/><circle cx="15.54" cy="12.34" r="1.25"/><circle cx="8.46" cy="12.34" r="1.25"/><circle cx="7" cy="8.8" r="1.25"/><circle cx="8.46" cy="5.26" r="1.25"/></g><path d="M12 13.8 V21 M9.8 18.2 H14.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="g-ayuda" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5 V16.5 M7.5 12 H16.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="g-configuracion" viewBox="0 0 24 24"><path d="M12 3 L14.68 5.53 L18.36 5.64 L18.47 9.32 L21 12 L18.47 14.68 L18.36 18.36 L14.68 18.47 L12 21 L9.32 18.47 L5.64 18.36 L5.53 14.68 L3 12 L5.53 9.32 L5.64 5.64 L9.32 5.53 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="g-antes" viewBox="0 0 24 24"><rect x="5.5" y="8.5" width="13" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 8.5 V7 A3 3 0 0 1 15 7 V8.5 M8.5 14.2 H15.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="14.2" r="1.6" fill="currentColor"/></symbol>
+    <symbol id="g-durante" viewBox="0 0 24 24"><path d="M7 3.5 H11.5 V12.5 L17.6 14.2 C18.8 14.6 19.5 15.6 19.5 16.8 V19.5 H7 Z M7 16.8 H19.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11.5" cy="8.5" r="1.4" fill="currentColor"/></symbol>
+    <symbol id="g-despues" viewBox="0 0 24 24"><path d="M5.5 11.5 L12 7 L18.5 11.5 V20.5 H5.5 Z M10.2 20.5 V17 A1.8 1.8 0 0 1 13.8 17 V20.5 M12 2.8 V7 M10.3 4.5 H13.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12.6" r="1.3" fill="currentColor"/></symbol>
+    <symbol id="g-avisos" viewBox="0 0 24 24"><path d="M12 4 C8.6 4 6.9 6.8 6.9 10 V14 L5.2 16.6 H18.8 L17.1 14 V10 C17.1 6.8 15.4 4 12 4 Z M10 19.3 A2.2 2.2 0 0 0 14 19.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-chevron-derecha" viewBox="0 0 24 24"><path d="M9.5 5.5 L16 12 L9.5 18.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-terminal" viewBox="0 0 24 24"><rect x="5.5" y="3.5" width="13" height="15" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5.5 11.2 H18.5 M8 18.5 V20.5 M16 18.5 V20.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="8.7" cy="14.9" r="1.3" fill="currentColor"/><circle cx="15.3" cy="14.9" r="1.3" fill="currentColor"/></symbol>
+    <symbol id="g-reencuentro" viewBox="0 0 24 24"><path d="M12 21 C12 21 5.5 14.8 5.5 9.75 A6.5 6.5 0 0 1 18.5 9.75 C18.5 14.8 12 21 12 21 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 6.8 L14.6 11.6 H9.4 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="g-vuelta" viewBox="0 0 24 24"><path d="M17 5 H9 A5 5 0 0 0 9 15 H14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 3.2"/><path d="M12 11.5 L15.5 15 L12 18.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-maletin" viewBox="0 0 24 24"><path d="M5 7.5 H19 A1.5 1.5 0 0 1 20.5 9 V18.5 A1.5 1.5 0 0 1 19 20 H5 A1.5 1.5 0 0 1 3.5 18.5 V9 A1.5 1.5 0 0 1 5 7.5 Z M8.5 7.5 V5.5 A1.5 1.5 0 0 1 10 4 H14 A1.5 1.5 0 0 1 15.5 5.5 V7.5 M12 10.5 V17 M8.75 13.75 H15.25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-comida" viewBox="0 0 24 24"><path d="M7 4 V9 M9.5 4 V20 M12 4 V9 M7 9 A2.5 2.5 0 0 0 12 9 M17 20 V4 C18.9 5.3 19.4 9 18.8 13 H17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <main class="inicio">
+    <header class="inicio__cabecera">
+      <img class="inicio__isotipo" src="imagenes/isotipo.png" alt="" width="30" height="36">
+      <div class="inicio__saludo">
+        <p class="inicio__buen-dia">¡Llegaste!</p>
+        <h1 class="inicio__nombre">Peregrino</h1>
+      </div>
+      <p class="inicio__clima"><span class="solo-lector">Temperatura: </span>24°</p>
+      <button class="inicio__avisos" type="button" aria-label="Avisos: 2 nuevos" data-ec="avisos" data-id="avisos" data-destino="avisos">
+        <svg class="ico" aria-hidden="true"><use href="#g-avisos"/></svg>
+        <span class="inicio__badge" aria-hidden="true">2</span>
+      </button>
+    </header>
+
+    <nav class="segmentado etapas" aria-label="Etapa de la peregrinación">
+      <button class="segmentado__opcion etapas__opcion" type="button" data-ec="etapa-antes" data-id="etapa-antes" data-destino="inicio-antes"><span class="etapas__icono"><svg class="ico" aria-hidden="true"><use href="#g-antes"/></svg></span>Antes</button>
+      <button class="segmentado__opcion etapas__opcion" type="button" data-ec="etapa-durante" data-id="etapa-durante" data-destino="inicio-durante"><span class="etapas__icono"><svg class="ico" aria-hidden="true"><use href="#g-durante"/></svg></span>Durante</button>
+      <button class="segmentado__opcion etapas__opcion" type="button" aria-current="page" data-ec="etapa-despues" data-id="etapa-despues" data-destino="inicio-despues"><span class="etapas__icono"><svg class="ico" aria-hidden="true"><use href="#g-despues"/></svg></span>Después</button>
+    </nav>
+
+    <section class="logro" aria-label="Tu peregrinación">
+      <div class="logro__textos">
+        <p class="logro__km">30 km<br>recorridos</p>
+        <p class="logro__detalle">7 h 48 min · 41.200 pasos</p>
+        <button class="btn btn--amarillo logro__boton" type="button" data-ec="compartir-camino" data-id="compartir-camino" data-destino="mi-equipo"><span>Compartir mi camino</span></button>
+      </div>
+      <span class="logro__sello" aria-hidden="true"><img src="imagenes/isotipo.png" alt="" width="47" height="56"></span>
+    </section>
+
+    <h2 class="inicio__seccion">Volver a casa</h2>
+    <div class="destinos">
+      <button class="destino" type="button" data-ec="terminal" data-id="terminal" data-destino="terminal">
+        <span class="icono-seccion icono-seccion--celeste"><svg class="ico" aria-hidden="true"><use href="#g-terminal"/></svg></span>
+        <span class="destino__textos"><span class="destino__titulo">Terminal de ómnibus</span><span class="destino__sub">A 1,2 km · próximo a Córdoba 10:40</span></span>
+        <svg class="ico destino__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
+      </button>
+      <button class="destino" type="button" data-ec="punto-encuentro" data-id="punto-encuentro" data-destino="punto-encuentro">
+        <span class="icono-seccion icono-seccion--celeste"><svg class="ico" aria-hidden="true"><use href="#g-reencuentro"/></svg></span>
+        <span class="destino__textos"><span class="destino__titulo">Punto de encuentro del grupo</span><span class="destino__sub">Plaza Solares · 4 personas llegaron</span></span>
+        <svg class="ico destino__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
+      </button>
+      <button class="destino" type="button" data-ec="remis" data-id="remis" data-destino="remis">
+        <span class="icono-seccion"><svg class="ico" aria-hidden="true"><use href="#g-vuelta"/></svg></span>
+        <span class="destino__textos"><span class="destino__titulo">Remis y transporte</span><span class="destino__sub">Paradas y números útiles</span></span>
+        <svg class="ico destino__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
+      </button>
+    </div>
+
+    <!-- Tarjetas de acceso del kit (tarjetas-acceso), de a dos dentro de .grilla2 -->
+    <div class="grilla2 accesos">
+      <button class="tile" type="button" data-ec="farmacias" data-id="farmacias" data-destino="farmacias" style="--sec: #E2393E"><span class="tile__icono"><svg class="ico" aria-hidden="true"><use href="#g-maletin"/></svg></span><span class="tile__titulo">Farmacias</span><span class="tile__sub">De turno · 3 cerca</span></button>
+      <button class="tile" type="button" data-ec="comer-algo" data-id="comer-algo" data-destino="comer-algo" style="--sec: #16884D"><span class="tile__icono"><svg class="ico" aria-hidden="true"><use href="#g-comida"/></svg></span><span class="tile__titulo">Comer algo</span><span class="tile__sub">Despensas y gastronomía</span></button>
+    </div>
+  </main>
+
+  <nav class="nav-inferior barra" aria-label="Navegación principal">
+    <button class="nav-item" type="button" data-ec="nav-inicio" data-destino="inicio-despues" aria-current="page"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-inicio"/></svg></span>Inicio</button>
+    <button class="nav-item" type="button" data-ec="nav-mapa" data-destino="mapa"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-mapa"/></svg></span>Mapa</button>
+    <button class="nav-item" type="button" data-ec="nav-espiritual" data-destino="espiritual"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-rosario"/></svg></span>Punto espiritual</button>
+    <button class="nav-item" type="button" data-ec="nav-ayuda" data-destino="ayuda"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-ayuda"/></svg></span>Ayuda</button>
+    <button class="nav-item" type="button" data-ec="nav-ajustes" data-destino="ajustes"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-configuracion"/></svg></span>Ajustes</button>
+  </nav>
+
+  <script src="js/botones.js"></script>
+  <script src="js/navegacion.js"></script>
+</body>
+</html>

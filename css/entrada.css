@@ -1,5 +1,5 @@
 /* ==========================================================================
-   En Camino · Pantallas de entrada: Apertura, Carga, Bienvenida, Ingreso y Registro
+   En Camino · Pantallas de entrada: Apertura, Carga, Bienvenida, Ingreso, Registro y Antes de salir
    Base de 360 dp, fluida de 320 a 599 dp. Nada depende de un alto fijo.
    ========================================================================== */
 *, *::before, *::after { box-sizing: border-box; }
@@ -76,12 +76,12 @@ body.fondo-papel { background: var(--ec-fondo-papel); }
 }
 .formulario .btn--primario { min-height: 52px; }
 .cabecera { display: flex; align-items: center; gap: 7px; margin-left: -4px; }
-.cabecera__volver { flex: none; color: var(--ec-negro); }
-.cabecera__volver .ico { position: relative; }
-/* El círculo visible mide 40 dp; el área táctil sigue siendo de 48 dp */
-.cabecera__volver::before { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #E6E5EA; }
-.cabecera__volver:hover { background: none; }
-.cabecera__volver:active::before { background: var(--ec-azul-tinte); }
+/* Botón de ícono en círculo blanco (Volver, Menú): el círculo visible mide 40 dp; el área táctil sigue siendo de 48 dp */
+:is(.cabecera__volver, .boton-circulo) { flex: none; color: var(--ec-negro); }
+:is(.cabecera__volver, .boton-circulo) .ico { position: relative; }
+:is(.cabecera__volver, .boton-circulo)::before { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #E6E5EA; }
+:is(.cabecera__volver, .boton-circulo):hover { background: none; }
+:is(.cabecera__volver, .boton-circulo):active::before { background: var(--ec-azul-tinte); }
 .cabecera__titulo { font: 300 18px/1.2 "lemonde-sans", sans-serif; }
 .cabecera__paso { margin-top: 2px; font: 400 13px/1.3 var(--ec-fuente); color: var(--ec-texto-secundario); }
 
@@ -142,12 +142,55 @@ body.fondo-papel { background: var(--ec-fondo-papel); }
 /* Si el código no entra junto a «Unirme», el botón pasa abajo a todo el ancho */
 .tarjeta-grupo__fila { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 /* El campo se queda con el espacio libre; el botón solo crece cuando queda solo en su línea */
-.tarjeta-grupo__fila .campo__caja { flex: 999 1 190px; min-width: 0; padding-inline: 12px; }
+.tarjeta-grupo__fila .campo__caja { flex: 999 1 176px; min-width: 0; padding-inline: 12px; }
 .tarjeta-grupo__fila .campo__entrada::placeholder { font-size: 13px; }
-.tarjeta-grupo__fila .btn { flex: 1 0 auto; min-height: 44px; border-radius: var(--ec-radio-tonal); padding-inline: 16px; }
+.tarjeta-grupo__fila .btn { flex: 1 0 auto; min-height: 44px; border-radius: var(--ec-radio-tonal); padding-inline: 12px; }
+
+/* «Unirme» ↔ «Modificar»: los dos textos comparten la celda, así el botón no cambia de tamaño */
+.unirme { display: inline-grid; place-items: center; }
+.unirme > * { grid-area: 1 / 1; }
+.unirme__modificar { visibility: hidden; }
+.unirme[aria-pressed="true"] .unirme__texto { visibility: hidden; }
+.unirme[aria-pressed="true"] .unirme__modificar { visibility: visible; }
 
 .registro__acepto { display: flex; align-items: center; gap: 12px; min-height: 48px; margin-top: 6px; font: 400 14px/1.35 var(--ec-fuente); color: var(--ec-texto-secundario); cursor: pointer; }
 .registro__acepto .casilla { flex: none; }
 .registro__continuar { margin-top: auto; padding-top: 20px; }
+
+/* ---------- Antes de salir (permisos y descarga) ---------- */
+.permisos__bajada { margin-top: 6px; font: 400 15px/1.4 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.permisos__lista { display: grid; gap: 10px; margin-top: 16px; }
+.permiso { min-height: 60px; padding: 10px 14px; gap: 12px; border-radius: var(--ec-radio-tarjeta); box-shadow: inset 0 0 0 1.5px var(--ec-linea-campo); cursor: pointer; }
+.permiso:active { background: var(--ec-blanco); }
+.permiso__icono { flex: none; width: 38px; height: 38px; display: block; }
+.permiso .item-lista__titulo { display: flex; flex-direction: column; gap: 3px; font: 700 14px/1.2 var(--ec-fuente); }
+.permiso__sub { font: 400 12px/1.3 var(--ec-fuente); color: var(--ec-texto-secundario); }
+/* Interruptor del kit, al tamaño de la pantalla final */
+.permiso .switch { width: 48px; height: 30px; border-radius: 15px; background: #BDBCC8; }
+.permiso .switch::after { width: 24px; height: 24px; }
+.permiso .switch[aria-checked="true"] { background: var(--ec-verde); }
+.permiso .switch[aria-checked="true"]::after { transform: translateX(18px); }
+
+.descarga { margin-top: 14px; padding: 14px 14px 14px; border-radius: var(--ec-radio-tarjeta); background: var(--ec-azul); color: var(--ec-blanco); }
+.descarga__cabecera { display: flex; align-items: center; gap: 10px; }
+.descarga__cabecera .permiso__icono { width: 34px; height: 34px; }
+.descarga__textos { flex: 1; min-width: 0; }
+.descarga__titulo { font: 600 15px/1.25 var(--ec-fuente); }
+.descarga__sub { margin-top: 2px; font: 500 12px/1.3 var(--ec-fuente); color: #D5D5E3; }
+.descarga__peso { flex: none; align-self: flex-start; padding: 5px 10px; border-radius: var(--ec-radio-pildora); background: rgba(255, 255, 255, .14); font: 700 12px/1 var(--ec-fuente); }
+.descarga__cuentas { display: flex; justify-content: space-between; gap: 4px; margin-top: 14px; }
+.descarga__cuenta { flex: 0 1 9px; aspect-ratio: 1; min-width: 6px; border-radius: 50%; box-shadow: inset 0 0 0 1.6px #9EA0B9; }
+.descarga__cuenta--llena { background: var(--ec-amarillo); box-shadow: none; }
+.descarga__estado { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-top: 12px; font: 600 13px/1.3 var(--ec-fuente); }
+.descarga__estado strong { font-weight: 700; font-size: 14px; }
+.descarga__boton { margin-top: 12px; }
+.descarga__detalle { margin-top: 10px; font: 500 12px/1.3 var(--ec-fuente); color: #C3C3D6; text-align: center; }
+
+.permisos__pie { margin-top: auto; padding-top: 20px; }
+/* «Descargar» en amarillo: no está en el kit, sale del rediseño de la pantalla 05 */
+.btn--amarillo { background: var(--ec-amarillo); color: var(--ec-azul); }
+.btn--amarillo:hover { background: #F4C15B; }
+.btn--amarillo:active { background: var(--ec-amarillo-presionado); }
+.descarga .btn--amarillo:is(:disabled, [aria-disabled="true"]) { background: rgba(255, 255, 255, .14); color: #C3C3D6; cursor: default; }
 
 .solo-lector { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }

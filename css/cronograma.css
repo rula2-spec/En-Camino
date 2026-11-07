@@ -1,0 +1,40 @@
+/* ==========================================================================
+   En Camino · Cronograma (pantalla 19)
+   ========================================================================== */
+.icono-seccion--naranja { --icono: #C9831F; }
+.cronograma__titulos { flex: 1; min-width: 0; }
+.cronograma__titulo { font-size: 24px; }
+
+/* ---------- Días ---------- */
+.dias { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 16px; }
+.dias__opcion { min-height: 48px; border: 0; border-radius: 16px; background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #D5D6DA; color: var(--ec-negro); font: 600 16px/1 var(--ec-fuente); cursor: pointer; -webkit-tap-highlight-color: transparent; transition: background var(--ec-transicion), color var(--ec-transicion); }
+.dias__opcion[aria-selected="true"] { background: var(--ec-azul); color: var(--ec-blanco); box-shadow: none; font-weight: 700; }
+.dias__opcion:not([aria-selected="true"]):active { background: var(--ec-arena); }
+.dias__opcion:focus-visible { outline: 3px solid var(--ec-foco); outline-offset: 2px; }
+
+/* ---------- Agenda: hora, hilo dorado y tarjeta ---------- */
+.agenda { position: relative; display: grid; gap: 10px; margin: 16px 0 0; padding: 0; list-style: none; }
+.agenda::before { content: ""; position: absolute; top: 24px; bottom: 24px; left: 53px; width: 2px; background: #EAD6A6; }
+.agenda[hidden] { display: none; }
+.agenda__item { position: relative; display: grid; grid-template-columns: 40px 20px minmax(0, 1fr); align-items: center; column-gap: 4px; }
+.agenda__hora { font: 700 13px/1 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.agenda__item--ahora .agenda__hora { color: var(--ec-negro); }
+.agenda__marca { justify-self: center; width: 18px; height: 18px; border-radius: 50%; background: var(--ec-fondo-claro); box-shadow: inset 0 0 0 2.2px #C9831F; }
+.agenda__item--ahora .agenda__marca { background: radial-gradient(circle, #C9831F 0 4.5px, var(--ec-fondo-claro) 5px); }
+
+.actividad { display: flex; align-items: center; gap: 8px; min-height: 64px; padding: 8px 0 8px 10px; border-radius: 18px; background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #E3E3E5; }
+.agenda__item--ahora .actividad { box-shadow: inset 0 0 0 2px var(--ec-azul); }
+.actividad .icono-seccion { --tam: 34px; }
+.actividad__textos { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.actividad__titulo { font: 700 15px/1.25 var(--ec-fuente); }
+.actividad__ahora { display: inline-block; margin-left: 4px; padding: 3px 7px; border-radius: 6px; background: var(--ec-azul); color: var(--ec-blanco); font: 700 10px/1.2 var(--ec-fuente); letter-spacing: 1.2px; text-transform: uppercase; vertical-align: 2px; }
+.actividad__sub { font: 400 12.5px/1.3 var(--ec-fuente); color: var(--ec-texto-secundario); }
+
+/* Campana de recordatorio: naranja encendida, gris apagada (área táctil de 48 dp) */
+.actividad__aviso { position: relative; flex: none; display: grid; place-items: center; width: 48px; height: 48px; padding: 0; border: 0; border-radius: 50%; background: none; color: var(--ec-blanco); cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.actividad__aviso::before { content: ""; position: absolute; inset: 7px; border-radius: 50%; background: #CFCFD6; transition: background var(--ec-transicion); }
+.actividad__aviso[aria-pressed="true"]::before { background: #C9831F; }
+.actividad__aviso .ico { position: relative; width: 18px; height: 18px; }
+.actividad__aviso:focus-visible { outline: 3px solid var(--ec-foco); outline-offset: -2px; }
+
+.agenda__vacio { margin-top: 24px; padding: 18px 16px; border-radius: 18px; background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #E3E3E5; text-align: center; font: 400 14px/1.4 var(--ec-fuente); color: var(--ec-texto-secundario); }

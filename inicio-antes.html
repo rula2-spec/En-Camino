@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F7F7">
+  <title>Inicio · En Camino</title>
+  <link rel="stylesheet" href="https://use.typekit.net/asn0sci.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/botones.css">
+  <link rel="stylesheet" href="css/entrada.css">
+  <link rel="stylesheet" href="css/inicio.css">
+</head>
+<body>
+  <!-- Glifos del sprite del kit que usa esta pantalla -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="g-inicio" viewBox="0 0 24 24"><path d="M4 10.5 L12 4 L20 10.5 M6 9 V20 H18 V9 M10 20 V16 A2 2 0 0 1 14 16 V20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-mapa" viewBox="0 0 24 24"><path d="M3.5 6.5 L9 4.5 L15 6.5 L20.5 4.5 V17.5 L15 19.5 L9 17.5 L3.5 19.5 Z M9 4.5 V17.5 M15 6.5 V19.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-rosario" viewBox="0 0 24 24"><circle cx="12" cy="8.8" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><g fill="currentColor"><circle cx="12" cy="3.8" r="1.25"/><circle cx="15.54" cy="5.26" r="1.25"/><circle cx="17" cy="8.8" r="1.25"/><circle cx="15.54" cy="12.34" r="1.25"/><circle cx="8.46" cy="12.34" r="1.25"/><circle cx="7" cy="8.8" r="1.25"/><circle cx="8.46" cy="5.26" r="1.25"/></g><path d="M12 13.8 V21 M9.8 18.2 H14.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <!-- Ayuda: círculo con cruz, como en las pantallas finales (el kit trae un signo de pregunta) -->
+    <symbol id="g-ayuda" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5 V16.5 M7.5 12 H16.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="g-configuracion" viewBox="0 0 24 24"><path d="M12 3 L14.68 5.53 L18.36 5.64 L18.47 9.32 L21 12 L18.47 14.68 L18.36 18.36 L14.68 18.47 L12 21 L9.32 18.47 L5.64 18.36 L5.53 14.68 L3 12 L5.53 9.32 L5.64 5.64 L9.32 5.53 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="g-antes" viewBox="0 0 24 24"><rect x="5.5" y="8.5" width="13" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 8.5 V7 A3 3 0 0 1 15 7 V8.5 M8.5 14.2 H15.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="14.2" r="1.6" fill="currentColor"/></symbol>
+    <symbol id="g-durante" viewBox="0 0 24 24"><path d="M7 3.5 H11.5 V12.5 L17.6 14.2 C18.8 14.6 19.5 15.6 19.5 16.8 V19.5 H7 Z M7 16.8 H19.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11.5" cy="8.5" r="1.4" fill="currentColor"/></symbol>
+    <!-- Después: capilla (glifo «santuario» del kit), como en las pantallas finales -->
+    <symbol id="g-despues" viewBox="0 0 24 24"><path d="M5.5 11.5 L12 7 L18.5 11.5 V20.5 H5.5 Z M10.2 20.5 V17 A1.8 1.8 0 0 1 13.8 17 V20.5 M12 2.8 V7 M10.3 4.5 H13.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12.6" r="1.3" fill="currentColor"/></symbol>
+    <symbol id="g-avisos" viewBox="0 0 24 24"><path d="M12 4 C8.6 4 6.9 6.8 6.9 10 V14 L5.2 16.6 H18.8 L17.1 14 V10 C17.1 6.8 15.4 4 12 4 Z M10 19.3 A2.2 2.2 0 0 0 14 19.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-programa" viewBox="0 0 24 24"><rect x="4" y="5.5" width="16" height="14.5" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 10 H20 M8.5 3.5 V7 M15.5 3.5 V7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="g-chevron-derecha" viewBox="0 0 24 24"><path d="M9.5 5.5 L16 12 L9.5 18.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-check" viewBox="0 0 24 24"><path d="M5 12.5 L9.5 17 L19 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <main class="inicio">
+    <header class="inicio__cabecera">
+      <img class="inicio__isotipo" src="imagenes/isotipo.png" alt="" width="30" height="36">
+      <div class="inicio__saludo">
+        <p class="inicio__buen-dia">Buen día</p>
+        <h1 class="inicio__nombre">Peregrino</h1>
+      </div>
+      <p class="inicio__clima"><span class="solo-lector">Temperatura: </span>24°</p>
+      <button class="inicio__avisos" type="button" aria-label="Avisos: 2 nuevos" data-ec="avisos" data-id="avisos" data-destino="avisos">
+        <svg class="ico" aria-hidden="true"><use href="#g-avisos"/></svg>
+        <span class="inicio__badge" aria-hidden="true">2</span>
+      </button>
+    </header>
+
+    <!-- Selector de etapas: cada opción lleva a su pantalla de Inicio -->
+    <nav class="segmentado etapas" aria-label="Etapa de la peregrinación">
+      <button class="segmentado__opcion etapas__opcion" type="button" aria-current="page" data-ec="etapa-antes" data-id="etapa-antes" data-destino="inicio-antes"><span class="etapas__icono"><svg class="ico" aria-hidden="true"><use href="#g-antes"/></svg></span>Antes</button>
+      <button class="segmentado__opcion etapas__opcion" type="button" data-ec="etapa-durante" data-id="etapa-durante" data-destino="inicio-durante"><span class="etapas__icono"><svg class="ico" aria-hidden="true"><use href="#g-durante"/></svg></span>Durante</button>
+      <button class="segmentado__opcion etapas__opcion" type="button" data-ec="etapa-despues" data-id="etapa-despues" data-destino="inicio-despues"><span class="etapas__icono"><svg class="ico" aria-hidden="true"><use href="#g-despues"/></svg></span>Después</button>
+    </nav>
+
+    <section class="cuenta-regresiva" aria-label="Salida">
+      <span class="cuenta-regresiva__arco" aria-hidden="true"></span>
+      <p class="cuenta-regresiva__faltan">Faltan</p>
+      <p class="cuenta-regresiva__dias">3 Días</p>
+      <p class="cuenta-regresiva__detalle">Sábado 7 · Salida 22:00 h · Córdoba capital</p>
+      <button class="btn btn--amarillo cuenta-regresiva__boton" type="button" data-ec="ver-punto-salida" data-id="ver-punto-salida" data-destino="recorrido"><span>Ver punto de salida</span><svg class="ico" aria-hidden="true"><use href="#g-chevron-derecha"/></svg></button>
+    </section>
+
+    <section class="preparacion" aria-labelledby="preparacion-titulo">
+      <div class="preparacion__cabecera">
+        <h2 class="preparacion__titulo" id="preparacion-titulo">Tu preparación</h2>
+        <p class="preparacion__cuenta" id="preparacion-cuenta" aria-live="polite">0 de 5</p>
+      </div>
+      <ul class="checklist">
+        <li><button class="tarea" type="button" role="checkbox" aria-checked="false" data-tarea="ficha-medica"><span class="tarea__marca"><svg class="ico" aria-hidden="true"><use href="#g-check"/></svg></span><span class="tarea__texto">Ficha médica completa</span><svg class="ico tarea__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg></button></li>
+        <li><button class="tarea" type="button" role="checkbox" aria-checked="false" data-tarea="que-llevar"><span class="tarea__marca"><svg class="ico" aria-hidden="true"><use href="#g-check"/></svg></span><span class="tarea__texto">Lista de qué llevar</span><svg class="ico tarea__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg></button></li>
+        <li><button class="tarea" type="button" role="checkbox" aria-checked="false" data-tarea="elegir-paradas"><span class="tarea__marca"><svg class="ico" aria-hidden="true"><use href="#g-check"/></svg></span><span class="tarea__texto">Elegir paradas</span><svg class="ico tarea__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg></button></li>
+        <li><button class="tarea" type="button" role="checkbox" aria-checked="false" data-tarea="descargar-mapa"><span class="tarea__marca"><svg class="ico" aria-hidden="true"><use href="#g-check"/></svg></span><span class="tarea__texto">Descargar mapa sin conexión</span><svg class="ico tarea__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg></button></li>
+        <li><button class="tarea" type="button" role="checkbox" aria-checked="false" data-tarea="unirme-grupo"><span class="tarea__marca"><svg class="ico" aria-hidden="true"><use href="#g-check"/></svg></span><span class="tarea__texto">Unirme a mi grupo</span><svg class="ico tarea__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg></button></li>
+      </ul>
+    </section>
+
+    <div class="grilla2 accesos">
+      <button class="acceso" type="button" data-ec="cronograma" data-id="cronograma" data-destino="cronograma">
+        <svg class="acceso__icono" viewBox="-27 -27 54 54" aria-hidden="true">
+          <circle r="27" fill="#C9831F"/>
+          <path d="M-20.3 -7.39 A21.6 21.6 0 0 1 -11.45 -18.32" fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="2.33" stroke-linecap="round"/>
+          <g transform="scale(1.4) translate(-12 -12)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><rect x="4" y="5.5" width="16" height="14.5" rx="2"/><path d="M4 10 H20 M8.5 3.5 V7 M15.5 3.5 V7"/><g fill="#FFFFFF" stroke="none"><circle cx="8.5" cy="13.5" r="1"/><circle cx="12" cy="13.5" r="1"/><circle cx="15.5" cy="13.5" r="1"/><circle cx="8.5" cy="16.8" r="1"/><circle cx="12" cy="16.8" r="1"/><circle cx="15.5" cy="16.8" r="1"/></g></g>
+        </svg>
+        <span class="acceso__textos"><span class="acceso__titulo">Cronograma</span><span class="acceso__sub">Misas y horarios</span></span>
+      </button>
+      <button class="acceso" type="button" data-ec="preguntas" data-id="preguntas" data-destino="preguntas">
+        <svg class="acceso__icono" viewBox="-27 -27 54 54" aria-hidden="true">
+          <circle r="27" fill="#DC393C"/>
+          <path d="M-20.3 -7.39 A21.6 21.6 0 0 1 -11.45 -18.32" fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="2.33" stroke-linecap="round"/>
+          <g transform="scale(1.4) translate(-12 -12)"><circle cx="12" cy="12" r="9" fill="none" stroke="#FFFFFF" stroke-width="2"/><path d="M9.5 9.5 A2.5 2.5 0 1 1 13.2 11.7 C12.5 12.1 12 12.7 12 13.6 V14" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="17.3" r="1.3" fill="#FFFFFF"/></g>
+        </svg>
+        <span class="acceso__textos"><span class="acceso__titulo">Preguntas</span><span class="acceso__sub">Recomendaciones</span></span>
+      </button>
+    </div>
+  </main>
+
+  <!-- Barra inferior del kit, con los círculos de la pantalla final. «Punto espiritual» por decisión del CLAUDE.md -->
+  <nav class="nav-inferior barra" aria-label="Navegación principal">
+    <button class="nav-item" type="button" data-ec="nav-inicio" data-destino="inicio" aria-current="page"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-inicio"/></svg></span>Inicio</button>
+    <button class="nav-item" type="button" data-ec="nav-mapa" data-destino="mapa"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-mapa"/></svg></span>Mapa</button>
+    <button class="nav-item" type="button" data-ec="nav-espiritual" data-destino="espiritual"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-rosario"/></svg></span>Punto espiritual</button>
+    <button class="nav-item" type="button" data-ec="nav-ayuda" data-destino="ayuda"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-ayuda"/></svg></span>Ayuda</button>
+    <button class="nav-item" type="button" data-ec="nav-ajustes" data-destino="ajustes"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-configuracion"/></svg></span>Ajustes</button>
+  </nav>
+
+  <script src="js/botones.js"></script>
+  <script src="js/navegacion.js"></script>
+  <script src="js/inicio.js"></script>
+</body>
+</html>

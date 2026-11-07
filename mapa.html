@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#E8EEE4">
+  <title>Mapa · En Camino</title>
+  <link rel="stylesheet" href="https://use.typekit.net/asn0sci.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/botones.css">
+  <link rel="stylesheet" href="css/entrada.css">
+  <link rel="stylesheet" href="css/inicio.css">
+  <link rel="stylesheet" href="css/mapa.css">
+</head>
+<body class="fondo-mapa">
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="g-inicio" viewBox="0 0 24 24"><path d="M4 10.5 L12 4 L20 10.5 M6 9 V20 H18 V9 M10 20 V16 A2 2 0 0 1 14 16 V20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-mapa" viewBox="0 0 24 24"><path d="M3.5 6.5 L9 4.5 L15 6.5 L20.5 4.5 V17.5 L15 19.5 L9 17.5 L3.5 19.5 Z M9 4.5 V17.5 M15 6.5 V19.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-rosario" viewBox="0 0 24 24"><circle cx="12" cy="8.8" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><g fill="currentColor"><circle cx="12" cy="3.8" r="1.25"/><circle cx="15.54" cy="5.26" r="1.25"/><circle cx="17" cy="8.8" r="1.25"/><circle cx="15.54" cy="12.34" r="1.25"/><circle cx="8.46" cy="12.34" r="1.25"/><circle cx="7" cy="8.8" r="1.25"/><circle cx="8.46" cy="5.26" r="1.25"/></g><path d="M12 13.8 V21 M9.8 18.2 H14.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="g-ayuda" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5 V16.5 M7.5 12 H16.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="g-configuracion" viewBox="0 0 24 24"><path d="M12 3 L14.68 5.53 L18.36 5.64 L18.47 9.32 L21 12 L18.47 14.68 L18.36 18.36 L14.68 18.47 L12 21 L9.32 18.47 L5.64 18.36 L5.53 14.68 L3 12 L5.53 9.32 L5.64 5.64 L9.32 5.53 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="g-atras" viewBox="0 0 24 24"><path d="M15 4.5 L8 12 L15 19.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-ubicacion" viewBox="0 0 24 24"><path d="M12 21 C12 21 5.5 14.8 5.5 9.75 A6.5 6.5 0 0 1 18.5 9.75 C18.5 14.8 12 21 12 21 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="9.75" r="2.2" fill="currentColor"/></symbol>
+    <symbol id="g-mas" viewBox="0 0 24 24"><path d="M12 5 V19 M5 12 H19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="g-menos" viewBox="0 0 24 24"><path d="M5 12 H19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="g-comida" viewBox="0 0 24 24"><path d="M7 4 V9 M9.5 4 V20 M12 4 V9 M7 9 A2.5 2.5 0 0 0 12 9 M17 20 V4 C18.9 5.3 19.4 9 18.8 13 H17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-nube" viewBox="0 0 24 24"><path d="M7.2 18.5 H9.5 M14.5 18.5 H16.8 A3.7 3.7 0 0 0 17.3 11.1 A5.5 5.5 0 0 0 6.7 11.8 A3.4 3.4 0 0 0 7.2 18.5 M12 11.5 V19.5 M9.6 17.1 L12 19.5 L14.4 17.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <!-- Persona de los marcadores (Vos y Tu grupo), dibujada como en la pantalla final -->
+    <symbol id="g-persona" viewBox="0 0 24 24"><circle cx="12" cy="6.5" r="3.6" fill="currentColor"/><path d="M5 21.5 C5 14.5 8 11.5 12 11.5 C16 11.5 19 14.5 19 21.5 Z" fill="currentColor"/></symbol>
+  </svg>
+
+  <main class="mapa">
+    <!-- Mapa ilustrado de la pantalla final 09 (coordenadas en px de la referencia, 780 × 1688) -->
+    <div class="mapa__lienzo" id="mapa-lienzo" aria-hidden="true">
+      <svg viewBox="0 0 780 1688" preserveAspectRatio="xMidYMid slice">
+        <rect x="-400" y="-400" width="1580" height="2488" fill="#E8EEE4"/>
+        <ellipse cx="110" cy="760" rx="330" ry="430" fill="#DCE7D6"/>
+        <ellipse cx="690" cy="1150" rx="250" ry="300" fill="#DCE7D6"/>
+        <path d="M-60 400 L420 1800" fill="none" stroke="#D6DFEA" stroke-width="12"/>
+        <path d="M-400 680 L1180 270 M-400 960 L1180 1180 M800 -300 L300 1900" fill="none" stroke="#FFFFFF" stroke-width="14"/>
+
+        <g fill="#FFFFFF" stroke="#9A9AAE" stroke-width="5">
+          <circle cx="592" cy="-4" r="8"/><circle cx="555" cy="52" r="8"/>
+          <circle cx="345" cy="618" r="8"/><circle cx="351" cy="675" r="8"/><circle cx="361" cy="731" r="8"/>
+        </g>
+        <g fill="#009866">
+          <circle cx="385" cy="845" r="11"/><circle cx="397" cy="901" r="11"/><circle cx="409" cy="959" r="11"/><circle cx="417" cy="1015" r="11"/>
+          <circle cx="421" cy="1071" r="11"/><circle cx="421" cy="1127" r="11"/><circle cx="413" cy="1183" r="11"/><circle cx="385" cy="1297" r="11"/>
+          <circle cx="361" cy="1353" r="11"/><circle cx="335" cy="1410" r="11"/><circle cx="303" cy="1466" r="11"/><circle cx="269" cy="1522" r="11"/>
+        </g>
+
+        <!-- Postas -->
+        <g transform="translate(522 104) scale(1.185)"><circle r="27" fill="#16884D"/></g>
+        <g transform="translate(343 563) scale(1.185)">
+          <circle r="27" fill="#16884D"/>
+          <path d="M-20.3 -7.39 A21.6 21.6 0 0 1 -11.45 -18.32" fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="2.33" stroke-linecap="round"/>
+          <g transform="scale(1.1) translate(-12 -12)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4 V9 M9.5 4 V20 M12 4 V9 M7 9 A2.5 2.5 0 0 0 12 9 M17 20 V4 C18.9 5.3 19.4 9 18.8 13 H17"/></g>
+        </g>
+        <g transform="translate(407 1220) scale(1.185)">
+          <circle r="27" fill="#E5353F"/>
+          <path d="M-20.3 -7.39 A21.6 21.6 0 0 1 -11.45 -18.32" fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="2.33" stroke-linecap="round"/>
+          <g transform="scale(1.1) translate(-12 -12)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7.5 H19 A1.5 1.5 0 0 1 20.5 9 V18.5 A1.5 1.5 0 0 1 19 20 H5 A1.5 1.5 0 0 1 3.5 18.5 V9 A1.5 1.5 0 0 1 5 7.5 Z M8.5 7.5 V5.5 A1.5 1.5 0 0 1 10 4 H14 A1.5 1.5 0 0 1 15.5 5.5 V7.5 M12 10.5 V17 M8.75 13.75 H15.25"/></g>
+        </g>
+        <g font-family="Montserrat, sans-serif">
+          <g transform="translate(570 70)"><rect width="206" height="64" rx="10" fill="#FFFFFF"/><text x="14" y="30" font-size="22" font-weight="700" fill="#141414">Posta 4 · km 27</text></g>
+          <g transform="translate(390 530)"><rect width="208" height="68" rx="10" fill="#FFFFFF"/><text x="16" y="30" font-size="22" font-weight="700" fill="#141414">Posta 3 · km 18</text><text x="16" y="56" font-size="19" fill="#4B4D5C">Comida · próxima</text></g>
+          <g transform="translate(454 1187)"><rect width="224" height="66" rx="10" fill="#FFFFFF"/><text x="16" y="30" font-size="22" font-weight="700" fill="#141414">Posta 2 · km 12</text><text x="16" y="54" font-size="19" fill="#4B4D5C">Asistencia · pasada</text></g>
+        </g>
+
+        <!-- Tu grupo -->
+        <g font-family="Montserrat, sans-serif" font-weight="700" font-size="17" text-anchor="middle">
+          <g transform="translate(404 683)"><circle r="30" fill="#16884D" fill-opacity=".18"/><use href="#g-persona" x="-17" y="-20" width="34" height="34" color="#16884D"/><circle cy="-12" r="5.5" fill="#FFFFFF"/><rect x="14" y="-54" width="34" height="28" rx="14" fill="#FFFFFF"/><text x="31" y="-34" fill="#16884D">S</text></g>
+          <g transform="translate(328 895)"><circle r="30" fill="#16884D" fill-opacity=".18"/><use href="#g-persona" x="-17" y="-20" width="34" height="34" color="#16884D"/><circle cy="-12" r="5.5" fill="#FFFFFF"/><rect x="-50" y="-17" width="30" height="28" rx="14" fill="#FFFFFF"/><text x="-35" y="3" fill="#16884D">J</text></g>
+          <g transform="translate(480 1075)"><circle r="30" fill="#16884D" fill-opacity=".18"/><use href="#g-persona" x="-17" y="-20" width="34" height="34" color="#16884D"/><circle cy="-12" r="5.5" fill="#FFFFFF"/><rect x="14" y="-54" width="34" height="28" rx="14" fill="#FFFFFF"/><text x="31" y="-34" fill="#16884D">L</text></g>
+        </g>
+        <!-- Vos -->
+        <g transform="translate(378 810)">
+          <circle r="64" fill="#FCCB68" fill-opacity=".35"/>
+          <circle r="40" fill="#FCCB68" fill-opacity=".55" stroke="#FCCB68" stroke-width="4"/>
+          <use href="#g-persona" x="-24" y="-30" width="48" height="48" color="#323366"/>
+          <circle cy="-19" r="7" fill="#FFFFFF"/>
+          <rect x="48" y="-66" width="78" height="40" rx="20" fill="#323366"/>
+          <text x="87" y="-38" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="700" font-size="21" fill="#FFFFFF">Vos</text>
+        </g>
+      </svg>
+    </div>
+
+    <section class="recorrido" aria-labelledby="recorrido-titulo">
+      <div class="recorrido__cabecera">
+        <button class="btn-icono btn-icono--plano recorrido__volver" type="button" aria-label="Volver" data-ec="volver-mapa" data-id="volver-mapa"><svg class="ico" aria-hidden="true"><use href="#g-atras"/></svg></button>
+        <h1 class="recorrido__titulo" id="recorrido-titulo">Recorrido de ida</h1>
+        <span class="recorrido__etapa">Durante</span>
+      </div>
+      <div class="recorrido__dato">
+        <p class="recorrido__km"><span class="recorrido__numero">14,2</span> km de 30</p>
+        <button class="btn btn--primario recorrido__donde" type="button" data-ec="donde-estoy" data-id="donde-estoy"><span>Dónde estoy</span></button>
+      </div>
+      <div class="recorrido__cuentas" id="recorrido-cuentas" data-km="14.2" data-total="30" aria-hidden="true"></div>
+      <div class="recorrido__estado">
+        <p class="recorrido__faltan">Faltan <strong>15,8 km</strong> · unas 3 h 57 min</p>
+        <p class="recorrido__guardado" id="recorrido-guardado"><span class="icono-seccion icono-seccion--celeste icono-seccion--mini"><svg class="ico" aria-hidden="true"><use href="#g-nube"/></svg></span><span id="recorrido-guardado-texto">Guardado sin señal</span></p>
+      </div>
+      <ul class="leyenda">
+        <li><svg class="ico leyenda__persona" aria-hidden="true"><use href="#g-persona"/></svg>Vos</li>
+        <li><svg class="ico leyenda__persona leyenda__persona--grupo" aria-hidden="true"><use href="#g-persona"/></svg>Tu grupo</li>
+        <li><span class="leyenda__punto leyenda__punto--hecho"></span>Ya caminaste</li>
+        <li><span class="leyenda__punto"></span>Falta</li>
+      </ul>
+    </section>
+
+    <div class="mapa__controles">
+      <button class="fab mapa__fab mapa__fab--ubicacion" type="button" aria-label="Mi ubicación" data-ec="mi-ubicacion" data-id="mi-ubicacion"><svg class="ico" aria-hidden="true"><use href="#g-ubicacion"/></svg></button>
+      <button class="fab mapa__fab" type="button" aria-label="Acercar" data-ec="acercar" data-id="acercar"><svg class="ico" aria-hidden="true"><use href="#g-mas"/></svg></button>
+      <button class="fab mapa__fab" type="button" aria-label="Alejar" data-ec="alejar" data-id="alejar"><svg class="ico" aria-hidden="true"><use href="#g-menos"/></svg></button>
+    </div>
+
+    <section class="proxima" aria-label="Próxima posta">
+      <span class="icono-seccion"><svg class="ico" aria-hidden="true"><use href="#g-comida"/></svg></span>
+      <p class="proxima__textos"><span class="proxima__etiqueta">Próxima posta</span><span class="proxima__nombre">Comida · Posta 3</span></p>
+      <p class="proxima__distancia">a 3,8 km</p>
+    </section>
+  </main>
+
+  <nav class="nav-inferior barra" aria-label="Navegación principal" style="--nav-activo: #16884D">
+    <button class="nav-item" type="button" data-ec="nav-inicio" data-destino="inicio"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-inicio"/></svg></span>Inicio</button>
+    <button class="nav-item" type="button" data-ec="nav-mapa" data-destino="mapa" aria-current="page"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-mapa"/></svg></span>Mapa</button>
+    <button class="nav-item" type="button" data-ec="nav-espiritual" data-destino="espiritual"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-rosario"/></svg></span>Punto espiritual</button>
+    <button class="nav-item" type="button" data-ec="nav-ayuda" data-destino="ayuda"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-ayuda"/></svg></span>Ayuda</button>
+    <button class="nav-item" type="button" data-ec="nav-ajustes" data-destino="ajustes"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-configuracion"/></svg></span>Ajustes</button>
+  </nav>
+
+  <script src="js/botones.js"></script>
+  <script src="js/navegacion.js"></script>
+  <script src="js/mapa.js"></script>
+</body>
+</html>

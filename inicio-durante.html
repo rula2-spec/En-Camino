@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F7F7">
+  <title>Inicio · Durante · En Camino</title>
+  <link rel="stylesheet" href="https://use.typekit.net/asn0sci.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/botones.css">
+  <link rel="stylesheet" href="css/entrada.css">
+  <link rel="stylesheet" href="css/inicio.css">
+</head>
+<body>
+  <!-- Glifos del kit que usa esta pantalla. Ida, Vuelta, Reencuentro, Vela, Maletín y Ayuda (cruz)
+       no están en el kit: salen de las pantallas finales -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="g-inicio" viewBox="0 0 24 24"><path d="M4 10.5 L12 4 L20 10.5 M6 9 V20 H18 V9 M10 20 V16 A2 2 0 0 1 14 16 V20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-mapa" viewBox="0 0 24 24"><path d="M3.5 6.5 L9 4.5 L15 6.5 L20.5 4.5 V17.5 L15 19.5 L9 17.5 L3.5 19.5 Z M9 4.5 V17.5 M15 6.5 V19.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-rosario" viewBox="0 0 24 24"><circle cx="12" cy="8.8" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><g fill="currentColor"><circle cx="12" cy="3.8" r="1.25"/><circle cx="15.54" cy="5.26" r="1.25"/><circle cx="17" cy="8.8" r="1.25"/><circle cx="15.54" cy="12.34" r="1.25"/><circle cx="8.46" cy="12.34" r="1.25"/><circle cx="7" cy="8.8" r="1.25"/><circle cx="8.46" cy="5.26" r="1.25"/></g><path d="M12 13.8 V21 M9.8 18.2 H14.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="g-ayuda" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5 V16.5 M7.5 12 H16.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="g-configuracion" viewBox="0 0 24 24"><path d="M12 3 L14.68 5.53 L18.36 5.64 L18.47 9.32 L21 12 L18.47 14.68 L18.36 18.36 L14.68 18.47 L12 21 L9.32 18.47 L5.64 18.36 L5.53 14.68 L3 12 L5.53 9.32 L5.64 5.64 L9.32 5.53 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="g-antes" viewBox="0 0 24 24"><rect x="5.5" y="8.5" width="13" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 8.5 V7 A3 3 0 0 1 15 7 V8.5 M8.5 14.2 H15.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="14.2" r="1.6" fill="currentColor"/></symbol>
+    <symbol id="g-durante" viewBox="0 0 24 24"><path d="M7 3.5 H11.5 V12.5 L17.6 14.2 C18.8 14.6 19.5 15.6 19.5 16.8 V19.5 H7 Z M7 16.8 H19.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11.5" cy="8.5" r="1.4" fill="currentColor"/></symbol>
+    <symbol id="g-despues" viewBox="0 0 24 24"><path d="M5.5 11.5 L12 7 L18.5 11.5 V20.5 H5.5 Z M10.2 20.5 V17 A1.8 1.8 0 0 1 13.8 17 V20.5 M12 2.8 V7 M10.3 4.5 H13.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12.6" r="1.3" fill="currentColor"/></symbol>
+    <symbol id="g-avisos" viewBox="0 0 24 24"><path d="M12 4 C8.6 4 6.9 6.8 6.9 10 V14 L5.2 16.6 H18.8 L17.1 14 V10 C17.1 6.8 15.4 4 12 4 Z M10 19.3 A2.2 2.2 0 0 0 14 19.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-chevron-derecha" viewBox="0 0 24 24"><path d="M9.5 5.5 L16 12 L9.5 18.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-comida" viewBox="0 0 24 24"><path d="M7 4 V9 M9.5 4 V20 M12 4 V9 M7 9 A2.5 2.5 0 0 0 12 9 M17 20 V4 C18.9 5.3 19.4 9 18.8 13 H17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-hidratacion" viewBox="0 0 24 24"><path d="M12 4.2 C12 4.2 5.6 10.8 5.6 14.6 A6.4 6.4 0 0 0 18.4 14.6 C18.4 10.8 12 4.2 12 4.2 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.2 15 A2.9 2.9 0 0 0 11.6 17.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="g-banos" viewBox="0 0 24 24"><circle cx="8" cy="5.2" r="2" fill="currentColor"/><circle cx="16" cy="5.2" r="2" fill="currentColor"/><path d="M6.2 15 V10.2 A1.2 1.2 0 0 1 7.4 9 H8.6 A1.2 1.2 0 0 1 9.8 10.2 V15 M7.3 15 V20 M8.7 15 V20 M16 9 L19 15.4 H13 Z M15.2 15.4 V20 M16.8 15.4 V20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-ubicacion" viewBox="0 0 24 24"><path d="M12 21 C12 21 5.5 14.8 5.5 9.75 A6.5 6.5 0 0 1 18.5 9.75 C18.5 14.8 12 21 12 21 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="9.75" r="2.2" fill="currentColor"/></symbol>
+    <symbol id="g-equipo" viewBox="0 0 24 24"><circle cx="12" cy="8" r="2.6" fill="currentColor"/><path d="M7.5 19.5 C7.5 15.6 9.5 13.6 12 13.6 C14.5 13.6 16.5 15.6 16.5 19.5 M2.8 18 C2.8 15.6 4 14.6 5.5 14.6 M21.2 18 C21.2 15.6 20 14.6 18.5 14.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="5.5" cy="10" r="1.9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="18.5" cy="10" r="1.9" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="g-reencuentro" viewBox="0 0 24 24"><path d="M12 21 C12 21 5.5 14.8 5.5 9.75 A6.5 6.5 0 0 1 18.5 9.75 C18.5 14.8 12 21 12 21 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 6.8 L14.6 11.6 H9.4 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="g-ida" viewBox="0 0 24 24"><path d="M3.5 12 H14.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 3.2"/><path d="M14 7.5 L18.5 12 L14 16.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-vuelta" viewBox="0 0 24 24"><path d="M17 5 H9 A5 5 0 0 0 9 15 H14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 3.2"/><path d="M12 11.5 L15.5 15 L12 18.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-maletin" viewBox="0 0 24 24"><path d="M5 7.5 H19 A1.5 1.5 0 0 1 20.5 9 V18.5 A1.5 1.5 0 0 1 19 20 H5 A1.5 1.5 0 0 1 3.5 18.5 V9 A1.5 1.5 0 0 1 5 7.5 Z M8.5 7.5 V5.5 A1.5 1.5 0 0 1 10 4 H14 A1.5 1.5 0 0 1 15.5 5.5 V7.5 M12 10.5 V17 M8.75 13.75 H15.25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-emergencia" viewBox="0 0 24 24"><path d="M12 4 L20.5 19 H3.5 Z M12 9.5 V13.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="16.2" r="1.45" fill="currentColor"/></symbol>
+    <symbol id="g-chat" viewBox="0 0 24 24"><path d="M5 4.5 H19 A1.5 1.5 0 0 1 20.5 6 V15.5 A1.5 1.5 0 0 1 19 17 H10 L5.5 20.5 V17 H5 A1.5 1.5 0 0 1 3.5 15.5 V6 A1.5 1.5 0 0 1 5 4.5 Z M8 9 H16 M8 12.5 H13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-vela" viewBox="0 0 24 24"><path d="M9 11 H15 V20.5 H9 Z M7 20.5 H17 M12 11 V9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 3.5 C13.6 5.3 13.8 6.9 12 8.2 C10.2 6.9 10.4 5.3 12 3.5 Z" fill="currentColor"/></symbol>
+    <symbol id="g-cantos" viewBox="0 0 24 24"><path d="M9 17 V6.5 L19 4.5 V15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="7" cy="17" rx="2.4" ry="2" fill="currentColor"/><ellipse cx="17" cy="15" rx="2.4" ry="2" fill="currentColor"/></symbol>
+    <symbol id="g-sin-senal" viewBox="0 0 24 24"><path d="M4.5 10.3 A11 11 0 0 1 19.5 10.3 M7.6 13.6 A6.6 6.6 0 0 1 16.4 13.6 M4.5 4 L19.5 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="17.4" r="1.8" fill="currentColor"/></symbol>
+  </svg>
+
+  <!-- Cabecera compacta: aparece fija arriba cuando la cabecera grande sale de la pantalla (pantalla final 08) -->
+  <div class="compacta" id="cabecera-compacta" aria-hidden="true">
+    <img class="compacta__isotipo" src="imagenes/isotipo.png" alt="" width="24" height="29">
+    <p class="compacta__titulo">Durante el camino</p>
+    <p class="compacta__km"><span class="compacta__punto"></span>14,2 / 30 km</p>
+  </div>
+
+  <main class="inicio">
+    <header class="inicio__cabecera" id="cabecera-inicio">
+      <img class="inicio__isotipo" src="imagenes/isotipo.png" alt="" width="30" height="36">
+      <div class="inicio__saludo">
+        <p class="inicio__buen-dia">Buen camino</p>
+        <h1 class="inicio__nombre">Peregrino</h1>
+      </div>
+      <p class="inicio__clima"><span class="solo-lector">Temperatura: </span>24°</p>
+      <button class="inicio__avisos" type="button" aria-label="Avisos: 2 nuevos" data-ec="avisos" data-id="avisos" data-destino="avisos">
+        <svg class="ico" aria-hidden="true"><use href="#g-avisos"/></svg>
+        <span class="inicio__badge" aria-hidden="true">2</span>
+      </button>
+    </header>
+
+    <nav class="segmentado etapas" aria-label="Etapa de la peregrinación">
+      <button class="segmentado__opcion etapas__opcion" type="button" data-ec="etapa-antes" data-id="etapa-antes" data-destino="inicio-antes"><span class="etapas__icono"><svg class="ico" aria-hidden="true"><use href="#g-antes"/></svg></span>Antes</button>
+      <button class="segmentado__opcion etapas__opcion" type="button" aria-current="page" data-ec="etapa-durante" data-id="etapa-durante" data-destino="inicio-durante"><span class="etapas__icono"><svg class="ico" aria-hidden="true"><use href="#g-durante"/></svg></span>Durante</button>
+      <button class="segmentado__opcion etapas__opcion" type="button" data-ec="etapa-despues" data-id="etapa-despues" data-destino="inicio-despues"><span class="etapas__icono"><svg class="ico" aria-hidden="true"><use href="#g-despues"/></svg></span>Después</button>
+    </nav>
+
+    <section class="avance" aria-label="Tu avance">
+      <p class="avance__km"><span class="avance__numero">14,2</span> km de 30</p>
+      <div class="avance__cuentas" id="avance-cuentas" data-km="14.2" data-total="30" aria-hidden="true"></div>
+      <p class="avance__faltan">Faltan 15,8 km · unas 3 h 57 min</p>
+      <div class="avance__posta">
+        <span class="icono-seccion icono-seccion--chico"><svg class="ico" aria-hidden="true"><use href="#g-comida"/></svg></span>
+        <p><span class="avance__posta-etiqueta">Próxima posta</span><span class="avance__posta-dato">Comida · a 3,8 km</span></p>
+      </div>
+      <div class="avance__pie">
+        <button class="btn btn--amarillo avance__boton" type="button" data-ec="ver-recorrido" data-id="ver-recorrido" data-destino="recorrido"><span>Ver recorrido</span><svg class="ico" aria-hidden="true"><use href="#g-chevron-derecha"/></svg></button>
+        <p class="avance__senal"><span class="icono-seccion icono-seccion--celeste icono-seccion--mini"><svg class="ico" aria-hidden="true"><use href="#g-sin-senal"/></svg></span>Sin señal: todo guardado</p>
+      </div>
+    </section>
+
+    <h2 class="inicio__seccion">¿Qué necesitás?</h2>
+    <ol class="linea">
+      <li>
+        <span class="icono-seccion"><svg class="ico" aria-hidden="true"><use href="#g-mapa"/></svg></span>
+        <section class="bloque" aria-labelledby="bloque-orientarme">
+          <button class="bloque__cabecera" type="button" data-ec="orientarme" data-id="orientarme" data-destino="orientarme">
+            <span class="bloque__textos"><span class="bloque__titulo" id="bloque-orientarme">Orientarme</span><span class="bloque__sub">Dónde estoy y cuánto falta</span></span>
+            <svg class="ico bloque__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
+          </button>
+          <div class="acciones">
+            <button class="accion" type="button" data-ec="mi-ubicacion" data-id="mi-ubicacion" data-destino="mi-ubicacion"><span class="icono-seccion"><svg class="ico" aria-hidden="true"><use href="#g-ubicacion"/></svg></span>Mi ubicación</button>
+            <button class="accion" type="button" data-ec="ida" data-id="ida" data-destino="recorrido-ida"><span class="icono-seccion"><svg class="ico" aria-hidden="true"><use href="#g-ida"/></svg></span>Ida</button>
+            <button class="accion" type="button" data-ec="vuelta" data-id="vuelta" data-destino="recorrido-vuelta"><span class="icono-seccion"><svg class="ico" aria-hidden="true"><use href="#g-vuelta"/></svg></span>Vuelta</button>
+          </div>
+        </section>
+      </li>
+      <li>
+        <span class="icono-seccion"><svg class="ico" aria-hidden="true"><use href="#g-hidratacion"/></svg></span>
+        <section class="bloque" aria-labelledby="bloque-servicios">
+          <button class="bloque__cabecera" type="button" data-ec="servicios" data-id="servicios" data-destino="servicios">
+            <span class="bloque__textos"><span class="bloque__titulo" id="bloque-servicios">Servicios</span><span class="bloque__sub">Agua, comida, baños y más</span></span>
+            <svg class="ico bloque__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
+          </button>
+          <div class="acciones">
+            <button class="accion" type="button" data-ec="hidratacion" data-id="hidratacion" data-destino="servicios-hidratacion"><span class="icono-seccion"><svg class="ico" aria-hidden="true"><use href="#g-hidratacion"/></svg></span>Hidratación</button>
+            <button class="accion" type="button" data-ec="comida" data-id="comida" data-destino="servicios-comida"><span class="icono-seccion"><svg class="ico" aria-hidden="true"><use href="#g-comida"/></svg></span>Comida</button>
+            <button class="accion" type="button" data-ec="banos" data-id="banos" data-destino="servicios-banos"><span class="icono-seccion"><svg class="ico" aria-hidden="true"><use href="#g-banos"/></svg></span>Baños</button>
+            <button class="accion" type="button" data-ec="mi-ubicacion" data-id="mi-ubicacion-servicios" data-destino="mi-ubicacion"><span class="icono-seccion"><svg class="ico" aria-hidden="true"><use href="#g-ubicacion"/></svg></span>Mi ubicación</button>
+            <button class="accion" type="button" data-ec="mi-equipo" data-id="mi-equipo" data-destino="mi-equipo"><span class="icono-seccion"><svg class="ico" aria-hidden="true"><use href="#g-equipo"/></svg></span>Mi equipo</button>
+            <button class="accion" type="button" data-ec="reencuentro" data-id="reencuentro" data-destino="reencuentro"><span class="icono-seccion icono-seccion--celeste"><svg class="ico" aria-hidden="true"><use href="#g-reencuentro"/></svg></span>Reencuentro</button>
+          </div>
+        </section>
+      </li>
+      <li>
+        <span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-ayuda"/></svg></span>
+        <section class="bloque bloque--ayuda" aria-labelledby="bloque-ayuda">
+          <button class="bloque__cabecera" type="button" data-ec="ayuda" data-id="ayuda" data-destino="ayuda">
+            <span class="bloque__textos"><span class="bloque__titulo" id="bloque-ayuda">Ayuda</span><span class="bloque__sub">Si necesitás ayuda, tocá acá</span></span>
+            <svg class="ico bloque__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
+          </button>
+          <div class="acciones">
+            <button class="accion" type="button" data-ec="asistencia" data-id="asistencia" data-destino="asistencia"><span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-maletin"/></svg></span>Asistencia</button>
+            <button class="accion" type="button" data-ec="emergencia" data-id="emergencia" data-destino="emergencia"><span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-emergencia"/></svg></span>Emergencia</button>
+            <button class="accion" type="button" data-ec="chat" data-id="chat" data-destino="chat"><span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-chat"/></svg></span>Chat</button>
+          </div>
+        </section>
+      </li>
+      <li>
+        <span class="icono-seccion icono-seccion--cobalto"><svg class="ico" aria-hidden="true"><use href="#g-rosario"/></svg></span>
+        <section class="bloque" aria-labelledby="bloque-fe">
+          <button class="bloque__cabecera" type="button" data-ec="fe-y-comunidad" data-id="fe-y-comunidad" data-destino="fe-y-comunidad">
+            <span class="bloque__textos"><span class="bloque__titulo" id="bloque-fe">Fe y comunidad</span><span class="bloque__sub">Rezo, cantos y mi grupo</span></span>
+            <svg class="ico bloque__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
+          </button>
+          <div class="acciones">
+            <button class="accion" type="button" data-ec="rosario" data-id="rosario" data-destino="rosario"><span class="icono-seccion icono-seccion--cobalto"><svg class="ico" aria-hidden="true"><use href="#g-rosario"/></svg></span>Rosario</button>
+            <button class="accion" type="button" data-ec="oraciones" data-id="oraciones" data-destino="oraciones"><span class="icono-seccion icono-seccion--cobalto"><svg class="ico" aria-hidden="true"><use href="#g-vela"/></svg></span>Oraciones</button>
+            <button class="accion" type="button" data-ec="cantos" data-id="cantos" data-destino="cancionero"><span class="icono-seccion icono-seccion--cobalto"><svg class="ico" aria-hidden="true"><use href="#g-cantos"/></svg></span>Cantos</button>
+          </div>
+        </section>
+      </li>
+    </ol>
+  </main>
+
+  <nav class="nav-inferior barra" aria-label="Navegación principal">
+    <button class="nav-item" type="button" data-ec="nav-inicio" data-destino="inicio-durante" aria-current="page"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-inicio"/></svg></span>Inicio</button>
+    <button class="nav-item" type="button" data-ec="nav-mapa" data-destino="mapa"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-mapa"/></svg></span>Mapa</button>
+    <button class="nav-item" type="button" data-ec="nav-espiritual" data-destino="espiritual"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-rosario"/></svg></span>Punto espiritual</button>
+    <button class="nav-item" type="button" data-ec="nav-ayuda" data-destino="ayuda"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-ayuda"/></svg></span>Ayuda</button>
+    <button class="nav-item" type="button" data-ec="nav-ajustes" data-destino="ajustes"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-configuracion"/></svg></span>Ajustes</button>
+  </nav>
+
+  <script src="js/botones.js"></script>
+  <script src="js/navegacion.js"></script>
+  <script src="js/inicio-durante.js"></script>
+</body>
+</html>
