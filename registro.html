@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F7F7">
+  <title>Crear cuenta · En Camino</title>
+  <link rel="stylesheet" href="https://use.typekit.net/asn0sci.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/botones.css">
+  <link rel="stylesheet" href="css/entrada.css">
+</head>
+<body>
+  <!-- Glifos del sprite del kit que usa esta pantalla -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="g-atras" viewBox="0 0 24 24"><path d="M15 4.5 L8 12 L15 19.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-perfil" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 20 C5.5 15.5 8.5 13.5 12 13.5 C15.5 13.5 18.5 15.5 19.5 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <main class="formulario registro">
+    <header class="cabecera">
+      <button class="btn-icono btn-icono--plano cabecera__volver" type="button" aria-label="Volver" data-ec="atras" data-id="atras" data-destino="bienvenida">
+        <svg class="ico" aria-hidden="true"><use href="#g-atras"/></svg>
+      </button>
+      <div>
+        <h1 class="cabecera__titulo registro__titulo">Crear cuenta</h1>
+        <p class="cabecera__paso">Paso 1 de 2</p>
+      </div>
+    </header>
+
+    <div class="registro__avance" aria-hidden="true">
+      <span class="registro__cuenta registro__cuenta--llena"></span><span class="registro__cuenta registro__cuenta--llena"></span><span class="registro__cuenta registro__cuenta--llena"></span>
+      <span class="registro__cuenta registro__cuenta--llena"></span><span class="registro__cuenta registro__cuenta--llena"></span><span class="registro__cuenta registro__cuenta--llena"></span>
+      <span class="registro__cuenta"></span><span class="registro__cuenta"></span><span class="registro__cuenta"></span>
+      <span class="registro__cuenta"></span><span class="registro__cuenta"></span><span class="registro__cuenta"></span>
+    </div>
+
+    <form id="form-registro" class="registro__form">
+      <div class="campo">
+        <label class="campo__etiqueta" for="registro-nombre">Nombre</label>
+        <div class="campo__caja">
+          <svg class="ico" aria-hidden="true"><use href="#g-perfil"/></svg>
+          <input class="campo__entrada" id="registro-nombre" name="nombre" type="text" autocomplete="given-name" placeholder="Martina" required>
+        </div>
+      </div>
+
+      <div class="grilla2 registro__fila">
+        <div class="campo">
+          <label class="campo__etiqueta" for="registro-edad">Edad</label>
+          <div class="campo__caja">
+            <input class="campo__entrada" id="registro-edad" name="edad" type="number" inputmode="numeric" min="1" max="120" placeholder="24" required>
+          </div>
+        </div>
+        <div class="campo">
+          <label class="campo__etiqueta" for="registro-salida">Salís desde</label>
+          <div class="campo__caja">
+            <input class="campo__entrada" id="registro-salida" name="salida" type="text" autocomplete="address-level2" placeholder="Córdoba" required>
+          </div>
+        </div>
+      </div>
+
+      <fieldset class="registro__grupo">
+        <legend class="campo__etiqueta">¿Participaste antes de la peregrinación?</legend>
+        <div class="fila-chips">
+          <button class="chip chip--general" type="button" data-ec="alternar" data-grupo="participacion" data-unico aria-pressed="false" data-id="primera-vez"><span>Primera vez</span></button>
+          <button class="chip chip--general" type="button" data-ec="alternar" data-grupo="participacion" data-unico aria-pressed="false" data-id="2-a-4-veces"><span>2 a 4 veces</span></button>
+          <button class="chip chip--general" type="button" data-ec="alternar" data-grupo="participacion" data-unico aria-pressed="false" data-id="siempre"><span>Siempre</span></button>
+        </div>
+      </fieldset>
+
+      <fieldset class="registro__grupo">
+        <legend class="campo__etiqueta">¿Cómo vas?</legend>
+        <div class="fila-chips">
+          <button class="chip chip--general" type="button" data-ec="alternar" data-grupo="transporte" data-unico aria-pressed="false" data-id="a-pie"><span>A pie</span></button>
+          <button class="chip chip--general" type="button" data-ec="alternar" data-grupo="transporte" data-unico aria-pressed="false" data-id="en-bicicleta"><span>En bicicleta</span></button>
+          <button class="chip chip--general" type="button" data-ec="alternar" data-grupo="transporte" data-unico aria-pressed="false" data-id="a-caballo"><span>A caballo</span></button>
+        </div>
+      </fieldset>
+
+      <section class="tarjeta-grupo" aria-labelledby="grupo-titulo">
+        <div class="tarjeta-grupo__cabecera">
+          <!-- Ícono «Equipo» del kit, en verde como en la pantalla final -->
+          <svg class="tarjeta-grupo__icono" viewBox="-27 -27 54 54" aria-hidden="true">
+            <circle r="27" fill="#16884D"/>
+            <path d="M-20.3 -7.39 A21.6 21.6 0 0 1 -11.45 -18.32" fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="2.33" stroke-linecap="round"/>
+            <g transform="scale(1.497) translate(-12 -12)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="2.6" fill="#FFFFFF" stroke="none"/>
+              <path d="M7.5 19.5 C7.5 15.6 9.5 13.6 12 13.6 C14.5 13.6 16.5 15.6 16.5 19.5"/>
+              <circle cx="5.5" cy="10" r="1.9"/><path d="M2.8 18 C2.8 15.6 4 14.6 5.5 14.6"/>
+              <circle cx="18.5" cy="10" r="1.9"/><path d="M21.2 18 C21.2 15.6 20 14.6 18.5 14.6"/>
+            </g>
+          </svg>
+          <div>
+            <h2 class="tarjeta-grupo__titulo" id="grupo-titulo">Sumate a un grupo</h2>
+            <p class="tarjeta-grupo__sub">Para ver a tu equipo en el mapa</p>
+          </div>
+        </div>
+        <div class="tarjeta-grupo__fila">
+          <label class="solo-lector" for="registro-codigo">Código de grupo</label>
+          <div class="campo__caja campo__caja--gris">
+            <input class="campo__entrada" id="registro-codigo" name="codigo" type="text" autocapitalize="characters" spellcheck="false" placeholder="Código · ej. LOURDES-24">
+          </div>
+          <button class="btn btn--servicio" type="button" data-ec="unirme" data-id="unirme"><span>Unirme</span></button>
+        </div>
+      </section>
+
+      <label class="registro__acepto">
+        <input class="casilla" type="checkbox" name="acepto" required>
+        <span>Acepto términos y política de privacidad</span>
+      </label>
+
+      <div class="registro__continuar">
+        <button class="btn btn--primario btn--bloque" type="submit" data-ec="continuar" data-id="continuar"><span>Continuar</span></button>
+      </div>
+    </form>
+  </main>
+
+  <script src="js/botones.js"></script>
+  <script src="js/navegacion.js"></script>
+  <script src="js/registro.js"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#323366">
+  <meta name="theme-color" content="#F5EFE3">
   <title>En Camino</title>
   <link rel="stylesheet" href="https://use.typekit.net/asn0sci.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,32 +12,23 @@
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/entrada.css">
 </head>
-<body class="fondo-azul">
-  <main class="carga">
+<body class="fondo-papel">
+  <!-- Apertura: misma estructura que Carga para que el isotipo y el nombre no salten al cambiar de pantalla -->
+  <main class="carga apertura">
     <span class="carga__arco carga__arco--arriba" aria-hidden="true"></span>
     <span class="carga__arco carga__arco--abajo" aria-hidden="true"></span>
 
     <div class="carga__centro">
-      <div id="carga-progreso" class="carga__rosario" role="progressbar" aria-label="Preparando tu camino" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-        <svg viewBox="0 0 164 194" aria-hidden="true">
-          <g id="carga-cuentas"></g>
-          <text id="carga-porcentaje" class="carga__porcentaje" x="82" y="94" text-anchor="middle">0%</text>
-          <path class="carga__cruz" d="M82 156 V191 M72 168 H92"/>
-        </svg>
-      </div>
+      <img class="apertura__isotipo" src="imagenes/isotipo.png" alt="" width="162" height="194">
       <h1 class="carga__marca">En Camino</h1>
-      <p class="carga__lema">Peregrinación a Nuestra Señora de Lourdes</p>
-      <p class="carga__estado">Preparando tu camino…</p>
+      <p class="carga__lema apertura__reserva" aria-hidden="true">Peregrinación a Nuestra Señora de Lourdes</p>
+      <p class="carga__estado apertura__reserva" aria-hidden="true">Preparando tu camino…</p>
     </div>
 
-    <p class="carga__lugar">
-      <span class="carga__punto carga__punto--verde" aria-hidden="true"></span>
-      <span>Santuario de Alta Gracia · Córdoba</span>
-      <span class="carga__punto carga__punto--rojo" aria-hidden="true"></span>
-    </p>
+    <p class="carga__lugar apertura__reserva" aria-hidden="true"><span>Santuario de Alta Gracia · Córdoba</span></p>
   </main>
 
   <script src="js/navegacion.js"></script>
-  <script src="js/carga.js"></script>
+  <script src="js/apertura.js"></script>
 </body>
 </html>

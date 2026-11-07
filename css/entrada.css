@@ -1,12 +1,12 @@
 /* ==========================================================================
-   En Camino · Pantallas de entrada: Carga, Bienvenida e Ingreso
+   En Camino · Pantallas de entrada: Apertura, Carga, Bienvenida, Ingreso y Registro
    Base de 360 dp, fluida de 320 a 599 dp. Nada depende de un alto fijo.
    ========================================================================== */
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body { margin: 0; background: var(--ec-fondo-claro); color: var(--ec-negro); font-family: var(--ec-fuente); }
 body.fondo-azul { background: var(--ec-azul); }
-p, h1 { margin: 0; }
+p, h1, h2 { margin: 0; }
 
 /* ---------- Carga ---------- */
 .carga {
@@ -40,6 +40,15 @@ p, h1 { margin: 0; }
 .carga__punto--verde { background: var(--ec-verde); }
 .carga__punto--rojo  { background: var(--ec-rojo); }
 
+/* ---------- Apertura (usa la estructura de Carga) ---------- */
+body.fondo-papel { background: var(--ec-fondo-papel); }
+.apertura { color: var(--ec-negro); }
+.apertura .carga__arco { border-color: rgba(20, 20, 20, .14); }
+/* 162 × 194: el anillo del isotipo coincide con el contador de Carga */
+.apertura__isotipo { display: block; width: 162px; height: auto; margin-inline: auto; }
+/* Textos de Carga que no se ven: reservan el mismo lugar para que la marca no se mueva */
+.apertura__reserva { visibility: hidden; }
+
 /* ---------- Bienvenida ---------- */
 .bienvenida { display: flex; flex-direction: column; width: 100%; max-width: 599px; min-height: 100vh; min-height: 100dvh; margin-inline: auto; }
 .bienvenida__mapa { position: relative; flex: 1 1 260px; overflow: hidden; border-radius: 0 0 28px 28px; background: #E8EEE4; }
@@ -58,22 +67,25 @@ p, h1 { margin: 0; }
 .bienvenida__pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px; margin-top: 8px; font: 600 14px/1.3 var(--ec-fuente); color: var(--ec-azul); }
 .bienvenida__pie .btn { padding-inline: 2px; font-size: 14px; text-underline-offset: 3px; }
 
-/* ---------- Ingreso ---------- */
-.ingreso {
+/* ---------- Pantallas con formulario (Ingreso y Registro) ---------- */
+.formulario {
   --ec-linea: var(--ec-linea-social);
   display: flex; flex-direction: column;
   width: 100%; max-width: 599px; min-height: 100vh; min-height: 100dvh; margin-inline: auto;
   padding: 48px var(--ec-margen) 32px;
 }
-.ingreso__cabecera { display: flex; align-items: center; gap: 7px; margin-left: -4px; }
-.ingreso__volver { color: var(--ec-negro); }
-.ingreso__volver .ico { position: relative; }
+.formulario .btn--primario { min-height: 52px; }
+.cabecera { display: flex; align-items: center; gap: 7px; margin-left: -4px; }
+.cabecera__volver { flex: none; color: var(--ec-negro); }
+.cabecera__volver .ico { position: relative; }
 /* El círculo visible mide 40 dp; el área táctil sigue siendo de 48 dp */
-.ingreso__volver::before { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #E6E5EA; }
-.ingreso__volver:hover { background: none; }
-.ingreso__volver:active::before { background: var(--ec-azul-tinte); }
-.ingreso__seccion { font: 300 18px/1.2 "lemonde-sans", sans-serif; }
+.cabecera__volver::before { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #E6E5EA; }
+.cabecera__volver:hover { background: none; }
+.cabecera__volver:active::before { background: var(--ec-azul-tinte); }
+.cabecera__titulo { font: 300 18px/1.2 "lemonde-sans", sans-serif; }
+.cabecera__paso { margin-top: 2px; font: 400 13px/1.3 var(--ec-fuente); color: var(--ec-texto-secundario); }
 
+/* ---------- Ingreso ---------- */
 .ingreso__titulo { margin-top: 18px; font: 300 32px/1.15 "lemonde-sans", sans-serif; }
 .ingreso__bajada { margin-top: 4px; font: 400 14px/1.4 var(--ec-fuente); color: var(--ec-texto-secundario); }
 .ingreso__form { margin-top: 20px; }
@@ -91,11 +103,12 @@ p, h1 { margin: 0; }
 .campo__entrada::placeholder { color: var(--ec-texto-sugerido); opacity: 1; }
 .campo__accion { flex: none; margin-right: -12px; color: var(--ec-texto-secundario); }
 .campo__accion[aria-pressed="true"] { color: var(--ec-azul); }
+.campo__caja--gris { min-height: 44px; background: #F5F5F7; box-shadow: inset 0 0 0 1.2px #E4E4E9; }
+.campo__caja--gris .campo__entrada { height: 42px; }
 
 .ingreso__olvido { display: flex; justify-content: flex-end; }
 .ingreso__olvido .btn { padding-inline: 0; font-size: 14px; text-underline-offset: 3px; }
 .ingreso__olvido .btn:hover { background: none; }
-.ingreso .btn--primario { min-height: 52px; }
 
 .ingreso__separador { display: flex; align-items: center; gap: 12px; margin-block: 14px; font: 400 14px/1.3 var(--ec-fuente); color: var(--ec-texto-secundario); }
 .ingreso__separador::before, .ingreso__separador::after { content: ""; flex: 1; height: 1px; background: var(--ec-linea-campo); }
@@ -107,3 +120,34 @@ p, h1 { margin: 0; }
 
 .ingreso__pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px; margin-top: auto; padding-top: 16px; font: 400 14px/1.3 var(--ec-fuente); color: var(--ec-texto-secundario); }
 .ingreso__pie .btn { padding-inline: 4px; font-size: 14px; text-underline-offset: 3px; }
+
+/* ---------- Registro ---------- */
+.registro__titulo { font-size: 20px; }
+.registro__avance { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.registro__cuenta { width: 9px; height: 9px; border-radius: 50%; box-shadow: inset 0 0 0 1.8px #A2A0AB; }
+.registro__cuenta--llena { background: var(--ec-verde); box-shadow: none; }
+
+.registro__form { flex: 1; display: flex; flex-direction: column; margin-top: 18px; }
+.grilla2 > .campo { min-width: 0; margin-top: 0; }
+.registro__fila { margin-top: 14px; }
+.registro__grupo { margin: 16px 0 0; padding: 0; border: 0; min-width: 0; }
+.registro__grupo legend { padding: 0; }
+.registro__grupo .chip { padding-inline: 14px; font-weight: 600; }
+
+.tarjeta-grupo { margin-top: 16px; padding: 14px 14px 14px; border-radius: var(--ec-radio-tarjeta); background: var(--ec-blanco); box-shadow: inset 0 0 0 1.5px var(--ec-linea-campo); }
+.tarjeta-grupo__cabecera { display: flex; align-items: center; gap: 12px; }
+.tarjeta-grupo__icono { flex: none; width: 36px; height: 36px; display: block; }
+.tarjeta-grupo__titulo { font: 300 18px/1.2 "lemonde-sans", sans-serif; }
+.tarjeta-grupo__sub { margin-top: 2px; font: 400 13px/1.3 var(--ec-fuente); color: var(--ec-texto-secundario); }
+/* Si el código no entra junto a «Unirme», el botón pasa abajo a todo el ancho */
+.tarjeta-grupo__fila { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+/* El campo se queda con el espacio libre; el botón solo crece cuando queda solo en su línea */
+.tarjeta-grupo__fila .campo__caja { flex: 999 1 190px; min-width: 0; padding-inline: 12px; }
+.tarjeta-grupo__fila .campo__entrada::placeholder { font-size: 13px; }
+.tarjeta-grupo__fila .btn { flex: 1 0 auto; min-height: 44px; border-radius: var(--ec-radio-tonal); padding-inline: 16px; }
+
+.registro__acepto { display: flex; align-items: center; gap: 12px; min-height: 48px; margin-top: 6px; font: 400 14px/1.35 var(--ec-fuente); color: var(--ec-texto-secundario); cursor: pointer; }
+.registro__acepto .casilla { flex: none; }
+.registro__continuar { margin-top: auto; padding-top: 20px; }
+
+.solo-lector { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }

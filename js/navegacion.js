@@ -6,8 +6,11 @@
 (function () {
   "use strict";
   const rutas = {
+    apertura: "index.html",
+    carga: "carga.html",
     bienvenida: "bienvenida.html",
     ingreso: "ingreso.html",
+    registro: "registro.html",
   };
 
   document.addEventListener("ec:cambio", (e) => {
