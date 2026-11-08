@@ -38,6 +38,15 @@
     notificaciones: "notificaciones.html",
   };
 
+  // Al refrescar cualquier pantalla, la app vuelve a arrancar desde la apertura
+  const navegacion = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+  const esRecarga = navegacion ? navegacion.type === "reload" : (performance.navigation && performance.navigation.type === 1);
+  const esApertura = !!document.querySelector(".apertura");
+  if (esRecarga && !esApertura) {
+    location.replace(rutas.apertura);
+    return;
+  }
+
   // Marca, en la sesión de esta pestaña, que se llegó desde otra pantalla de la app
   const MARCA = "ec-navego";
   const marcar = () => { try { sessionStorage.setItem(MARCA, "1"); } catch { /* sin almacenamiento */ } };
