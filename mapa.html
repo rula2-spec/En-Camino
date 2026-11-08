@@ -71,6 +71,47 @@
           <g transform="translate(454 1187)"><rect width="224" height="66" rx="10" fill="#FFFFFF"/><text x="16" y="30" font-size="22" font-weight="700" fill="#141414">Posta 2 · km 12</text><text x="16" y="54" font-size="19" fill="#4B4D5C">Asistencia · pasada</text></g>
         </g>
 
+        <!-- Servicios, parada de colectivo y estación de servicio: mismo círculo con brillo que las postas, más chico.
+             Agua y baños en los km de la pantalla Servicios; el surtidor no está en el kit y se dibujó con su trazo -->
+        <g fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Agua · km 15,6 -->
+          <g transform="translate(310 745) scale(.9)">
+            <circle r="27" fill="#16884D" stroke="none"/>
+            <path d="M-20.3 -7.39 A21.6 21.6 0 0 1 -11.45 -18.32" stroke-opacity=".55" stroke-width="2.33"/>
+            <g transform="scale(1.1) translate(-12 -12)"><path d="M12 4.2 C12 4.2 5.6 10.8 5.6 14.6 A6.4 6.4 0 0 0 18.4 14.6 C18.4 10.8 12 4.2 12 4.2 Z"/><path d="M9.2 15 A2.9 2.9 0 0 0 11.6 17.8" stroke-width="1.6"/></g>
+          </g>
+          <!-- Baños · km 16,2 -->
+          <g transform="translate(298 665) scale(.9)">
+            <circle r="27" fill="#16884D" stroke="none"/>
+            <path d="M-20.3 -7.39 A21.6 21.6 0 0 1 -11.45 -18.32" stroke-opacity=".55" stroke-width="2.33"/>
+            <g transform="scale(1.1) translate(-12 -12)"><circle cx="8" cy="5.2" r="2" fill="#FFFFFF" stroke="none"/><circle cx="16" cy="5.2" r="2" fill="#FFFFFF" stroke="none"/><path d="M6.2 15 V10.2 A1.2 1.2 0 0 1 7.4 9 H8.6 A1.2 1.2 0 0 1 9.8 10.2 V15 M7.3 15 V20 M8.7 15 V20 M16 9 L19 15.4 H13 Z M15.2 15.4 V20 M16.8 15.4 V20"/></g>
+          </g>
+          <!-- Estación de servicio -->
+          <g transform="translate(365 1150) scale(.9)">
+            <circle r="27" fill="#16884D" stroke="none"/>
+            <path d="M-20.3 -7.39 A21.6 21.6 0 0 1 -11.45 -18.32" stroke-opacity=".55" stroke-width="2.33"/>
+            <g transform="scale(1.1) translate(-12 -12)"><path d="M5 20 V5.5 A1.5 1.5 0 0 1 6.5 4 H12.5 A1.5 1.5 0 0 1 14 5.5 V20 M3.5 20 H15.5 M7.5 7.5 H11.5 V11 H7.5 Z M14 10 H15.5 A1.5 1.5 0 0 1 17 11.5 V15.5 A1.5 1.5 0 0 0 20 15.5 V8.5 L18 6.5"/></g>
+          </g>
+          <!-- Parada de colectivo -->
+          <g transform="translate(330 1290) scale(.9)">
+            <circle r="27" fill="#1D89AF" stroke="none"/>
+            <path d="M-20.3 -7.39 A21.6 21.6 0 0 1 -11.45 -18.32" stroke-opacity=".55" stroke-width="2.33"/>
+            <g transform="scale(1.1) translate(-12 -12)"><rect x="5.5" y="3.5" width="13" height="15" rx="3"/><path d="M5.5 11.2 H18.5 M8 18.5 V20.5 M16 18.5 V20.5"/><circle cx="8.7" cy="14.9" r="1.3" fill="#FFFFFF" stroke="none"/><circle cx="15.3" cy="14.9" r="1.3" fill="#FFFFFF" stroke="none"/></g>
+          </g>
+          <!-- Punto espiritual: rosario del kit sobre cobalto, como en Inicio y Cronograma -->
+          <g transform="translate(360 1000) scale(.9)">
+            <circle r="27" fill="#1B2A8A" stroke="none"/>
+            <path d="M-20.3 -7.39 A21.6 21.6 0 0 1 -11.45 -18.32" stroke-opacity=".55" stroke-width="2.33"/>
+            <use href="#g-rosario" x="-13.2" y="-13.2" width="26.4" height="26.4" color="#FFFFFF" stroke="none"/>
+          </g>
+        </g>
+        <g font-family="Montserrat, sans-serif" font-size="17" font-weight="700" fill="#141414">
+          <!-- Carteles a la izquierda de cada ícono, para no tapar el camino ni los botones flotantes -->
+          <g transform="translate(136 981)"><rect width="192" height="38" rx="10" fill="#FFFFFF"/><text x="14" y="25">Punto espiritual</text></g>
+          <g transform="translate(103 1131)"><rect width="230" height="38" rx="10" fill="#FFFFFF"/><text x="14" y="25">Estación de servicio</text></g>
+          <g transform="translate(164 1271)"><rect width="134" height="38" rx="10" fill="#FFFFFF"/><text x="14" y="25">Colectivos</text></g>
+        </g>
+
         <!-- Tu grupo -->
         <g font-family="Montserrat, sans-serif" font-weight="700" font-size="17" text-anchor="middle">
           <g transform="translate(404 683)"><circle r="30" fill="#16884D" fill-opacity=".18"/><use href="#g-persona" x="-17" y="-20" width="34" height="34" color="#16884D"/><circle cy="-12" r="5.5" fill="#FFFFFF"/><rect x="14" y="-54" width="34" height="28" rx="14" fill="#FFFFFF"/><text x="31" y="-34" fill="#16884D">S</text></g>

@@ -24,7 +24,6 @@
     return c;
   });
 
-  const yaDescargado = () => { try { return localStorage.getItem(CLAVE) === "1"; } catch { return false; } };
   const guardar = () => { try { localStorage.setItem(CLAVE, "1"); } catch { /* sin almacenamiento: no queda guardado */ } };
 
   function mostrar(p) {
@@ -41,11 +40,23 @@
     boton.querySelector("span").textContent = "Descargado";
   }
 
+  let reloj = null;
+
+  // Cada vez que se llega a la pantalla: permisos apagados y descarga lista para tocar
+  function reiniciar() {
+    clearInterval(reloj);
+    document.querySelectorAll('.permisos__lista .switch').forEach((sw) => sw.setAttribute("aria-checked", "false"));
+    mostrar(0);
+    texto.textContent = "Todavía no descargaste el contenido";
+    boton.disabled = false;
+    boton.querySelector("span").textContent = "Descargar";
+  }
+
   function descargar() {
     boton.disabled = true;
     texto.textContent = "Descargando mapa del recorrido…";
     const inicio = performance.now();
-    const reloj = setInterval(() => {
+    reloj = setInterval(() => {
       const p = Math.min(100, Math.round((performance.now() - inicio) / DURACION * 100));
       mostrar(p);
       if (p < 100) return;
@@ -55,8 +66,9 @@
     }, 100);
   }
 
-  if (yaDescargado()) completa();
-  else mostrar(0);
+  reiniciar();
+  // Al volver con «Atrás» el navegador puede restaurar la pantalla tal como quedó
+  window.addEventListener("pageshow", (e) => { if (e.persisted) reiniciar(); });
 
   document.addEventListener("ec:cambio", (e) => {
     if (e.detail.tipo === "accion" && e.detail.accion === "descargar") descargar();
