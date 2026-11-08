@@ -9,6 +9,8 @@
     apertura: "index.html",
     carga: "carga.html",
     bienvenida: "bienvenida.html",
+    "bienvenida-2": "bienvenida-2.html",
+    "bienvenida-3": "bienvenida-3.html",
     ingreso: "ingreso.html",
     registro: "registro.html",
     permisos: "permisos.html",

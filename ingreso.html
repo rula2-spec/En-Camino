@@ -20,7 +20,8 @@
     <symbol id="g-candado" viewBox="0 0 24 24"><path d="M6.5 11 H17.5 A1.5 1.5 0 0 1 19 12.5 V19 A1.5 1.5 0 0 1 17.5 20.5 H6.5 A1.5 1.5 0 0 1 5 19 V12.5 A1.5 1.5 0 0 1 6.5 11 Z M8 11 V8 A4 4 0 0 1 16 8 V11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="g-correo" viewBox="0 0 24 24"><path d="M4.5 5.5 H19.5 A1.5 1.5 0 0 1 21 7 V17 A1.5 1.5 0 0 1 19.5 18.5 H4.5 A1.5 1.5 0 0 1 3 17 V7 A1.5 1.5 0 0 1 4.5 5.5 Z M3.5 6.5 L12 13 L20.5 6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="g-telefono" viewBox="0 0 24 24"><path d="M5.5 3.5 H9 L10.5 8 L8.3 9.6 A11 11 0 0 0 14.4 15.7 L16 13.5 L20.5 15 V18.5 A2 2 0 0 1 18.5 20.5 A16 16 0 0 1 3.5 5.5 A2 2 0 0 1 5.5 3.5 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="g-ver" viewBox="0 0 24 24"><path d="M2.5 12 C5 7 8.5 5.5 12 5.5 C15.5 5.5 19 7 21.5 12 C19 17 15.5 18.5 12 18.5 C8.5 18.5 5 17 2.5 12 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-perfil" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 20 C5.5 15.5 8.5 13.5 12 13.5 C15.5 13.5 18.5 15.5 19.5 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-ver"viewBox="0 0 24 24"><path d="M2.5 12 C5 7 8.5 5.5 12 5.5 C15.5 5.5 19 7 21.5 12 C19 17 15.5 18.5 12 18.5 C8.5 18.5 5 17 2.5 12 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   </svg>
 
   <main class="formulario ingreso">
@@ -39,7 +40,7 @@
         <label class="campo__etiqueta" for="ingreso-usuario">Correo o teléfono</label>
         <div class="campo__caja">
           <svg class="ico" aria-hidden="true"><use href="#g-correo"/></svg>
-          <input class="campo__entrada" id="ingreso-usuario" name="usuario" type="text" inputmode="email" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="nombre@correo.com" required>
+          <input class="campo__entrada" id="ingreso-usuario" name="usuario" type="text" inputmode="email" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="nombre@correo.com">
         </div>
       </div>
 
@@ -47,7 +48,7 @@
         <label class="campo__etiqueta" for="ingreso-contrasena">Contraseña</label>
         <div class="campo__caja">
           <svg class="ico" aria-hidden="true"><use href="#g-candado"/></svg>
-          <input class="campo__entrada" id="ingreso-contrasena" name="contrasena" type="password" autocomplete="current-password" required>
+          <input class="campo__entrada" id="ingreso-contrasena" name="contrasena" type="password" autocomplete="current-password" placeholder="•••••••••">
           <button class="btn-icono btn-icono--plano campo__accion" type="button" aria-label="Mostrar contraseña" aria-pressed="false" data-ec="alternar" data-id="ver-contrasena">
             <svg class="ico" aria-hidden="true"><use href="#g-ver"/></svg>
           </button>
@@ -64,9 +65,10 @@
     <p class="ingreso__separador">o continuá con</p>
 
     <div class="ingreso__sociales">
-      <button class="btn btn--social btn--bloque" type="button" data-ec="google" data-id="google" data-destino="ingresar con cuenta de Google"><span class="btn__logo slot" aria-hidden="true"></span><span>Continuar con Google</span></button>
-      <button class="btn btn--social btn--bloque" type="button" data-ec="apple" data-id="apple" data-destino="ingresar con cuenta de Apple"><span class="btn__logo slot" aria-hidden="true"></span><span>Continuar con Apple</span></button>
-      <button class="btn btn--social btn--bloque" type="button" data-ec="telefono" data-id="telefono" data-destino="ingresar con número de teléfono"><svg class="ico" aria-hidden="true"><use href="#g-telefono"/></svg><span>Continuar con número de teléfono</span></button>
+      <!-- Como en el diseño: una «G» y la persona del kit en lugar de los logos, que no se redibujan -->
+      <button class="btn btn--social btn--bloque" type="button" data-ec="google" data-id="google" data-destino="permisos"><span class="ingreso__letra" aria-hidden="true">G</span><span>Continuar con Google</span></button>
+      <button class="btn btn--social btn--bloque" type="button" data-ec="apple" data-id="apple" data-destino="permisos"><svg class="ico" aria-hidden="true"><use href="#g-perfil"/></svg><span>Continuar con Apple</span></button>
+      <button class="btn btn--social btn--bloque" type="button" data-ec="telefono" data-id="telefono" data-destino="permisos"><svg class="ico" aria-hidden="true"><use href="#g-telefono"/></svg><span>Continuar con número de teléfono</span></button>
     </div>
 
     <p class="ingreso__pie">

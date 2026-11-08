@@ -12,9 +12,9 @@
     e.target.setAttribute("aria-label", e.detail.activo ? "Ocultar contraseña" : "Mostrar contraseña");
   });
 
-  // El navegador valida los campos obligatorios antes de llegar acá.
-  // Sin servidor de cuentas y sin la pantalla Permisos, no hay adónde seguir.
+  // Todavía no hay servidor de cuentas: «Ingresar» pasa directo a Permisos, sin verificar los datos.
   document.getElementById("form-ingreso").addEventListener("submit", (e) => {
     e.preventDefault();
+    document.dispatchEvent(new CustomEvent("ec:cambio", { detail: { tipo: "navegar", destino: "permisos" } }));
   });
 })();

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#E8EEE4">
+  <title>Bienvenida 3 · En Camino</title>
+  <link rel="stylesheet" href="https://use.typekit.net/asn0sci.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/botones.css">
+  <link rel="stylesheet" href="css/entrada.css">
+</head>
+<body>
+  <main class="bienvenida">
+    <div class="bienvenida__mapa">
+      <!-- Mapa ilustrado del diseño, con una oración y dos cantos encima. Coordenadas en px de la referencia (780 de ancho). -->
+      <svg viewBox="0 0 780 900" aria-hidden="true">
+        <ellipse cx="640" cy="170" rx="330" ry="250" fill="#DCE7D6"/>
+        <ellipse cx="70" cy="780" rx="320" ry="220" fill="#DCE7D6"/>
+        <!-- Las rutas siguen más allá del dibujo para cubrir los celulares anchos -->
+        <path d="M-800 420 L1600 260 M250 -200 L110 1000" fill="none" stroke="#FFFFFF" stroke-width="14"/>
+
+        <!-- Oración destacada -->
+        <!-- Oración y cantos van hacia el centro para que entren en los celulares S -->
+        <g transform="translate(30 0) rotate(-5 316 222)">
+          <rect x="56" y="132" width="520" height="180" rx="30" fill="#323366"/>
+          <text x="86" y="200" font-family="Montserrat, sans-serif" font-weight="700" font-size="21" letter-spacing="2.5" fill="#FCCB68">ORACIÓN 03 · MARIANA</text>
+          <text x="86" y="268" font-family="lemonde-sans, sans-serif" font-weight="300" font-size="40" fill="#FFFFFF">Ave María</text>
+          <circle cx="508" cy="208" r="38" fill="#FCCB68"/>
+          <path d="M499 194 V222 L521 208 Z" fill="none" stroke="#323366" stroke-width="3.5" stroke-linejoin="round"/>
+        </g>
+
+        <!-- Cantos -->
+        <g transform="translate(-36 0) rotate(3 474 550)" font-family="Montserrat, sans-serif">
+          <rect x="212" y="420" width="524" height="262" rx="30" fill="#FFFFFF" stroke="#E3E3E5" stroke-width="2"/>
+          <circle cx="276" cy="484" r="34" fill="#1B2A8A"/>
+          <text x="276" y="493" text-anchor="middle" font-weight="700" font-size="24" fill="#FFFFFF">01</text>
+          <text x="330" y="472" font-weight="700" font-size="26" fill="#141414">La niña de tus ojos</text>
+          <text x="330" y="510" font-size="23" fill="#4B4D5C">Hakuna Music Group</text>
+          <path d="M688 516 C688 516 674 507 673 498 A8 8 0 0 1 688 493 A8 8 0 0 1 703 498 C702 507 688 516 688 516 Z" fill="none" stroke="#4B4D5C" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M212 551 H736" stroke="#EDEDF0" stroke-width="2"/>
+          <circle cx="276" cy="616" r="34" fill="#1B2A8A"/>
+          <text x="276" y="625" text-anchor="middle" font-weight="700" font-size="24" fill="#FFFFFF">02</text>
+          <text x="330" y="604" font-weight="700" font-size="26" fill="#141414">Descalzos</text>
+          <text x="330" y="642" font-size="23" fill="#4B4D5C">Hakuna Music Group</text>
+          <path d="M688 648 C688 648 674 639 673 630 A8 8 0 0 1 688 625 A8 8 0 0 1 703 630 C702 639 688 648 688 648 Z" fill="none" stroke="#4B4D5C" stroke-width="3" stroke-linejoin="round"/>
+        </g>
+      </svg>
+
+      <p class="bienvenida__marca"><img src="imagenes/isotipo.png" alt="" width="27" height="32"><span>En Camino</span></p>
+    </div>
+
+    <div class="bienvenida__contenido">
+      <div class="bienvenida__puntos" aria-hidden="true"><span class="bienvenida__punto"></span><span class="bienvenida__punto"></span><span class="bienvenida__punto bienvenida__punto--activo"></span></div>
+      <h1 class="bienvenida__titulo">Rezá y cantá, aunque no haya señal</h1>
+      <p class="bienvenida__texto">Oraciones, cantos e intenciones del camino, descargados en tu teléfono para usar sin conexión.</p>
+      <button class="btn btn--primario btn--bloque" type="button" data-ec="empezar-a-caminar" data-id="empezar-a-caminar" data-destino="registro"><span>Empezar a caminar</span></button>
+      <p class="bienvenida__pie">
+        <span>Ya tengo cuenta ·</span>
+        <button class="btn btn--terciario" type="button" data-ec="ir-ingreso" data-id="ir-ingreso" data-destino="ingreso"><span>Ingresar</span></button>
+      </p>
+    </div>
+  </main>
+
+  <script src="js/botones.js"></script>
+  <script src="js/navegacion.js"></script>
+</body>
+</html>

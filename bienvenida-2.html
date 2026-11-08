@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#E8EEE4">
+  <title>Bienvenida 2 · En Camino</title>
+  <link rel="stylesheet" href="https://use.typekit.net/asn0sci.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/botones.css">
+  <link rel="stylesheet" href="css/entrada.css">
+</head>
+<body>
+  <main class="bienvenida">
+    <div class="bienvenida__mapa">
+      <!-- Mapa ilustrado del diseño. Coordenadas en px de la referencia (780 de ancho). -->
+      <svg viewBox="0 0 780 900" aria-hidden="true">
+        <ellipse cx="90" cy="640" rx="300" ry="260" fill="#DCE7D6"/>
+        <ellipse cx="690" cy="780" rx="230" ry="150" fill="#DCE7D6"/>
+        <path d="M-120 140 L300 1000" fill="none" stroke="#D6DFEA" stroke-width="11"/>
+        <!-- Las rutas siguen más allá del dibujo para cubrir los celulares anchos -->
+        <path d="M-800 560 L1600 130 M-800 470 L1600 890 M530 -200 L340 1000" fill="none" stroke="#FFFFFF" stroke-width="14"/>
+
+        <g fill="#FFFFFF" stroke="#9A9AAE" stroke-width="5">
+          <circle cx="564" cy="4" r="8"/><circle cx="534" cy="44" r="8"/><circle cx="510" cy="86" r="8"/>
+          <circle cx="456" cy="256" r="8"/><circle cx="448" cy="298" r="8"/><circle cx="444" cy="338" r="8"/><circle cx="444" cy="376" r="8"/>
+        </g>
+        <g fill="#009866">
+          <circle cx="432" cy="572" r="11"/><circle cx="424" cy="610" r="11"/><circle cx="414" cy="648" r="11"/><circle cx="402" cy="684" r="11"/>
+          <circle cx="336" cy="792" r="11"/><circle cx="302" cy="826" r="11"/><circle cx="262" cy="860" r="11"/><circle cx="216" cy="894" r="11"/>
+        </g>
+
+        <g fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Hidratación (glifo del kit) -->
+          <g transform="translate(474 184) scale(1.185)">
+            <circle r="27" fill="#16884D" stroke="none"/>
+            <path d="M-20.3 -7.39 A21.6 21.6 0 0 1 -11.45 -18.32" stroke-opacity=".55" stroke-width="2.33"/>
+            <g transform="scale(1.1) translate(-12 -12)" stroke-width="2"><path d="M12 4.2 C12 4.2 5.6 10.8 5.6 14.6 A6.4 6.4 0 0 0 18.4 14.6 C18.4 10.8 12 4.2 12 4.2 Z"/><path d="M9.2 15 A2.9 2.9 0 0 0 11.6 17.8" stroke-width="1.6"/></g>
+          </g>
+          <!-- Puesto sanitario (maletín de las pantallas finales) -->
+          <g transform="translate(440 476) scale(1.185)">
+            <circle r="27" fill="#E5353F" stroke="none"/>
+            <path d="M-20.3 -7.39 A21.6 21.6 0 0 1 -11.45 -18.32" stroke-opacity=".55" stroke-width="2.33"/>
+            <g transform="scale(1.1) translate(-12 -12)" stroke-width="2"><path d="M5 7.5 H19 A1.5 1.5 0 0 1 20.5 9 V18.5 A1.5 1.5 0 0 1 19 20 H5 A1.5 1.5 0 0 1 3.5 18.5 V9 A1.5 1.5 0 0 1 5 7.5 Z M8.5 7.5 V5.5 A1.5 1.5 0 0 1 10 4 H14 A1.5 1.5 0 0 1 15.5 5.5 V7.5 M12 10.5 V17 M8.75 13.75 H15.25"/></g>
+          </g>
+          <!-- Tu grupo (glifo Equipo del kit) -->
+          <g transform="translate(370 748) scale(1.185)">
+            <circle r="27" fill="#16884D" stroke="none"/>
+            <path d="M-20.3 -7.39 A21.6 21.6 0 0 1 -11.45 -18.32" stroke-opacity=".55" stroke-width="2.33"/>
+            <g transform="scale(1.1) translate(-12 -12)" stroke-width="2"><circle cx="12" cy="8" r="2.6" fill="#FFFFFF" stroke="none"/><path d="M7.5 19.5 C7.5 15.6 9.5 13.6 12 13.6 C14.5 13.6 16.5 15.6 16.5 19.5 M2.8 18 C2.8 15.6 4 14.6 5.5 14.6 M21.2 18 C21.2 15.6 20 14.6 18.5 14.6"/><circle cx="5.5" cy="10" r="1.9"/><circle cx="18.5" cy="10" r="1.9"/></g>
+          </g>
+        </g>
+
+        <g font-family="Montserrat, sans-serif" font-weight="700" font-size="25" fill="#141414">
+          <!-- Termina en x 664 para que no se corte en los celulares S -->
+          <g transform="translate(464 376)"><rect width="200" height="52" rx="26" fill="#FFFFFF"/><text x="100" y="33" text-anchor="middle" font-size="20.5">Puesto sanitario</text></g>
+          <g transform="translate(350 494)"><rect width="168" height="60" rx="30" fill="#FFFFFF"/><text x="84" y="39" text-anchor="middle">Tu grupo</text></g>
+        </g>
+      </svg>
+
+      <p class="bienvenida__marca"><img src="imagenes/isotipo.png" alt="" width="27" height="32"><span>En Camino</span></p>
+    </div>
+
+    <div class="bienvenida__contenido">
+      <div class="bienvenida__puntos" aria-hidden="true"><span class="bienvenida__punto"></span><span class="bienvenida__punto bienvenida__punto--activo"></span><span class="bienvenida__punto"></span></div>
+      <h1 class="bienvenida__titulo">Tu grupo y tu ayuda, siempre cerca</h1>
+      <p class="bienvenida__texto">Compartí tu ubicación con tu grupo, encontrá puestos de asistencia y pedí ayuda cuando la necesites.</p>
+      <button class="btn btn--primario btn--bloque" type="button" data-ec="siguiente" data-id="siguiente" data-destino="bienvenida-3"><span>Siguiente</span></button>
+    </div>
+  </main>
+
+  <script src="js/botones.js"></script>
+  <script src="js/navegacion.js"></script>
+</body>
+</html>
