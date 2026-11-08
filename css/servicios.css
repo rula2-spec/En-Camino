@@ -1,0 +1,31 @@
+/* ==========================================================================
+   En Camino · Servicios (pantalla 10)
+   Usa la base de Inicio (contenedor, íconos de sección, barra inferior).
+   ========================================================================== */
+.servicios__titulos { flex: 1; min-width: 0; }
+.servicios__titulo { font-size: 28px; }
+.servicios__mapa { flex: none; display: grid; place-items: center; width: 48px; height: 48px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.servicios__mapa .icono-seccion { --tam: 44px; }
+.servicios__mapa:active .icono-seccion { --icono: #007A52; }
+.servicios__mapa:focus-visible { outline: 3px solid var(--ec-foco); outline-offset: 0; }
+
+/* Fila de chips con scroll lateral; el elegido en verde oscuro, como en la pantalla final */
+.servicios__filtros { flex-wrap: nowrap; margin: 14px calc(var(--ec-margen) * -1) 0; padding: 2px var(--ec-margen); overflow-x: auto; scrollbar-width: none; }
+.servicios__filtros::-webkit-scrollbar { display: none; }
+.servicios__filtros .chip { flex: none; height: 40px; --chip-color: var(--ec-verde-presionado); font-weight: 600; font-size: 15px; padding-inline: 16px; }
+
+/* ---------- Lista de servicios ---------- */
+.servicios__lista { display: grid; gap: 8px; margin: 14px 0 0; padding: 0; list-style: none; }
+.servicio { display: flex; align-items: center; gap: 12px; min-height: 64px; padding: 10px 12px 10px 12px; border-radius: 18px; background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #E3E3E5; }
+.servicio[hidden] { display: none; }
+.servicio .icono-seccion { --tam: 40px; }
+.servicio__textos { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.servicio__titulo { font: 700 15px/1.2 var(--ec-fuente); overflow-wrap: anywhere; }
+.servicio__sub { font: 400 13px/1.3 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.servicio__estado { flex: none; display: flex; flex-direction: column; align-items: flex-end; gap: 2px; text-align: right; }
+.servicio__distancia { font: 700 14px/1.2 var(--ec-fuente); white-space: nowrap; }
+.servicio__condicion { font: 700 12.5px/1.2 var(--ec-fuente); color: var(--ec-verde-presionado); }
+.servicio__condicion--celeste { color: #0F7A6B; }
+.servicio__condicion--rojo { color: #B3141A; }
+
+.servicios__pie { margin-top: 16px; text-align: center; font: 400 12.5px/1.4 var(--ec-fuente); color: var(--ec-texto-secundario); }

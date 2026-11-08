@@ -1,5 +1,5 @@
 /* ==========================================================================
-   En Camino · Ayuda y Chat de asistencia
+   En Camino · Ayuda, Preguntas frecuentes y Chat de asistencia
    Usa la base de Inicio (contenedor, íconos de sección, filas, barra inferior).
    Color de la sección: rojo.
    ========================================================================== */
@@ -25,6 +25,25 @@
 .ayuda__config .icono-seccion { --tam: 30px; }
 .ayuda__config:active { background: var(--ec-arena); }
 .ayuda__config:focus-visible { outline: 3px solid var(--ec-foco); outline-offset: 2px; }
+
+/* ---------- Preguntas frecuentes ---------- */
+.preguntas .cabecera__volver { color: var(--ec-rojo); }
+.preguntas__titulo { margin-top: 18px; font: 300 32px/1.1 "lemonde-sans", sans-serif; }
+.preguntas__bajada { margin-top: 6px; font: 400 14px/1.4 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.preguntas__lista { display: grid; gap: 10px; margin-top: 16px; }
+
+.pregunta { border-radius: 20px; background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #E3E3E5; overflow: hidden; }
+.pregunta__cabecera { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 72px; padding: 12px 14px; border: 0; background: none; text-align: left; color: var(--ec-negro); cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.pregunta__cabecera:active { background: var(--ec-fondo-claro); }
+.pregunta__cabecera:focus-visible { outline: 3px solid var(--ec-foco); outline-offset: -3px; border-radius: 20px; }
+.pregunta__cabecera .icono-seccion { --tam: 44px; }
+.pregunta__textos { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.pregunta__titulo { font: 700 15px/1.25 var(--ec-fuente); }
+.pregunta__sub { font: 400 12.5px/1.3 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.pregunta__chevron { flex: none; width: 20px; height: 20px; color: var(--ec-rojo); transition: transform var(--ec-transicion); }
+.pregunta__cabecera[aria-expanded="true"] .pregunta__chevron { transform: rotate(90deg); }
+.pregunta__respuesta { margin: 0 14px 14px; padding: 12px 14px; border-radius: 14px; background: var(--ec-rojo-tinte); font: 400 14px/1.55 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.pregunta__respuesta[hidden] { display: none; }
 
 /* ---------- Chat de asistencia ---------- */
 .chat-cabecera > .icono-seccion { --tam: 36px; }

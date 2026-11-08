@@ -18,6 +18,7 @@
 <body>
   <!-- Glifos del kit que usa esta pantalla. Maletín, Reencuentro, Chat con puntos y Ayuda (cruz) salen de las pantallas finales -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="g-atras" viewBox="0 0 24 24"><path d="M15 4.5 L8 12 L15 19.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="g-inicio" viewBox="0 0 24 24"><path d="M4 10.5 L12 4 L20 10.5 M6 9 V20 H18 V9 M10 20 V16 A2 2 0 0 1 14 16 V20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="g-mapa" viewBox="0 0 24 24"><path d="M3.5 6.5 L9 4.5 L15 6.5 L20.5 4.5 V17.5 L15 19.5 L9 17.5 L3.5 19.5 Z M9 4.5 V17.5 M15 6.5 V19.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="g-rosario" viewBox="0 0 24 24"><circle cx="12" cy="8.8" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><g fill="currentColor"><circle cx="12" cy="3.8" r="1.25"/><circle cx="15.54" cy="5.26" r="1.25"/><circle cx="17" cy="8.8" r="1.25"/><circle cx="15.54" cy="12.34" r="1.25"/><circle cx="8.46" cy="12.34" r="1.25"/><circle cx="7" cy="8.8" r="1.25"/><circle cx="8.46" cy="5.26" r="1.25"/></g><path d="M12 13.8 V21 M9.8 18.2 H14.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
@@ -33,6 +34,9 @@
   </svg>
 
   <main class="inicio ayuda">
+    <header class="cabecera">
+      <button class="btn-icono btn-icono--plano cabecera__volver" type="button" aria-label="Volver" data-ec="volver-ayuda" data-id="volver-ayuda" data-volver="inicio"><svg class="ico" aria-hidden="true"><use href="#g-atras"/></svg></button>
+    </header>
     <h1 class="ayuda__titulo">Ayuda</h1>
     <p class="ayuda__bajada">Elegí lo que necesitás. Te respondemos rápido.</p>
 
@@ -51,12 +55,12 @@
     </section>
 
     <div class="destinos ayuda__lista">
-      <button class="destino" type="button" data-ec="asistencia-medica" data-id="asistencia-medica" data-destino="asistencia">
+      <button class="destino" type="button" data-ec="asistencia-medica" data-id="asistencia-medica" data-destino="mapa">
         <span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-maletin"/></svg></span>
         <span class="destino__textos"><span class="destino__titulo">Asistencia médica</span><span class="destino__sub">Puesto sanitario más cercano · 2,1 km</span></span>
         <svg class="ico destino__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
       </button>
-      <button class="destino" type="button" data-ec="llamar-emergencias" data-id="llamar-emergencias">
+      <button class="destino" type="button" data-ec="llamar-emergencias" data-id="llamar-emergencias" data-destino="chat-asistencia">
         <span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-telefono"/></svg></span>
         <span class="destino__textos"><span class="destino__titulo">Llamar a emergencias</span><span class="destino__sub">107 · SAME · Defensa Civil</span></span>
         <svg class="ico destino__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
@@ -71,7 +75,7 @@
         <span class="destino__textos"><span class="destino__titulo">Preguntas frecuentes</span><span class="destino__sub">Baños, transporte, objetos perdidos</span></span>
         <svg class="ico destino__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
       </button>
-      <button class="destino" type="button" data-ec="me-perdi" data-id="me-perdi" data-destino="reencuentro">
+      <button class="destino" type="button" data-ec="me-perdi" data-id="me-perdi" data-destino="mi-equipo">
         <span class="icono-seccion icono-seccion--celeste"><svg class="ico" aria-hidden="true"><use href="#g-reencuentro"/></svg></span>
         <span class="destino__textos"><span class="destino__titulo">Me perdí de mi grupo</span><span class="destino__sub">Ir al punto de reencuentro</span></span>
         <svg class="ico destino__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>

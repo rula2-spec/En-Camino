@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F7F7">
+  <title>Oraciones · En Camino</title>
+  <link rel="stylesheet" href="https://use.typekit.net/asn0sci.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/botones.css">
+  <link rel="stylesheet" href="css/entrada.css">
+  <link rel="stylesheet" href="css/inicio.css">
+  <!-- Misma estructura que el Cancionero: comparte sus estilos -->
+  <link rel="stylesheet" href="css/cancionero.css">
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="g-inicio" viewBox="0 0 24 24"><path d="M4 10.5 L12 4 L20 10.5 M6 9 V20 H18 V9 M10 20 V16 A2 2 0 0 1 14 16 V20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-mapa" viewBox="0 0 24 24"><path d="M3.5 6.5 L9 4.5 L15 6.5 L20.5 4.5 V17.5 L15 19.5 L9 17.5 L3.5 19.5 Z M9 4.5 V17.5 M15 6.5 V19.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-rosario" viewBox="0 0 24 24"><circle cx="12" cy="8.8" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><g fill="currentColor"><circle cx="12" cy="3.8" r="1.25"/><circle cx="15.54" cy="5.26" r="1.25"/><circle cx="17" cy="8.8" r="1.25"/><circle cx="15.54" cy="12.34" r="1.25"/><circle cx="8.46" cy="12.34" r="1.25"/><circle cx="7" cy="8.8" r="1.25"/><circle cx="8.46" cy="5.26" r="1.25"/></g><path d="M12 13.8 V21 M9.8 18.2 H14.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="g-ayuda" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5 V16.5 M7.5 12 H16.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="g-configuracion" viewBox="0 0 24 24"><path d="M12 3 L14.68 5.53 L18.36 5.64 L18.47 9.32 L21 12 L18.47 14.68 L18.36 18.36 L14.68 18.47 L12 21 L9.32 18.47 L5.64 18.36 L5.53 14.68 L3 12 L5.53 9.32 L5.64 5.64 L9.32 5.53 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="g-atras" viewBox="0 0 24 24"><path d="M15 4.5 L8 12 L15 19.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-check" viewBox="0 0 24 24"><path d="M5 12.5 L9.5 17 L19 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-buscar" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15 L19.5 19.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="g-play" viewBox="0 0 24 24"><path d="M8 5 V19 L19 12 Z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="g-pausa" viewBox="0 0 24 24"><rect x="6.5" y="5" width="3.5" height="14" rx="1" fill="currentColor"/><rect x="14" y="5" width="3.5" height="14" rx="1" fill="currentColor"/></symbol>
+    <symbol id="g-favorito" viewBox="0 0 24 24"><path d="M12 19.5 C12 19.5 4.5 15 3.8 10 A4.3 4.3 0 0 1 12 7.2 A4.3 4.3 0 0 1 20.2 10 C19.5 15 12 19.5 12 19.5 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-favorito-lleno" viewBox="0 0 24 24"><path d="M12 19.5 C12 19.5 4.5 15 3.8 10 A4.3 4.3 0 0 1 12 7.2 A4.3 4.3 0 0 1 20.2 10 C19.5 15 12 19.5 12 19.5 Z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <main class="inicio cancionero">
+    <header class="cabecera">
+      <button class="btn-icono btn-icono--plano cabecera__volver" type="button" aria-label="Volver" data-ec="volver-oraciones" data-id="volver-oraciones"><svg class="ico" aria-hidden="true"><use href="#g-atras"/></svg></button>
+      <div class="cancionero__titulos">
+        <h1 class="cabecera__titulo cancionero__titulo">Oraciones</h1>
+        <p class="cabecera__paso">Rezos del camino · 18</p>
+      </div>
+      <p class="cancionero__sin-conexion"><svg class="ico" aria-hidden="true"><use href="#g-check"/></svg>Sin conexión</p>
+    </header>
+
+    <div class="campo__caja cancionero__buscar">
+      <svg class="ico" aria-hidden="true"><use href="#g-buscar"/></svg>
+      <label class="solo-lector" for="oraciones-buscar">Buscar oración o palabra</label>
+      <input class="campo__entrada" id="oraciones-buscar" type="search" placeholder="Buscar oración o palabra…" autocomplete="off">
+    </div>
+
+    <!-- Chips del kit, de selección única -->
+    <div class="fila-chips cancionero__filtros" role="group" aria-label="Filtrar por tipo">
+      <button class="chip chip--general" type="button" data-ec="alternar" data-grupo="categoria" data-unico aria-pressed="true" data-id="todas" data-categoria="todas">Todas</button>
+      <button class="chip chip--general" type="button" data-ec="alternar" data-grupo="categoria" data-unico aria-pressed="false" data-id="marianas" data-categoria="mariana">Marianas</button>
+      <button class="chip chip--general" type="button" data-ec="alternar" data-grupo="categoria" data-unico aria-pressed="false" data-id="rosario" data-categoria="rosario">Rosario</button>
+      <button class="chip chip--general" type="button" data-ec="alternar" data-grupo="categoria" data-unico aria-pressed="false" data-id="misa" data-categoria="misa">Misa</button>
+    </div>
+
+    <!-- Contenido de ejemplo: el diseño trae marcadores en lugar de oraciones reales -->
+    <section class="canto-destacado" aria-labelledby="oracion-destacada-titulo">
+      <div class="canto-destacado__cabecera">
+        <div>
+          <p class="canto-destacado__etiqueta">Oración 03 · Mariana</p>
+          <h2 class="canto-destacado__titulo" id="oracion-destacada-titulo">[Título de la oración]</h2>
+        </div>
+        <button class="media canto-destacado__play" type="button" aria-label="Reproducir" data-ec="reproducir" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#g-play"/></svg></button>
+      </div>
+      <p class="canto-destacado__estrofa">[Primer párrafo de la oración, en letra grande para leer mientras se camina]</p>
+      <p class="canto-destacado__etiqueta canto-destacado__etiqueta--gris">Respuesta</p>
+      <p class="canto-destacado__estribillo">[Respuesta del grupo]</p>
+    </section>
+
+    <ul class="cantos" id="oraciones">
+      <li class="canto" data-categoria="mariana"><span class="canto__numero">01</span><span class="canto__textos"><span class="canto__titulo">[Título de la oración]</span><span class="canto__sub">Mariana · breve</span></span><button class="btn-icono btn-icono--plano canto__favorito" type="button" aria-label="Agregar a favoritos" data-ec="alternar" aria-pressed="false" data-icono-activo="#g-favorito-lleno" data-icono-inactivo="#g-favorito"><svg class="ico" aria-hidden="true"><use href="#g-favorito"/></svg></button></li>
+      <li class="canto" data-categoria="rosario"><span class="canto__numero">02</span><span class="canto__textos"><span class="canto__titulo">[Título de la oración]</span><span class="canto__sub">Rosario</span></span><button class="btn-icono btn-icono--plano canto__favorito" type="button" aria-label="Agregar a favoritos" data-ec="alternar" aria-pressed="false" data-icono-activo="#g-favorito-lleno" data-icono-inactivo="#g-favorito"><svg class="ico" aria-hidden="true"><use href="#g-favorito"/></svg></button></li>
+      <li class="canto" data-categoria="misa"><span class="canto__numero">03</span><span class="canto__textos"><span class="canto__titulo">[Título de la oración]</span><span class="canto__sub">Misa · entrada</span></span><button class="btn-icono btn-icono--plano canto__favorito" type="button" aria-label="Agregar a favoritos" data-ec="alternar" aria-pressed="false" data-icono-activo="#g-favorito-lleno" data-icono-inactivo="#g-favorito"><svg class="ico" aria-hidden="true"><use href="#g-favorito"/></svg></button></li>
+      <li class="canto" data-categoria="mariana"><span class="canto__numero">04</span><span class="canto__textos"><span class="canto__titulo">[Título de la oración]</span><span class="canto__sub">Mariana</span></span><button class="btn-icono btn-icono--plano canto__favorito" type="button" aria-label="Agregar a favoritos" data-ec="alternar" aria-pressed="false" data-icono-activo="#g-favorito-lleno" data-icono-inactivo="#g-favorito"><svg class="ico" aria-hidden="true"><use href="#g-favorito"/></svg></button></li>
+    </ul>
+    <p class="cantos__vacio" id="oraciones-vacio" hidden>No hay oraciones que coincidan.</p>
+  </main>
+
+  <nav class="nav-inferior barra" aria-label="Navegación principal" style="--nav-activo: #1B2A8A">
+    <button class="nav-item" type="button" data-ec="nav-inicio" data-destino="inicio"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-inicio"/></svg></span>Inicio</button>
+    <button class="nav-item" type="button" data-ec="nav-mapa" data-destino="mapa"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-mapa"/></svg></span>Mapa</button>
+    <button class="nav-item" type="button" data-ec="nav-espiritual" data-destino="espiritual" aria-current="page"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-rosario"/></svg></span>Punto espiritual</button>
+    <button class="nav-item" type="button" data-ec="nav-ayuda" data-destino="ayuda"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-ayuda"/></svg></span>Ayuda</button>
+    <button class="nav-item" type="button" data-ec="nav-ajustes" data-destino="ajustes"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-configuracion"/></svg></span>Ajustes</button>
+  </nav>
+
+  <script src="js/botones.js"></script>
+  <script src="js/navegacion.js"></script>
+  <script src="js/oraciones.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+/* ==========================================================================
+   En Camino · Intenciones (Punto espiritual)
+   Usa la base de Inicio (contenedor, íconos de sección, barra inferior).
+   ========================================================================== */
+.intenciones__titulos { flex: 1; min-width: 0; }
+.intenciones__titulo { font-size: 28px; }
+
+/* ---------- Nueva intención ---------- */
+.nueva-intencion { margin-top: 16px; padding: 18px 16px 16px; border-radius: 24px; background: var(--ec-azul); color: var(--ec-blanco); }
+.nueva-intencion__etiqueta { display: block; font: 700 11px/1.3 var(--ec-fuente); letter-spacing: 1.8px; text-transform: uppercase; color: var(--ec-amarillo); }
+.nueva-intencion__campo { display: block; width: 100%; min-height: 104px; margin-top: 12px; padding: 12px 14px; border: 0; border-radius: 16px; background: var(--ec-blanco); color: var(--ec-negro); font: 400 15px/1.5 var(--ec-fuente); resize: vertical; outline: 0; }
+.nueva-intencion__campo::placeholder { color: var(--ec-texto-sugerido); }
+.nueva-intencion__campo:focus-visible { box-shadow: 0 0 0 3px var(--ec-amarillo); }
+.nueva-intencion__pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-top: 12px; }
+.nueva-intencion__nota { flex: 1 1 120px; max-width: 150px; font: 700 12px/1.4 var(--ec-fuente); color: #DCDCEA; }
+.nueva-intencion__enviar { min-height: 48px; padding-inline: 28px; font-weight: 700; }
+
+/* ---------- Tus intenciones ---------- */
+.intenciones__seccion { margin-top: 22px; font: 400 13px/1.3 "lemonde-sans", sans-serif; letter-spacing: 2.6px; text-transform: uppercase; color: var(--ec-texto-secundario); }
+.mis-intenciones { margin: 10px 0 0; padding: 0; list-style: none; overflow: hidden; border-radius: 20px; background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #E3E3E5; }
+.mi-intencion { display: flex; align-items: center; gap: 12px; min-height: 60px; padding: 10px 12px 10px 14px; }
+.mi-intencion + .mi-intencion { border-top: 1px solid #EDEDF0; }
+.mi-intencion .icono-seccion { --tam: 36px; }
+.mi-intencion__textos { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.mi-intencion__texto { font: 700 15px/1.25 var(--ec-fuente); overflow-wrap: anywhere; }
+.mi-intencion__sub { font: 400 13px/1.3 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.mi-intencion__estado { flex: none; padding: 6px 10px; border-radius: var(--ec-radio-pildora); background: #D9F0E8; color: var(--ec-verde-presionado); font: 700 11.5px/1 var(--ec-fuente); }
+.mi-intencion__estado--borrador { background: #EBEAF0; color: var(--ec-texto-secundario); }

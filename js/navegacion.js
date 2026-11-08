@@ -19,14 +19,21 @@
     mapa: "mapa.html",
     recorrido: "mapa.html",
     "mi-equipo": "mi-equipo.html",
+    servicios: "servicios.html",
     espiritual: "fe-y-comunidad.html",
     "fe-y-comunidad": "fe-y-comunidad.html",
     rosario: "rosario.html",
     cronograma: "cronograma.html",
     cancionero: "cancionero.html",
+    oraciones: "oraciones.html",
+    intenciones: "intenciones.html",
     ayuda: "ayuda.html",
     "chat-asistencia": "chat-asistencia.html",
     chat: "chat-asistencia.html",
+    preguntas: "preguntas-frecuentes.html",
+    ajustes: "ajustes.html",
+    avisos: "notificaciones.html",
+    notificaciones: "notificaciones.html",
   };
 
   // Marca, en la sesión de esta pestaña, que se llegó desde otra pantalla de la app
@@ -44,6 +51,8 @@
   document.addEventListener("ec:cambio", (e) => {
     const { tipo, destino, reemplazar } = e.detail;
     if (tipo === "navegar") ir(destino, reemplazar);
+    // Flecha de volver con data-volver="destino por defecto"
+    else if (tipo === "accion" && e.target.dataset && e.target.dataset.volver) window.ecVolver(e.target.dataset.volver);
   });
 
   // Volver: a la pantalla anterior de la app, o al destino por defecto si se entró directo

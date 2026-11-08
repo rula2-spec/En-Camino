@@ -24,7 +24,8 @@
     <symbol id="g-configuracion" viewBox="0 0 24 24"><path d="M12 3 L14.68 5.53 L18.36 5.64 L18.47 9.32 L21 12 L18.47 14.68 L18.36 18.36 L14.68 18.47 L12 21 L9.32 18.47 L5.64 18.36 L5.53 14.68 L3 12 L5.53 9.32 L5.64 5.64 L9.32 5.53 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
     <symbol id="g-atras" viewBox="0 0 24 24"><path d="M15 4.5 L8 12 L15 19.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="g-ubicacion" viewBox="0 0 24 24"><path d="M12 21 C12 21 5.5 14.8 5.5 9.75 A6.5 6.5 0 0 1 18.5 9.75 C18.5 14.8 12 21 12 21 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="9.75" r="2.2" fill="currentColor"/></symbol>
-    <symbol id="g-mas" viewBox="0 0 24 24"><path d="M12 5 V19 M5 12 H19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="g-vuelta" viewBox="0 0 24 24"><path d="M17 5 H9 A5 5 0 0 0 9 15 H14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 3.2"/><path d="M12 11.5 L15.5 15 L12 18.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-mas"viewBox="0 0 24 24"><path d="M12 5 V19 M5 12 H19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
     <symbol id="g-menos" viewBox="0 0 24 24"><path d="M5 12 H19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
     <symbol id="g-comida" viewBox="0 0 24 24"><path d="M7 4 V9 M9.5 4 V20 M12 4 V9 M7 9 A2.5 2.5 0 0 0 12 9 M17 20 V4 C18.9 5.3 19.4 9 18.8 13 H17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="g-nube" viewBox="0 0 24 24"><path d="M7.2 18.5 H9.5 M14.5 18.5 H16.8 A3.7 3.7 0 0 0 17.3 11.1 A5.5 5.5 0 0 0 6.7 11.8 A3.4 3.4 0 0 0 7.2 18.5 M12 11.5 V19.5 M9.6 17.1 L12 19.5 L14.4 17.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -92,7 +93,7 @@
       <div class="recorrido__cabecera">
         <button class="btn-icono btn-icono--plano recorrido__volver" type="button" aria-label="Volver" data-ec="volver-mapa" data-id="volver-mapa"><svg class="ico" aria-hidden="true"><use href="#g-atras"/></svg></button>
         <h1 class="recorrido__titulo" id="recorrido-titulo">Recorrido de ida</h1>
-        <span class="recorrido__etapa">Durante</span>
+        <button class="recorrido__etapa" type="button" data-ec="vuelta" data-id="vuelta"><svg class="ico" aria-hidden="true"><use href="#g-vuelta"/></svg>Vuelta</button>
       </div>
       <div class="recorrido__dato">
         <p class="recorrido__km"><span class="recorrido__numero">14,2</span> km de 30</p>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F7F7">
+  <title>Notificaciones · En Camino</title>
+  <link rel="stylesheet" href="https://use.typekit.net/asn0sci.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/botones.css">
+  <link rel="stylesheet" href="css/entrada.css">
+  <link rel="stylesheet" href="css/inicio.css">
+  <link rel="stylesheet" href="css/notificaciones.css">
+</head>
+<body>
+  <!-- Glifos del kit. La nube con tilde sale del diseño de esta pantalla -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="g-atras" viewBox="0 0 24 24"><path d="M15 4.5 L8 12 L15 19.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-ubicacion" viewBox="0 0 24 24"><path d="M12 21 C12 21 5.5 14.8 5.5 9.75 A6.5 6.5 0 0 1 18.5 9.75 C18.5 14.8 12 21 12 21 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="9.75" r="2.2" fill="currentColor"/></symbol>
+    <symbol id="g-avisos" viewBox="0 0 24 24"><path d="M12 4 C8.6 4 6.9 6.8 6.9 10 V14 L5.2 16.6 H18.8 L17.1 14 V10 C17.1 6.8 15.4 4 12 4 Z M10 19.3 A2.2 2.2 0 0 0 14 19.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-equipo" viewBox="0 0 24 24"><circle cx="12" cy="8" r="2.6" fill="currentColor"/><path d="M7.5 19.5 C7.5 15.6 9.5 13.6 12 13.6 C14.5 13.6 16.5 15.6 16.5 19.5 M2.8 18 C2.8 15.6 4 14.6 5.5 14.6 M21.2 18 C21.2 15.6 20 14.6 18.5 14.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="5.5" cy="10" r="1.9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="18.5" cy="10" r="1.9" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="g-nube-lista" viewBox="0 0 24 24"><path d="M7.2 18.5 H16.8 A3.7 3.7 0 0 0 17.3 11.1 A5.5 5.5 0 0 0 6.7 11.8 A3.4 3.4 0 0 0 7.2 18.5 Z M9.6 14.6 L11.3 16.2 L14.6 12.9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <main class="inicio notificaciones">
+    <header class="cabecera">
+      <button class="btn-icono btn-icono--plano cabecera__volver" type="button" aria-label="Volver" data-ec="volver-notificaciones" data-id="volver-notificaciones"><svg class="ico" aria-hidden="true"><use href="#g-atras"/></svg></button>
+      <div class="notificaciones__titulos">
+        <p class="cabecera__titulo notificaciones__marca">En Camino</p>
+        <p class="cabecera__paso notificaciones__contexto">Tus avisos de hoy</p>
+      </div>
+    </header>
+
+    <h1 class="notificaciones__titulo">Notificaciones</h1>
+    <p class="notificaciones__bajada">Todo lo que pasa en el camino, en un solo lugar.</p>
+
+    <!-- Avisos de ejemplo, tomados del diseño -->
+    <h2 class="notificaciones__seccion">Nuevas</h2>
+    <ul class="avisos">
+      <li class="aviso aviso--nuevo">
+        <span class="icono-seccion"><svg class="ico" aria-hidden="true"><use href="#g-ubicacion"/></svg></span>
+        <p class="aviso__textos"><span class="aviso__titulo">Próxima posta cerca</span><span class="aviso__sub">Capilla del camino, a 400 m</span></p>
+        <p class="aviso__tiempo">Ahora<span class="aviso__punto"><span class="solo-lector">Nueva</span></span></p>
+      </li>
+      <li class="aviso aviso--nuevo">
+        <span class="icono-seccion icono-seccion--naranja"><svg class="ico" aria-hidden="true"><use href="#g-avisos"/></svg></span>
+        <p class="aviso__textos"><span class="aviso__titulo">Misa en el santuario</span><span class="aviso__sub">Comienza en 30 minutos</span></p>
+        <p class="aviso__tiempo">10 min<span class="aviso__punto"><span class="solo-lector">Nueva</span></span></p>
+      </li>
+      <li class="aviso aviso--nuevo">
+        <span class="icono-seccion"><svg class="ico" aria-hidden="true"><use href="#g-equipo"/></svg></span>
+        <p class="aviso__textos"><span class="aviso__titulo">Tu grupo avanza</span><span class="aviso__sub">Lucía llegó a la posta</span></p>
+        <p class="aviso__tiempo">25 min<span class="aviso__punto"><span class="solo-lector">Nueva</span></span></p>
+      </li>
+    </ul>
+
+    <h2 class="notificaciones__seccion">Anteriores</h2>
+    <ul class="avisos">
+      <li class="aviso">
+        <span class="icono-seccion icono-seccion--celeste"><svg class="ico" aria-hidden="true"><use href="#g-nube-lista"/></svg></span>
+        <p class="aviso__textos"><span class="aviso__titulo">Descarga lista</span><span class="aviso__sub">Mapa, postas, rezos y cantos</span></p>
+        <p class="aviso__tiempo">Ayer</p>
+      </li>
+    </ul>
+
+    <section class="sin-conexion" aria-labelledby="sin-conexion-titulo">
+      <div class="sin-conexion__cabecera">
+        <span class="icono-seccion icono-seccion--celeste"><svg class="ico" aria-hidden="true"><use href="#g-avisos"/></svg></span>
+        <div>
+          <h2 class="sin-conexion__titulo" id="sin-conexion-titulo">Avisos sin conexión</h2>
+          <p class="sin-conexion__sub">Te llegan aunque no tengas señal</p>
+        </div>
+      </div>
+      <button class="btn btn--bloque btn--amarillo sin-conexion__permitir" type="button" id="permitir-avisos" data-ec="permitir-avisos" data-id="permitir-avisos"><span>Permitir</span></button>
+    </section>
+
+    <button class="btn btn--bloque btn--primario notificaciones__mapa" type="button" data-ec="volver-al-mapa" data-id="volver-al-mapa" data-destino="mapa"><span>Volver al mapa</span></button>
+  </main>
+
+  <script src="js/botones.js"></script>
+  <script src="js/navegacion.js"></script>
+  <script src="js/notificaciones.js"></script>
+</body>
+</html>

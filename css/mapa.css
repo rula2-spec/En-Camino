@@ -14,7 +14,11 @@ body.fondo-mapa { background: #E8EEE4; overflow: hidden; }
 .recorrido__cabecera { display: flex; align-items: center; gap: 4px; margin-left: -8px; }
 .recorrido__volver { flex: none; color: var(--ec-negro); }
 .recorrido__titulo { flex: 1; min-width: 0; font: 300 21px/1.2 "lemonde-sans", sans-serif; }
-.recorrido__etapa { flex: none; padding: 7px 14px; border-radius: var(--ec-radio-pildora); background: #D9F0E8; color: var(--ec-verde-presionado); font: 700 13px/1 var(--ec-fuente); }
+/* «Vuelta»: pastilla verde clara, ahora botón (área táctil de 48 dp) */
+.recorrido__etapa { flex: none; display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 0 16px 0 12px; border: 0; border-radius: var(--ec-radio-pildora); background: #D9F0E8; color: var(--ec-verde-presionado); font: 700 13px/1 var(--ec-fuente); cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.recorrido__etapa .ico { width: 18px; height: 18px; }
+.recorrido__etapa:active { background: #C3E6D9; }
+.recorrido__etapa:focus-visible { outline: 3px solid var(--ec-foco); outline-offset: 2px; }
 .recorrido__dato { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-top: 4px; }
 .recorrido__km { font: 400 15px/1 var(--ec-fuente); color: var(--ec-texto-secundario); }
 .recorrido__numero { margin-right: 4px; font: 300 44px/1 "lemonde-sans", sans-serif; color: var(--ec-negro); }

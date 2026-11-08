@@ -1,0 +1,26 @@
+/* ==========================================================================
+   En Camino · Ajustes
+   Usa la base de Inicio (contenedor, íconos de sección, barra inferior).
+   ========================================================================== */
+.icono-seccion--gris { --icono: #6E6E78; }
+
+/* ---------- Ajustes ---------- */
+.ajustes__contexto { flex: 1; min-width: 0; font-size: 22px; }
+.ajustes__titulo { margin-top: 18px; font: 300 32px/1.1 "lemonde-sans", sans-serif; }
+.ajustes__bajada { margin-top: 6px; font: 400 14px/1.4 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.ajustes__seccion { margin-top: 22px; font: 400 13px/1.3 "lemonde-sans", sans-serif; letter-spacing: 2.6px; text-transform: uppercase; color: var(--ec-texto-secundario); }
+.ajustes__lista { display: grid; gap: 10px; margin-top: 10px; }
+
+.ajuste { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 64px; padding: 10px 14px; border: 0; border-radius: 18px; background: var(--ec-blanco); box-shadow: inset 0 0 0 1.2px #E3E3E5; text-align: left; color: var(--ec-negro); cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.ajuste:active { background: var(--ec-fondo-claro); }
+.ajuste--boton:focus-visible { outline: 3px solid var(--ec-foco); outline-offset: 2px; }
+.ajuste .icono-seccion { --tam: 40px; }
+.ajuste__textos { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.ajuste__titulo { font: 700 15px/1.25 var(--ec-fuente); }
+.ajuste__sub { font: 400 12.5px/1.3 var(--ec-fuente); color: var(--ec-texto-secundario); }
+.ajuste__chevron { flex: none; width: 20px; height: 20px; color: #6B6B78; }
+/* Interruptor del kit, al tamaño y color del diseño */
+.ajuste .switch { width: 52px; height: 32px; border-radius: 16px; background: #C9C9D0; }
+.ajuste .switch::after { top: 4px; left: 4px; width: 24px; height: 24px; }
+.ajuste .switch[aria-checked="true"] { background: #3E3E46; }
+.ajuste .switch[aria-checked="true"]::after { transform: translateX(20px); }

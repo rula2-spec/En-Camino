@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F7F7">
+  <title>Preguntas frecuentes · En Camino</title>
+  <link rel="stylesheet" href="https://use.typekit.net/asn0sci.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/botones.css">
+  <link rel="stylesheet" href="css/entrada.css">
+  <link rel="stylesheet" href="css/inicio.css">
+  <link rel="stylesheet" href="css/ayuda.css">
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="g-inicio" viewBox="0 0 24 24"><path d="M4 10.5 L12 4 L20 10.5 M6 9 V20 H18 V9 M10 20 V16 A2 2 0 0 1 14 16 V20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-mapa" viewBox="0 0 24 24"><path d="M3.5 6.5 L9 4.5 L15 6.5 L20.5 4.5 V17.5 L15 19.5 L9 17.5 L3.5 19.5 Z M9 4.5 V17.5 M15 6.5 V19.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-rosario" viewBox="0 0 24 24"><circle cx="12" cy="8.8" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><g fill="currentColor"><circle cx="12" cy="3.8" r="1.25"/><circle cx="15.54" cy="5.26" r="1.25"/><circle cx="17" cy="8.8" r="1.25"/><circle cx="15.54" cy="12.34" r="1.25"/><circle cx="8.46" cy="12.34" r="1.25"/><circle cx="7" cy="8.8" r="1.25"/><circle cx="8.46" cy="5.26" r="1.25"/></g><path d="M12 13.8 V21 M9.8 18.2 H14.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="g-ayuda" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5 V16.5 M7.5 12 H16.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="g-configuracion" viewBox="0 0 24 24"><path d="M12 3 L14.68 5.53 L18.36 5.64 L18.47 9.32 L21 12 L18.47 14.68 L18.36 18.36 L14.68 18.47 L12 21 L9.32 18.47 L5.64 18.36 L5.53 14.68 L3 12 L5.53 9.32 L5.64 5.64 L9.32 5.53 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="g-atras" viewBox="0 0 24 24"><path d="M15 4.5 L8 12 L15 19.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-chevron-derecha" viewBox="0 0 24 24"><path d="M9.5 5.5 L16 12 L9.5 18.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-ubicacion" viewBox="0 0 24 24"><path d="M12 21 C12 21 5.5 14.8 5.5 9.75 A6.5 6.5 0 0 1 18.5 9.75 C18.5 14.8 12 21 12 21 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="9.75" r="2.2" fill="currentColor"/></symbol>
+    <symbol id="g-terminal" viewBox="0 0 24 24"><rect x="5.5" y="3.5" width="13" height="15" rx="3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M5.5 11.2 H18.5 M8 18.5 V20.5 M16 18.5 V20.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8.7" cy="14.9" r="1.3" fill="currentColor"/><circle cx="15.3" cy="14.9" r="1.3" fill="currentColor"/></symbol>
+    <symbol id="g-buscar" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15 L19.5 19.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="g-candado" viewBox="0 0 24 24"><path d="M6.5 11 H17.5 A1.5 1.5 0 0 1 19 12.5 V19 A1.5 1.5 0 0 1 17.5 20.5 H6.5 A1.5 1.5 0 0 1 5 19 V12.5 A1.5 1.5 0 0 1 6.5 11 Z M8 11 V8 A4 4 0 0 1 16 8 V11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-maletin" viewBox="0 0 24 24"><path d="M5 7.5 H19 A1.5 1.5 0 0 1 20.5 9 V18.5 A1.5 1.5 0 0 1 19 20 H5 A1.5 1.5 0 0 1 3.5 18.5 V9 A1.5 1.5 0 0 1 5 7.5 Z M8.5 7.5 V5.5 A1.5 1.5 0 0 1 10 4 H14 A1.5 1.5 0 0 1 15.5 5.5 V7.5 M12 10.5 V17 M8.75 13.75 H15.25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <main class="inicio preguntas">
+    <header class="cabecera">
+      <button class="btn-icono btn-icono--plano cabecera__volver" type="button" aria-label="Volver" data-ec="volver-preguntas" data-id="volver-preguntas"><svg class="ico" aria-hidden="true"><use href="#g-atras"/></svg></button>
+    </header>
+
+    <h1 class="preguntas__titulo">Preguntas frecuentes</h1>
+    <p class="preguntas__bajada">Lo que más se consulta durante la peregrinación.</p>
+
+    <!-- Acordeón del kit. Solo la primera respuesta está en el diseño: las demás son marcadores -->
+    <div class="preguntas__lista">
+      <section class="pregunta">
+        <button class="pregunta__cabecera" type="button" data-ec="acordeon" aria-expanded="true" aria-controls="respuesta-banos">
+          <span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-ubicacion"/></svg></span>
+          <span class="pregunta__textos"><span class="pregunta__titulo">Dónde hay baños</span><span class="pregunta__sub">Baños y servicios</span></span>
+          <svg class="ico pregunta__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
+        </button>
+        <p class="pregunta__respuesta" id="respuesta-banos">Los baños están marcados en el mapa de la app, en cada posta y cerca del santuario. Activá la ubicación para ver el más cercano.</p>
+      </section>
+      <section class="pregunta">
+        <button class="pregunta__cabecera" type="button" data-ec="acordeon" aria-expanded="false" aria-controls="respuesta-regreso">
+          <span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-terminal"/></svg></span>
+          <span class="pregunta__textos"><span class="pregunta__titulo">Cómo vuelvo a casa</span><span class="pregunta__sub">Transporte de regreso</span></span>
+          <svg class="ico pregunta__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
+        </button>
+        <p class="pregunta__respuesta" id="respuesta-regreso" hidden>[Respuesta de la pregunta]</p>
+      </section>
+      <section class="pregunta">
+        <button class="pregunta__cabecera" type="button" data-ec="acordeon" aria-expanded="false" aria-controls="respuesta-objeto">
+          <span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-buscar"/></svg></span>
+          <span class="pregunta__textos"><span class="pregunta__titulo">Perdí un objeto</span><span class="pregunta__sub">Objetos perdidos</span></span>
+          <svg class="ico pregunta__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
+        </button>
+        <p class="pregunta__respuesta" id="respuesta-objeto" hidden>[Respuesta de la pregunta]</p>
+      </section>
+      <section class="pregunta">
+        <button class="pregunta__cabecera" type="button" data-ec="acordeon" aria-expanded="false" aria-controls="respuesta-llevar">
+          <span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-candado"/></svg></span>
+          <span class="pregunta__textos"><span class="pregunta__titulo">Qué llevar para caminar</span><span class="pregunta__sub">Antes de salir</span></span>
+          <svg class="ico pregunta__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
+        </button>
+        <p class="pregunta__respuesta" id="respuesta-llevar" hidden>[Respuesta de la pregunta]</p>
+      </section>
+      <section class="pregunta">
+        <button class="pregunta__cabecera" type="button" data-ec="acordeon" aria-expanded="false" aria-controls="respuesta-salud">
+          <span class="icono-seccion icono-seccion--rojo"><svg class="ico" aria-hidden="true"><use href="#g-maletin"/></svg></span>
+          <span class="pregunta__textos"><span class="pregunta__titulo">Me siento mal en el camino</span><span class="pregunta__sub">Salud y seguridad</span></span>
+          <svg class="ico pregunta__chevron" aria-hidden="true"><use href="#g-chevron-derecha"/></svg>
+        </button>
+        <p class="pregunta__respuesta" id="respuesta-salud" hidden>[Respuesta de la pregunta]</p>
+      </section>
+    </div>
+  </main>
+
+  <nav class="nav-inferior barra" aria-label="Navegación principal" style="--nav-activo: #E2393E">
+    <button class="nav-item" type="button" data-ec="nav-inicio" data-destino="inicio"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-inicio"/></svg></span>Inicio</button>
+    <button class="nav-item" type="button" data-ec="nav-mapa" data-destino="mapa"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-mapa"/></svg></span>Mapa</button>
+    <button class="nav-item" type="button" data-ec="nav-espiritual" data-destino="espiritual"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-rosario"/></svg></span>Punto espiritual</button>
+    <button class="nav-item" type="button" data-ec="nav-ayuda" data-destino="ayuda" aria-current="page"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-ayuda"/></svg></span>Ayuda</button>
+    <button class="nav-item" type="button" data-ec="nav-ajustes" data-destino="ajustes"><span class="nav-item__pastilla"><svg class="ico" aria-hidden="true"><use href="#g-configuracion"/></svg></span>Ajustes</button>
+  </nav>
+
+  <script src="js/botones.js"></script>
+  <script src="js/navegacion.js"></script>
+  <script src="js/preguntas.js"></script>
+</body>
+</html>

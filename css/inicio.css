@@ -10,6 +10,13 @@
 
 /* ---------- Cabecera ---------- */
 .inicio__cabecera { display: flex; align-items: center; gap: 10px; }
+/* Flecha de volver: pegada al margen para dejarle lugar al saludo */
+.inicio__volver { margin: 0 -6px 0 -10px; }
+/* Celulares S (menos de 360 dp): la cabecera se aprieta para que el nombre no se corte */
+@media (max-width: 359px) {
+  .inicio__cabecera { gap: 6px; }
+  .inicio__nombre { font-size: 22px; }
+}
 .inicio__isotipo { flex: none; display: block; width: auto; height: 36px; }
 .inicio__saludo { flex: 1; min-width: 0; }
 .inicio__buen-dia { font: 400 14px/1.2 var(--ec-fuente); color: var(--ec-texto-secundario); }
